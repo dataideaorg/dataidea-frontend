@@ -10,8 +10,8 @@ import {
   FaTwitter,
   FaLinkedin,
   FaYoutube,
-  FaGraduationCap,
-  FaLaptopCode
+  // FaGraduationCap,
+  // FaLaptopCode
 } from "react-icons/fa";
 
 
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
                   Our Services
                 </a>
                 <a href="#courses" className="px-8 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white/10 transition-all duration-300">
-                  Browse Courses
+                  Browse Courses  
                 </a>
               </div>
             </div>
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
       </section> */}
 
       {/* Software Services Section */}
-      <section id="software" className="bg-cyan-50 px-4 py-10 font-default">
+      <section id="services" className="bg-cyan-50 px-4 py-10 font-default">
         <div className="container-xl lg:container m-auto">
           <h2 className="text-3xl font-bold text-[#008374] mb-6 text-center">
             All Services
@@ -230,7 +230,7 @@ const Home: React.FC = () => {
                     15 Seats
                   </div>
                   <a
-                    href="https://science.dataidea.org/Python/00_python_programming_outline.html"
+                    href="https://science.dataidea.org/Python/11_python_tutorial/"
                     className="h-[36px] bg-[#008374] hover:bg-[#019b89] text-white px-4 py-2 rounded-lg text-center text-sm"
                   >
                     Get Started
@@ -264,7 +264,7 @@ const Home: React.FC = () => {
                     10 seats
                   </div>
                   <a
-                    href="https://science.dataidea.org/Python-Data-Analysis/python_data_analysis_outline.html"
+                    href="https://science.dataidea.org/Data%20Collection%20and%20Visulization/31_matplotlib_refined/"
                     className="h-[36px] bg-[#008374] hover:bg-[#019b89] text-white px-4 py-2 rounded-lg text-center text-sm"
                   >
                     Get Started
@@ -297,7 +297,7 @@ const Home: React.FC = () => {
                     10 seats
                   </div>
                   <a
-                    href="https://science.dataidea.org/Python-Data-Analysis/Week4-ML-Intro/41_overview_of_machine_learning.html"
+                    href="https://science.dataidea.org/Machine%20Learning/41_overview_of_machine_learning/"
                     className="h-[36px] bg-[#008374] hover:bg-[#019b89] text-white px-4 py-2 rounded-lg text-center text-sm"
                   >
                     Get Started
