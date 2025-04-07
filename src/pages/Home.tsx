@@ -6,8 +6,6 @@ import DotEnv from "../assets/images/dot-env.jpg";
 import ReactThumb from "../assets/images/react-thumbnails.jpg";
 import HeroImage from "../assets/images/hero-image.png";
 import {
-  FaChartLine,
-  FaGlobe,
   FaExternalLinkAlt,
   FaTwitter,
   FaLinkedin,
@@ -60,13 +58,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* Service Categories Section */}
-      <section id="services" className="py-12 font-default">
+      {/* <section id="services" className="py-12 font-default">
         <div className="container-xl lg:container m-auto">
           <h2 className="text-3xl font-bold text-[#008374] mb-8 text-center">
             Our Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
-            {/* Education Services Card */}
+            
             <div className="bg-gray-100 p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
               <div className="flex flex-col items-center text-center mb-6">
                 <div className="w-20 h-20 bg-[#008374]/10 rounded-full flex items-center justify-center mb-4">
@@ -84,7 +82,7 @@ const Home: React.FC = () => {
               </div>
             </div>
             
-            {/* Software Services Card */}
+           
             <div className="bg-cyan-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
               <div className="flex flex-col items-center text-center mb-6">
                 <div className="w-20 h-20 bg-[#008374]/10 rounded-full flex items-center justify-center mb-4">
@@ -103,16 +101,16 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Software Services Section */}
       <section id="software" className="bg-cyan-50 px-4 py-10 font-default">
         <div className="container-xl lg:container m-auto">
           <h2 className="text-3xl font-bold text-[#008374] mb-6 text-center">
-            Software Solutions
+            All Services
           </h2>
           <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            Explore our range of software solutions designed to enhance your productivity and collaboration.
+            Explore our range of services designed to enhance your productivity and collaboration.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -123,15 +121,15 @@ const Home: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">DATAIDEA MEET</h3>
-                <p className="text-gray-600 mb-4">Our video conferencing platform for seamless online meetings and collaboration.</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">DATAIDEA SCIENCE</h3>
+                <p className="text-gray-600 mb-4">Our comprehensive Programming for Data Science courses.</p>
                 <a 
-                  href="https://meet.dataidea.org" 
+                  href="https://science.dataidea.org" 
                   className="text-[#008374] hover:text-[#019b89] font-medium flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Visit Meet
+                  Visit DataIdea Science
                   <span className="ml-2"><FaExternalLinkAlt size={12} /></span>
                 </a>
               </div>
@@ -144,15 +142,15 @@ const Home: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">DATAIDEA COURSES</h3>
-                <p className="text-gray-600 mb-4">Our comprehensive learning management system for courses and training (in development).</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">DATAIDEA DATASETS</h3>
+                <p className="text-gray-600 mb-4">Open datasets for data science and machine learning.</p>
                 <a 
-                  href="https://courses.dataidea.org" 
+                  href="https://datasets.dataidea.org" 
                   className="text-[#008374] hover:text-[#019b89] font-medium flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Explore Courses
+                  Explore Datasets
                   <span className="ml-2"><FaExternalLinkAlt size={12} /></span>
                 </a>
               </div>
