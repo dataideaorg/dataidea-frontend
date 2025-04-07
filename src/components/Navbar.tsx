@@ -36,9 +36,13 @@ const Navbar: React.FC = () => {
 
   const menuItems = {
     resources: [
-      { label: "Data Science", href: "https://science.dataidea.org" },
+      
       { label: "Blog", href: "https://blog.dataidea.org" },
-      { label: "Movies", href: "https://movies.dataidea.org" },
+      { label: "Datasets", href: "https://datasets.dataidea.org" },
+      { label: "Data Science", href: "https://science.dataidea.org" },
+      { label: "Web Development", href: "https://web.dataidea.org" },
+      // { label: "Movies", href: "https://movies.dataidea.org" },
+
     ],
     community: [
       { label: "Forum Group", href: "https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi" },
