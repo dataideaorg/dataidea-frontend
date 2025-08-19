@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
+// Animation variants for consistent animations
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
@@ -142,9 +143,10 @@ export default function Resources() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-24 md:px-32 lg:px-64">
+        {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-primary/90 to-dataidea-dark/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#008374] to-[#008374]/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -162,7 +164,7 @@ export default function Resources() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -183,13 +185,13 @@ export default function Resources() {
             variants={staggerContainer}
           >
             <motion.h1 
-              className="text-4xl lg:text-5xl font-bold mb-6"
+              className="text-4xl lg:text-5xl font-bold mb-8"
               variants={fadeInUp}
             >
               Resources
             </motion.h1>
             <motion.p 
-              className="text-lg mb-8 text-white/90"
+              className="text-xl mb-10 text-white/90"
               variants={fadeInUp}
             >
               Access our collection of statistical resources, research papers, educational materials, and datasets to enhance your statistical knowledge and skills.
@@ -199,17 +201,17 @@ export default function Resources() {
       </section>
 
       {/* Resources Overview */}
-      <section className="py-16">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Available Resources</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               Download educational materials, research papers, and datasets to enhance your statistical knowledge
             </p>
           </motion.div>
@@ -219,24 +221,25 @@ export default function Resources() {
             {resourceCategories.map((category, categoryIndex) => (
               <motion.div 
                 key={categoryIndex}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
-                viewport={{ once: true }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
               >
-                <div className="mb-8">
-                  <div className="flex items-center mb-4">
-                    <div className="p-3 rounded-full bg-dataidea-primary/10 mr-4">
+                <div className="bg-white p-8 rounded-lg shadow-lg mb-8 border-t-4 border-easi-primary">
+                  <div className="flex items-center mb-8">
+                    <div className="p-4 rounded-full bg-easi-primary/10 mr-6">
                       {category.icon}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-dataidea-dark">{category.title}</h3>
+                      <h3 className="text-2xl font-bold text-easi-dark">{category.title}</h3>
                       <p className="text-gray-600">{category.description}</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {category.resources.map((resource, resourceIndex) => (
                     <motion.div
                       key={resourceIndex}
@@ -247,8 +250,8 @@ export default function Resources() {
                       <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
                         <div className="p-6 flex-grow">
                           <div className="flex items-start mb-4">
-                            <div className="p-2 rounded-full bg-dataidea-primary/10 mr-4">
-                              <DocumentTextIcon className="h-6 w-6 text-dataidea-primary" />
+                            <div className="p-2 rounded-full bg-easi-primary/10 mr-4">
+                              <DocumentTextIcon className="h-6 w-6 text-easi-primary" />
                             </div>
                             <div className="flex-1">
                               <h4 className="text-lg font-semibold mb-2">{resource.title}</h4>
@@ -269,13 +272,13 @@ export default function Resources() {
                         <div className="p-4 border-t border-gray-100 flex justify-between items-center">
                           <Link 
                             href="#"
-                            className="text-dataidea-primary hover:text-dataidea-primaryHover font-medium text-sm"
+                            className="text-easi-primary hover:text-easi-primaryHover font-medium text-sm"
                           >
                             View Details
                           </Link>
                           <Button
                             size="sm"
-                            className="bg-dataidea-primary hover:bg-dataidea-primaryHover text-white"
+                            className="bg-easi-primary hover:bg-easi-primaryHover text-white"
                             onClick={() => {
                               // In a real app, this would trigger the download
                               alert('Download functionality will be available soon');
@@ -296,25 +299,25 @@ export default function Resources() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 py-24">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
             className="text-center"
           >
-            <BookOpenIcon className="h-16 w-16 text-dataidea-primary mx-auto mb-6" />
+            <BookOpenIcon className="h-16 w-16 text-easi-primary mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-6">Need Something Specific?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto mb-10">
               If you&apos;re looking for specific resources or have suggestions for materials you&apos;d like to see in our library, 
               don&apos;t hesitate to reach out to us.
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4"
+              className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4 text-lg"
             >
               <Link href="/contact">Contact Us</Link>
             </Button>
