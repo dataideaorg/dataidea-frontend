@@ -14,12 +14,28 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
+// Animation variants for consistent animations
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
 export default function Courses() {
   const courseCategories = [
     {
       title: "Data Science & Analytics",
       description: "Master the tools and techniques for data analysis, visualization, and machine learning.",
-      icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />,
+      icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
           title: "Python for Data Science",
@@ -54,7 +70,7 @@ export default function Courses() {
     {
       title: "Statistical Analysis",
       description: "Develop strong statistical foundations for research and data analysis.",
-      icon: <AcademicCapIcon className="h-12 w-12 text-dataidea-primary" />,
+      icon: <AcademicCapIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
           title: "Statistical Methods",
@@ -79,7 +95,7 @@ export default function Courses() {
     {
       title: "Professional Development",
       description: "Enhance your professional skills in monitoring, evaluation, and project management.",
-      icon: <UserGroupIcon className="h-12 w-12 text-dataidea-primary" />,
+      icon: <UserGroupIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
           title: "Monitoring & Evaluation",
@@ -139,10 +155,10 @@ export default function Courses() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-24 md:px-32 lg:px-64">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-primary/90 to-dataidea-dark/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#008374] to-[#008374]/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -160,7 +176,7 @@ export default function Courses() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -174,52 +190,51 @@ export default function Courses() {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center text-white max-w-4xl mx-auto">
+          <motion.div 
+            className="text-center text-white max-w-4xl mx-auto"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
             <motion.h1 
-              className="text-4xl lg:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              className="text-4xl lg:text-5xl font-bold mb-8"
+              variants={fadeInUp}
             >
               Professional <span className="text-white">Courses</span>
             </motion.h1>
             <motion.p 
-              className="text-xl mb-8 text-white/90"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl mb-10 text-white/90"
+              variants={fadeInUp}
             >
               Enhance your skills with our comprehensive online and in-person courses designed for professionals, researchers, and students across East Africa.
             </motion.p>
             <motion.div 
-              className="flex flex-wrap justify-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-6"
+              variants={fadeInUp}
             >
-              <Button size="lg" className="bg-white text-dataidea-primary hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-easi-primary hover:bg-gray-100 hover:cursor-pointer">
                 Explore Courses
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/20">
                 <Link href="/contact">Get Consultation</Link>
               </Button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Course Categories */}
-      <section id="courses" className="py-16 bg-gray-50">
+      <section id="courses" className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
             className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Our Course Categories</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-3xl mx-auto">
               Choose from our diverse range of courses designed to meet the needs of professionals, researchers, and students at all levels.
             </p>
           </motion.div>
@@ -228,23 +243,24 @@ export default function Courses() {
             {courseCategories.map((category, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <div className="bg-white p-8 rounded-lg shadow-lg mb-8 border-t-4 border-easi-primary">
                   <div className="flex flex-col md:flex-row md:items-center mb-8">
-                    <div className="p-4 rounded-full bg-dataidea-primary/10 mr-6 mb-4 md:mb-0 w-fit">
+                    <div className="p-4 rounded-full bg-easi-primary/10 mr-6 mb-4 md:mb-0 w-fit">
                       {category.icon}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">{category.title}</h3>
+                      <h3 className="text-2xl font-bold mb-2 text-easi-dark">{category.title}</h3>
                       <p className="text-gray-600 text-lg">{category.description}</p>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {category.courses.map((course, courseIndex) => (
                       <motion.div
                         key={courseIndex}
@@ -254,7 +270,7 @@ export default function Courses() {
                         <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                           <div className="p-6 h-full flex flex-col">
                             <div className="flex justify-between items-start mb-3">
-                              <h4 className="text-lg font-semibold text-dataidea-primary">{course.title}</h4>
+                              <h4 className="text-lg font-semibold text-easi-primary">{course.title}</h4>
                               {course.external && (
                                 <Badge variant="secondary" className="bg-green-100 text-green-800">
                                   External
@@ -268,7 +284,7 @@ export default function Courses() {
                                 <ClockIcon className="h-3 w-3 mr-1" />
                                 {course.duration}
                               </Badge>
-                              <Badge variant="secondary" className="bg-dataidea-primary/10 text-dataidea-primary text-xs">
+                              <Badge variant="secondary" className="bg-easi-primary/10 text-easi-primary text-xs">
                                 {course.level}
                               </Badge>
                               <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">
@@ -281,7 +297,7 @@ export default function Courses() {
                               <ul className="text-xs text-gray-600 space-y-1">
                                 {course.features.map((feature, idx) => (
                                   <li key={idx} className="flex items-center">
-                                    <span className="w-1.5 h-1.5 bg-dataidea-primary rounded-full mr-2"></span>
+                                    <span className="w-1.5 h-1.5 bg-easi-primary rounded-full mr-2"></span>
                                     {feature}
                                   </li>
                                 ))}
@@ -295,12 +311,12 @@ export default function Courses() {
                                 rel="noopener noreferrer"
                                 className="inline-block"
                               >
-                                <Button className="bg-dataidea-primary text-white hover:bg-dataidea-primaryHover w-full">
+                                <Button className="bg-easi-primary text-white hover:bg-easi-primaryHover w-full">
                                   Visit Course
                                 </Button>
                               </a>
                             ) : (
-                              <Button asChild variant="outline" className="w-full">
+                              <Button asChild variant="outline" className="w-full hover:bg-easi-primary hover:text-white">
                                 <Link href="/contact">Enroll Now</Link>
                               </Button>
                             )}
@@ -317,17 +333,17 @@ export default function Courses() {
       </section>
 
       {/* Why Choose Our Courses */}
-      <section className="py-16">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Why Choose Our Courses?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               Discover the advantages of learning with DATAIDEA&apos;s professional training programs
             </p>
           </motion.div>
@@ -336,15 +352,16 @@ export default function Courses() {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="text-center border-0 shadow-sm hover:shadow-md transition-shadow h-full">
                   <div className="p-6">
-                    <div className="p-3 rounded-full bg-dataidea-primary/10 w-fit mx-auto mb-4">
-                      <div className="text-dataidea-primary">
+                    <div className="p-3 rounded-full bg-easi-primary/10 w-fit mx-auto mb-4">
+                      <div className="text-easi-primary">
                         {feature.icon}
                       </div>
                     </div>
@@ -359,42 +376,39 @@ export default function Courses() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-dataidea-dark text-white py-16">
+      <section className="bg-easi-dark text-white py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
             <motion.h2 
               className="text-3xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              variants={fadeInUp}
             >
               Ready to Start Your Learning Journey?
             </motion.h2>
             <motion.p 
-              className="text-xl mb-8 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
+              className="text-xl mb-10 max-w-2xl mx-auto"
+              variants={fadeInUp}
             >
               Choose from our comprehensive course offerings and take the first step towards enhancing your professional skills.
             </motion.p>
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+              variants={fadeInUp}
             >
-              <Button size="lg" className="bg-dataidea-primary hover:bg-dataidea-primaryHover">
+              <Button size="lg" className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4 text-lg">
                 Browse All Courses
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/20">
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/20 px-8 py-4 text-lg">
                 <Link href="/contact">Get Course Advice</Link>
               </Button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -12,6 +12,22 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
+// Animation variants for consistent animations
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
 export default function About() {
   const teamMembers = [
     {
@@ -19,21 +35,21 @@ export default function About() {
       title: "Chairman, Board of Directors",
       shortBio: "Associate Professor of Statistics and Applied Computing. Currently the Deputy Vice-Chancellor of Kyambogo University responsible for Finance and Administration.",
       education: "PhD in Statistics (1994) from the University of Edinburgh, Scotland",
-      icon: <AcademicCapIcon className="h-6 w-6 text-dataidea-primary" />
+      icon: <AcademicCapIcon className="h-6 w-6 text-easi-primary" />
     },
     {
       name: "Prof. Ronald Wesonga",
       title: "Founding Director",
       shortBio: "Statistician based at the Department of Statistics, Sultan Qaboos University. Formerly a visiting Professor at the Institute of Social Research, Makerere University.",
       education: "Studied at the Institute of Statistics and Applied Economics, Makerere University",
-      icon: <UserIcon className="h-6 w-6 text-dataidea-primary" />
+      icon: <UserIcon className="h-6 w-6 text-easi-primary" />
     },
     {
       name: "Dr. Abraham Owino Yeyo",
       title: "Director",
       shortBio: "Statistician involved in capacity building in Research, Monitoring and Evaluation and Community Development, currently lecturing at Makerere University.",
       education: "Lecturer at Makerere University School of Statistics and Planning",
-      icon: <BuildingLibraryIcon className="h-6 w-6 text-dataidea-primary" />
+      icon: <BuildingLibraryIcon className="h-6 w-6 text-easi-primary" />
     }
   ];
 
@@ -41,31 +57,32 @@ export default function About() {
     {
       title: "Excellence",
       description: "We are committed to the highest standards of statistical methodology and research.",
-      icon: <AcademicCapIcon className="h-12 w-12 text-dataidea-primary" />
+      icon: <AcademicCapIcon className="h-12 w-12 text-easi-primary" />
     },
     {
       title: "Innovation",
       description: "We continuously seek new approaches to solve complex statistical challenges.",
-      icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />
+      icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />
     },
     {
       title: "Integrity",
       description: "We uphold ethical standards and transparency in all our work and relationships.",
-      icon: <UserIcon className="h-12 w-12 text-dataidea-primary" />
+      icon: <UserIcon className="h-12 w-12 text-easi-primary" />
     },
     {
       title: "Collaboration",
       description: "We believe in the power of partnerships to achieve greater impact across the region.",
-      icon: <BuildingLibraryIcon className="h-12 w-12 text-dataidea-primary" />
+      icon: <BuildingLibraryIcon className="h-12 w-12 text-easi-primary" />
     }
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-24 md:px-32 lg:px-64">
+        {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-dark/90 to-dataidea-primary/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#008374] to-[#008374]/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -83,7 +100,7 @@ export default function About() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
+            className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
             animate={{ 
               x: [0, 50, 0],
               y: [0, -30, 0],
@@ -99,23 +116,19 @@ export default function About() {
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             className="max-w-3xl mx-auto text-center text-white"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
           >
             <motion.h1 
-              className="text-4xl lg:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl lg:text-5xl font-bold mb-8"
+              variants={fadeInUp}
             >
               About <span className="text-white">DATAIDEA</span>
             </motion.h1>
             <motion.p 
               className="text-xl text-white/90"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              variants={fadeInUp}
             >
               DATAIDEA was established to provide primarily a complementary role of research in appropriate statistical and computational methodology that facilitate production and sustenance of quality national statistics.
             </motion.p>
@@ -124,17 +137,17 @@ export default function About() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeInUp}
             >
-              <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-dataidea-primary h-full">
-                <h2 className="text-3xl font-bold mb-4 text-dataidea-dark">Our Mission</h2>
+              <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-easi-primary h-full">
+                <h2 className="text-3xl font-bold mb-4 text-easi-dark">Our Mission</h2>
                 <p className="text-gray-600">
                   To provide high-quality research in statistical methodology and computational techniques that enhance the production and sustainability of quality national statistics across East Africa.
                 </p>
@@ -142,13 +155,13 @@ export default function About() {
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeInUp}
             >
-              <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-dataidea-primary h-full">
-                <h2 className="text-3xl font-bold mb-4 text-dataidea-dark">Our Vision</h2>
+              <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-easi-primary h-full">
+                <h2 className="text-3xl font-bold mb-4 text-easi-dark">Our Vision</h2>
                 <p className="text-gray-600">
                   To be the leading center of excellence in statistical research, methodology development, and capacity building in East Africa and beyond.
                 </p>
@@ -159,22 +172,22 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               Over the years, DATAIDEA has made significant contributions to statistical development across East Africa
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { number: "15+", label: "Years Experience" },
               { number: "1000+", label: "Professionals Trained" },
@@ -183,13 +196,14 @@ export default function About() {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                  <div className="text-3xl font-bold text-dataidea-primary mb-2">{stat.number}</div>
+                  <div className="text-3xl font-bold text-easi-primary mb-2">{stat.number}</div>
                   <div className="text-gray-600">{stat.label}</div>
                 </Card>
               </motion.div>
@@ -199,17 +213,17 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Our Leadership Team</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               Our team consists of experienced statisticians and researchers dedicated to advancing statistical excellence across East Africa.
             </p>
           </motion.div>
@@ -218,24 +232,25 @@ export default function About() {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <div className="p-0 flex flex-col h-full">
-                    <div className="relative bg-gradient-to-br from-dataidea-primary/10 to-dataidea-secondary/10 p-8">
+                    <div className="relative bg-gradient-to-br from-easi-primary/10 to-easi-secondary/10 p-8">
                       <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
                         {member.icon}
                       </div>
-                      <Badge className="absolute top-4 right-4 bg-dataidea-primary text-white">
+                      <Badge className="absolute top-4 right-4 bg-easi-primary text-white">
                         Leadership
                       </Badge>
                     </div>
                     <div className="p-6 flex-grow">
                       <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                      <p className="text-dataidea-primary font-medium mb-4">{member.title}</p>
+                      <p className="text-easi-primary font-medium mb-4">{member.title}</p>
                       <p className="text-gray-600 mb-4 text-sm">{member.shortBio}</p>
                       <div className="flex items-center mb-4">
                         <AcademicCapIcon className="h-5 w-5 text-gray-500 mr-2" />
@@ -244,7 +259,7 @@ export default function About() {
                       <Button 
                         variant="outline" 
                         size="sm"
-                        className="w-full"
+                        className="w-full hover:bg-easi-primary hover:text-white"
                         onClick={() => {
                           alert('Full biography coming soon');
                         }}
@@ -261,17 +276,17 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               These principles guide our work and relationships with partners and clients.
             </p>
           </motion.div>
@@ -280,10 +295,11 @@ export default function About() {
             {coreValues.map((value, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
                   <div className="p-6">
@@ -296,46 +312,6 @@ export default function About() {
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-dataidea-dark text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <motion.h2 
-              className="text-3xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Join Us in Our Mission
-            </motion.h2>
-            <motion.p 
-              className="text-xl mb-8 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Partner with DATAIDEA to advance statistical excellence and contribute to evidence-based decision making across East Africa.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <Button
-                asChild
-                size="lg"
-                className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4"
-              >
-                <Link href="/contact">Contact Us Today</Link>
-              </Button>
-            </motion.div>
           </div>
         </div>
       </section>

@@ -26,10 +26,10 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-24">
+      <section className="relative overflow-hidden py-24 md:px-32 lg:px-64">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-primary/90 to-dataidea-dark/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#008374] to-[#008374]/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -47,7 +47,7 @@ export default function Home() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -72,7 +72,7 @@ export default function Home() {
                 className="text-4xl lg:text-5xl font-bold mb-8"
                 variants={fadeInUp}
               >
-                Excellence in Statistical <span className="text-white">Research & Training</span>
+                Learn Programming <span className="text-white">For Data Science</span>
               </motion.h1>
               <motion.p 
                 className="text-xl mb-10 text-white/90"
@@ -84,17 +84,17 @@ export default function Home() {
                 className="flex flex-wrap gap-6"
                 variants={fadeInUp}
               >
-                <Button size="lg" className="bg-white text-dataidea-primary hover:bg-gray-100">
+                <Button size="lg" className="bg-[#008374] text-white hover:bg-gray-100 border-white border-1 rounded-sm px-4 py-2 hover:cursor-pointer hover:text-[#008374]">
                   Our Programs
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                <Button size="lg" className="bg-[#008374] border-white text-white border-1 text-white rounded-sm px-4 py-2 hover:cursor-pointer hover:text-[#008374] hover:bg-white">
                   Learn More
                 </Button>
               </motion.div>
             </motion.div>
             
             <motion.div 
-              className="lg:w-1/2"
+              className="lg:w-1/2 flex justify-center lg:justify-end"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
@@ -119,7 +119,7 @@ export default function Home() {
                 >
                   <Card className="bg-white rounded-lg shadow-2xl overflow-hidden max-w-md">
                     <div className="p-8">
-                      <h3 className="text-2xl font-bold text-dataidea-dark mb-6">
+                      <h3 className="text-2xl font-bold text-easi-dark mb-4">
                         Our Impact
                       </h3>
                       <div className="space-y-6">
@@ -128,7 +128,7 @@ export default function Home() {
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <div className="text-dataidea-primary text-4xl font-bold mr-4">15+</div>
+                          <div className="text-easi-primary text-4xl font-bold mr-4">15+</div>
                           <div className="text-gray-600">Years of Experience</div>
                         </motion.div>
                         <motion.div 
@@ -136,7 +136,7 @@ export default function Home() {
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <div className="text-dataidea-primary text-4xl font-bold mr-4">1000+</div>
+                          <div className="text-easi-primary text-4xl font-bold mr-4">1000+</div>
                           <div className="text-gray-600">Trained Professionals</div>
                         </motion.div>
                         <motion.div 
@@ -144,55 +144,23 @@ export default function Home() {
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <div className="text-dataidea-primary text-4xl font-bold mr-4">50+</div>
+                          <div className="text-easi-primary text-4xl font-bold mr-4">50+</div>
                           <div className="text-gray-600">Research Projects</div>
                         </motion.div>
                       </div>
                     </div>
-                    <div className="bg-dataidea-primary p-4 text-center text-white">
-                      <Button variant="ghost" className="text-white hover:bg-white/10">
-                        Discover Our Story →
-                      </Button>
+                    <div className="bg-[#008374] p-4 text-center text-white -mb-6">
+                      <div className="flex justify-center">
+                        <Button variant="ghost" className="text-white hover:bg-white/10">
+                          Learn More →
+                        </Button>
+                      </div>
                     </div>
                   </Card>
                 </motion.div>
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-dataidea-dark text-white py-24">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.h2 
-              className="text-3xl font-bold mb-6"
-              variants={fadeInUp}
-            >
-              Ready to Get Started?
-            </motion.h2>
-            <motion.p 
-              className="text-xl mb-10 max-w-2xl mx-auto"
-              variants={fadeInUp}
-            >
-              Join leading organizations across East Africa in advancing statistical excellence through our programs and services.
-            </motion.p>
-            <motion.div variants={fadeInUp}>
-              <Button
-                size="lg"
-                className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4 text-lg"
-              >
-                Contact Us Today
-              </Button>
-            </motion.div>
-          </motion.div>
         </div>
       </section>
 
@@ -216,25 +184,25 @@ export default function Home() {
               {
                 title: "Statistical Research",
                 description: "Research in appropriate statistical and computational methodology to facilitate quality national statistics",
-                icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />,
+                icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
                 link: "/about"
               },
               {
                 title: "Training Programs",
                 description: "Practical, high-quality training programs delivered by experienced professionals in statistics and data analysis",
-                icon: <AcademicCapIcon className="h-12 w-12 text-dataidea-primary" />,
+                icon: <AcademicCapIcon className="h-12 w-12 text-easi-primary" />,
                 link: "/training"
               },
               {
                 title: "Consultancy & Research",
                 description: "Premier management development and excellence in statistical methodologies, systems and software applications",
-                icon: <BeakerIcon className="h-12 w-12 text-dataidea-primary" />,
+                icon: <BeakerIcon className="h-12 w-12 text-easi-primary" />,
                 link: "/consultancy"
               },
               {
                 title: "Tailored Training",
                 description: "Customized training solutions delivered at your premises, focusing on your organization's specific requirements",
-                icon: <UserGroupIcon className="h-12 w-12 text-dataidea-primary" />,
+                icon: <UserGroupIcon className="h-12 w-12 text-easi-primary" />,
                 link: "/training"
               }
             ].map((service, index) => (
@@ -271,7 +239,7 @@ export default function Home() {
                       >
                         <Link 
                           href={service.link}
-                          className="text-dataidea-primary hover:text-dataidea-primaryHover font-medium inline-block"
+                          className="text-easi-primary hover:text-easi-primaryHover font-medium inline-block"
                         >
                           Learn More →
                         </Link>
@@ -302,22 +270,22 @@ export default function Home() {
               {
                 number: "15+",
                 label: "Years Experience",
-                icon: <BuildingOfficeIcon className="h-8 w-8 text-dataidea-primary" />
+                icon: <BuildingOfficeIcon className="h-8 w-8 text-easi-primary" />
               },
               {
                 number: "1000+",
                 label: "Trained Professionals",
-                icon: <UserGroupIcon className="h-8 w-8 text-dataidea-primary" />
+                icon: <UserGroupIcon className="h-8 w-8 text-easi-primary" />
               },
               {
                 number: "50+",
                 label: "Research Projects",
-                icon: <ChartBarIcon className="h-8 w-8 text-dataidea-primary" />
+                icon: <ChartBarIcon className="h-8 w-8 text-easi-primary" />
               },
               {
                 number: "100+",
                 label: "Training Programs",
-                icon: <AcademicCapIcon className="h-8 w-8 text-dataidea-primary" />
+                icon: <AcademicCapIcon className="h-8 w-8 text-easi-primary" />
               }
             ].map((stat, index) => (
               <motion.div
@@ -343,7 +311,7 @@ export default function Home() {
                     {stat.icon}
                   </motion.div>
                   <motion.div 
-                    className="text-4xl font-bold text-dataidea-primary mb-3"
+                    className="text-4xl font-bold text-easi-primary mb-3"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -362,7 +330,7 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center mb-16"
@@ -393,10 +361,10 @@ export default function Home() {
                 variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
               >
-                <Card className="p-6 flex items-center justify-center border border-gray-100 hover:border-dataidea-primary transition-colors duration-300">
+                <Card className="p-6 flex items-center justify-center border border-gray-100 hover:border-easi-primary transition-colors duration-300">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-dataidea-primary/10 rounded-full flex items-center justify-center mb-2 mx-auto">
-                      <BuildingOfficeIcon className="h-8 w-8 text-dataidea-primary" />
+                    <div className="w-16 h-16 bg-easi-primary/10 rounded-full flex items-center justify-center mb-2 mx-auto">
+                      <BuildingOfficeIcon className="h-8 w-8 text-easi-primary" />
                     </div>
                     <p className="text-xs font-medium text-gray-600">{partner.name}</p>
                   </div>
@@ -436,7 +404,7 @@ export default function Home() {
             >
               {/* X (Twitter) */}
               <motion.a
-                href="https://x.com/easiacug"
+                href="https://x.com/dataideaorg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
@@ -454,7 +422,7 @@ export default function Home() {
 
               {/* YouTube */}
               <motion.a
-                href="https://youtube.com/@easiacug"
+                href="https://youtube.com/@dataideaorg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"

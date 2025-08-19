@@ -41,7 +41,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-dataidea-dark text-white">
+    <footer className="bg-[#008374] text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -148,12 +148,12 @@ const Footer = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-gray-700 border-gray-600 focus:border-dataidea-primary text-white placeholder:text-gray-400"
+                className="bg-gray-50 border-gray-600 focus:border-dataidea-primary text-white placeholder:text-gray-400 p-5"
                 required
               />
               <Button
                 type="submit"
-                className="w-full bg-dataidea-primary hover:bg-dataidea-primaryHover"
+                className="w-full border-white border-1 rounded-sm p-5 bg-[#008374] text-white hover:bg-white hover:text-[#008374] hover:cursor-pointer px-4 py-2"
               >
                 Subscribe
               </Button>
