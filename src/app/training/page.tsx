@@ -13,13 +13,28 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
+// Animation variants for consistent animations
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 export default function Training() {
   const trainingCategories = [
     {
       title: "R Programming for Statistical Analysis",
       description: "Comprehensive training in R programming language for statistical analysis, data visualization, and reporting.",
-      icon: <CodeBracketIcon className="h-12 w-12 text-dataidea-primary" />,
+      icon: <CodeBracketIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
           title: "Introduction to R for Statisticians",
@@ -44,7 +59,7 @@ export default function Training() {
     {
       title: "Python for Data Science",
       description: "Hands-on training in Python programming for data analysis, machine learning, and statistical applications.",
-      icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />,
+      icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
           title: "Python Fundamentals for Data Analysis",
@@ -69,7 +84,7 @@ export default function Training() {
     {
       title: "Monitoring and Evaluation",
       description: "Comprehensive training in designing, implementing, and managing effective M&E systems for programs and projects.",
-      icon: <ClipboardDocumentCheckIcon className="h-12 w-12 text-dataidea-primary" />,
+      icon: <ClipboardDocumentCheckIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
           title: "M&E Fundamentals",
@@ -96,9 +111,10 @@ export default function Training() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-24 md:px-32 lg:px-64">
+        {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-primary/90 to-dataidea-dark/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#008374] to-[#008374]/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -116,7 +132,7 @@ export default function Training() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -133,36 +149,30 @@ export default function Training() {
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <motion.div 
               className="lg:w-1/2 mb-10 lg:mb-0 text-white"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
             >
               <motion.h1 
-                className="text-4xl lg:text-5xl font-bold mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl lg:text-5xl font-bold mb-8"
+                variants={fadeInUp}
               >
                 Training <span className="text-white">Programs</span>
               </motion.h1>
               <motion.p 
-                className="text-xl mb-8 text-white/90"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-xl mb-10 text-white/90"
+                variants={fadeInUp}
               >
                 DATAIDEA offers comprehensive training programs in statistical analysis, research methodology, and data science to enhance the capacity of professionals across East Africa.
               </motion.p>
               <motion.div 
-                className="flex flex-wrap gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-wrap gap-6"
+                variants={fadeInUp}
               >
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white text-dataidea-primary hover:bg-gray-100"
+                  className="bg-white text-easi-primary hover:bg-gray-100 hover:cursor-pointer"
                 >
                   <a
                     href="https://calendar.google.com/calendar/u/0?cid=ZWFzaS5hYy51Z0BnbWFpbC5jb20"
@@ -189,22 +199,22 @@ export default function Training() {
               transition={{ duration: 1, delay: 0.3 }}
             >
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold text-dataidea-dark mb-4">Upcoming Training / Meetings</h3>
+                <h3 className="text-2xl font-bold text-easi-dark mb-4">Upcoming Training / Meetings</h3>
                 <div className="space-y-4">
                   <motion.div 
-                    className="flex items-center p-3 border-l-4 border-dataidea-primary bg-gray-50"
+                    className="flex items-center p-3 border-l-4 border-easi-primary bg-gray-50"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="mr-4">
-                      <CalendarIcon className="h-8 w-8 text-dataidea-primary" />
+                      <CalendarIcon className="h-8 w-8 text-easi-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold">Data Management with R Language</h4>
                       <div className="text-sm text-gray-600 flex flex-wrap gap-x-4">
                         <span>Tuesday, July 29, to Wednesday, July 30, 2025</span>
                         <span>Kampala, Uganda</span>
-                        <a href="https://meet.google.com/ypg-wxdc-dwr" target="_blank" rel="noopener noreferrer" className="text-dataidea-primary">Join event</a>
+                        <a href="https://meet.google.com/ypg-wxdc-dwr" target="_blank" rel="noopener noreferrer" className="text-easi-primary">Join event</a>
                       </div>
                     </div>
                   </motion.div>
@@ -216,17 +226,17 @@ export default function Training() {
       </section>
 
       {/* Upcoming Trainings Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">All Upcoming Training Events</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               Explore our upcoming events and secure your spot today.
             </p>
           </motion.div>
@@ -253,20 +263,21 @@ export default function Training() {
             ].map((training, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 text-dataidea-primary">{training.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-easi-primary">{training.title}</h3>
                     <div className="text-gray-700 mb-1"><strong className="text-gray-900">Date:</strong> {training.date}</div>
                     <div className="text-gray-700 mb-1"><strong className="text-gray-900">Location:</strong> {training.location}</div>
                     <p className="text-gray-600 mt-2 mb-4">{training.description}</p>
                     <Button
                       asChild
-                      className="w-full bg-dataidea-primary hover:bg-dataidea-primaryHover"
+                      className="w-full bg-easi-primary hover:bg-easi-primaryHover"
                     >
                       <Link href="/contact">Express Interest</Link>
                     </Button>
@@ -279,37 +290,37 @@ export default function Training() {
       </section>
 
       {/* How to Pay */}
-      <section className="py-16">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-yellow-50 border-l-4 border-dataidea-primary shadow-md mb-12">
+            <Card className="bg-yellow-50 border-l-4 border-easi-primary shadow-md mb-12">
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4 text-dataidea-primary">How to Pay</h2>
+                <h2 className="text-2xl font-bold mb-4 text-easi-primary">How to Pay</h2>
                 <p className="mb-4 text-gray-700">
                   To secure your spot in our training, please deposit the required fee via Mobile Money to:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div className="flex flex-col">
-                    <span className="font-semibold text-lg text-dataidea-primary">Mobile Number:</span>
+                    <span className="font-semibold text-lg text-easi-primary">Mobile Number:</span>
                     <span className="font-mono text-lg text-gray-900">+256 749747472</span>
-                    <span className="font-semibold text-lg text-dataidea-primary">Name:</span>
+                    <span className="font-semibold text-lg text-easi-primary">Name:</span>
                     <span className="font-mono text-lg text-gray-900">Ronald Wesonga</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-semibold text-lg text-dataidea-primary">Mobile Number:</span>
+                    <span className="font-semibold text-lg text-easi-primary">Mobile Number:</span>
                     <span className="font-mono text-lg text-gray-900">+256 791429565</span>
-                    <span className="font-semibold text-lg text-dataidea-primary">Name:</span>
+                    <span className="font-semibold text-lg text-easi-primary">Name:</span>
                     <span className="font-mono text-lg text-gray-900">Ronald Wesonga</span>
                   </div>
                 </div>
                 <p className="mb-2 text-gray-700">
                   After payment, capture the transaction ID and fill it in this form{' '}
-                  <a href='https://forms.gle/7yHWruQ7RFBXANTc9' className="text-dataidea-primary underline" target="_blank" rel="noopener noreferrer">
+                  <a href='https://forms.gle/7yHWruQ7RFBXANTc9' className="text-easi-primary underline" target="_blank" rel="noopener noreferrer">
                     DATAIDEA Training Registration Form
                   </a>.
                 </p>
                 <p className="text-gray-600 text-sm">
-                  For any questions, <Link href="/contact" className="text-dataidea-primary underline">contact us here</Link>.
+                  For any questions, <Link href="/contact" className="text-easi-primary underline">contact us here</Link>.
                 </p>
               </div>
             </Card>
@@ -318,17 +329,17 @@ export default function Training() {
       </section>
 
       {/* Training Categories */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Other Training Programs</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               Comprehensive training solutions designed to enhance statistical capacity and data analysis skills
             </p>
           </motion.div>
@@ -337,23 +348,24 @@ export default function Training() {
             {trainingCategories.map((category, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-                  <div className="flex flex-col md:flex-row md:items-center mb-6">
-                    <div className="p-4 rounded-full bg-dataidea-primary/10 mr-6 mb-4 md:mb-0 w-fit">
+                <div className="bg-white p-8 rounded-lg shadow-lg mb-8 border-t-4 border-easi-primary">
+                  <div className="flex flex-col md:flex-row md:items-center mb-8">
+                    <div className="p-4 rounded-full bg-easi-primary/10 mr-6 mb-4 md:mb-0 w-fit">
                       {category.icon}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">{category.title}</h3>
+                      <h3 className="text-2xl font-bold mb-2 text-easi-dark">{category.title}</h3>
                       <p className="text-gray-600">{category.description}</p>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                     {category.courses.map((course, courseIndex) => (
                       <motion.div
                         key={courseIndex}
@@ -368,12 +380,12 @@ export default function Training() {
                                 <ClockIcon className="h-3 w-3 mr-1" />
                                 {course.duration}
                               </Badge>
-                              <Badge variant="secondary" className="bg-dataidea-primary/10 text-dataidea-primary text-xs">
+                              <Badge variant="secondary" className="bg-easi-primary/10 text-easi-primary text-xs">
                                 {course.level}
                               </Badge>
                             </div>
                             <p className="text-gray-600 text-sm mb-4">{course.description}</p>
-                            <Button variant="outline" size="sm" className="w-full">
+                            <Button variant="outline" size="sm" className="w-full hover:bg-easi-primary hover:text-white">
                               Learn More
                             </Button>
                           </div>
@@ -389,17 +401,17 @@ export default function Training() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">What Our Trainees Say</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               Hear from professionals who have participated in our training programs
             </p>
           </motion.div>
@@ -424,10 +436,11 @@ export default function Training() {
             ].map((testimonial, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="bg-gray-50 border border-gray-100 h-full">
                   <div className="p-6">
@@ -445,46 +458,43 @@ export default function Training() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-dataidea-dark text-white py-16">
+      <section className="bg-easi-dark text-white py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
             <motion.h2 
               className="text-3xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              variants={fadeInUp}
             >
               Ready to Enhance Your Team&apos;s Skills?
             </motion.h2>
             <motion.p 
-              className="text-xl mb-8 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
+              className="text-xl mb-10 max-w-2xl mx-auto"
+              variants={fadeInUp}
             >
               Contact us today to discuss your training needs and how we can design a 
               customized program for your organization.
             </motion.p>
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+              variants={fadeInUp}
             >
               <Button
                 asChild
                 size="lg"
-                className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4"
+                className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4 text-lg"
               >
                 <Link href="/contact">Request Training</Link>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white/20 px-8 py-4"
+                className="border-white text-white hover:bg-white/20 px-8 py-4 text-lg"
                 onClick={() => {
                   alert("The brochure will be available soon");
                 }}
@@ -492,7 +502,7 @@ export default function Training() {
                 Download Brochure
               </Button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
