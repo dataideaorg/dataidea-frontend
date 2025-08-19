@@ -24,7 +24,7 @@ const Navbar = () => {
     { name: 'Training', href: '/training' },
     { name: 'Consultancy', href: '/consultancy' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Blog', href: 'https://blog.easi.ac.ug/', external: true },
+    { name: 'Blog', href: 'https://blog.dataidea.ac.ug/', external: true },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md">
       {/* Thin Top Banner */}
-      <section className="relative bg-gradient-to-r from-easi-primary to-easi-secondary py-2 md:py-3">
+      <section className="relative bg-[#008374] py-2 md:py-3">
         <div className="container mx-auto px-4">
           <motion.div 
             className="flex flex-col md:flex-row items-center justify-between text-white"
@@ -45,7 +45,7 @@ const Navbar = () => {
           >
             {/* Left side - Event info */}
             <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-3 mb-2 md:mb-0">
-              <span className="text-xs md:text-sm font-semibold bg-white/20 px-2 md:px-3 py-1 rounded-full">
+              <span className="text-xs md:text-sm font-semibold bg-white text-[#008374] px-2 md:px-3 py-1 rounded-full">
                 🚀 Upcoming Event
               </span>
               <span className="text-xs md:text-sm font-medium text-center sm:text-left">Data Management with R Language</span>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <Button
                   asChild
                   size="sm"
-                  className="bg-white text-easi-primary hover:bg-gray-100 text-xs md:text-sm px-2 md:px-3 py-1 font-bold"
+                  className="rounded-full bg-white text-[#008374] hover:bg-gray-100 text-xs md:text-sm px-2 md:px-3 py-1 font-bold"
                 >
                   <Link href="/contact">Express Interest</Link>
                 </Button>
@@ -83,13 +83,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <Image
-              src="/EASI-Logo.png"
-              alt="EASI Logo"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
-            />
+            <h1 className="text-2xl font-bold text-[#008374]">DATAIDEA</h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -101,7 +95,7 @@ const Navbar = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-2 rounded-md text-sm font-medium text-easi-dark hover:text-easi-primary hover:bg-orange-50 transition-colors duration-200"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-dataidea-dark hover:text-dataidea-primary hover:bg-teal-50 transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -111,15 +105,15 @@ const Navbar = () => {
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-easi-primary bg-orange-50'
-                      : 'text-easi-dark hover:text-easi-primary hover:bg-orange-50'
+                      ? 'text-dataidea-primary bg-teal-50'
+                      : 'text-dataidea-dark hover:text-dataidea-primary hover:bg-teal-50'
                   }`}
                 >
                   {item.name}
                 </Link>
               )
             ))}
-            <Button asChild className="bg-easi-primary hover:bg-easi-primaryHover">
+            <Button asChild className="bg-dataidea-primary hover:bg-dataidea-primaryHover">
               <Link href="/contact">Get in Touch</Link>
             </Button>
           </div>
@@ -131,7 +125,7 @@ const Navbar = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="p-2 rounded-md text-easi-primary hover:text-easi-primary hover:bg-orange-50"
+                  className="p-2 rounded-md text-dataidea-primary hover:text-dataidea-primary hover:bg-teal-50"
                 >
                   {isOpen ? (
                     <XMarkIcon className="h-6 w-6" />
@@ -150,7 +144,7 @@ const Navbar = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setIsOpen(false)}
-                        className="px-3 py-2 rounded-md text-base font-medium text-easi-dark hover:text-easi-primary hover:bg-orange-50 transition-colors duration-200"
+                        className="px-3 py-2 rounded-md text-base font-medium text-dataidea-dark hover:text-dataidea-primary hover:bg-teal-50 transition-colors duration-200"
                       >
                         {item.name}
                       </a>
@@ -161,8 +155,8 @@ const Navbar = () => {
                         onClick={() => setIsOpen(false)}
                         className={`px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                           isActive(item.href)
-                            ? 'text-easi-primary bg-orange-50'
-                            : 'text-easi-dark hover:text-easi-primary hover:bg-orange-50'
+                            ? 'text-dataidea-primary bg-teal-50'
+                            : 'text-dataidea-dark hover:text-dataidea-primary hover:bg-teal-50'
                         }`}
                       >
                         {item.name}
@@ -171,7 +165,7 @@ const Navbar = () => {
                   ))}
                   <Button
                     asChild
-                    className="mt-4 bg-easi-primary hover:bg-easi-primaryHover"
+                    className="mt-4 bg-dataidea-primary hover:bg-dataidea-primaryHover"
                     onClick={() => setIsOpen(false)}
                   >
                     <Link href="/contact">Get in Touch</Link>

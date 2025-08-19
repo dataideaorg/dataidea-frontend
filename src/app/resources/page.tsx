@@ -122,13 +122,6 @@ export default function Resources() {
       description: "Software tools, scripts, and utilities for statistical analysis.",
       resources: [
         {
-          title: "EASI R Package for Survey Analysis",
-          description: "Custom R package developed by EASI for survey data analysis.",
-          type: "Software",
-          date: "2024",
-          downloadUrl: "#"
-        },
-        {
           title: "Statistical Analysis Templates",
           description: "Ready-to-use templates for common statistical analyses in R and Python.",
           type: "Templates",
@@ -151,7 +144,7 @@ export default function Resources() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-easi-primary/90 to-easi-dark/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-primary/90 to-dataidea-dark/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -169,7 +162,7 @@ export default function Resources() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -233,11 +226,11 @@ export default function Resources() {
               >
                 <div className="mb-8">
                   <div className="flex items-center mb-4">
-                    <div className="p-3 rounded-full bg-easi-primary/10 mr-4">
+                    <div className="p-3 rounded-full bg-dataidea-primary/10 mr-4">
                       {category.icon}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-easi-dark">{category.title}</h3>
+                      <h3 className="text-2xl font-bold text-dataidea-dark">{category.title}</h3>
                       <p className="text-gray-600">{category.description}</p>
                     </div>
                   </div>
@@ -254,8 +247,8 @@ export default function Resources() {
                       <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
                         <div className="p-6 flex-grow">
                           <div className="flex items-start mb-4">
-                            <div className="p-2 rounded-full bg-easi-primary/10 mr-4">
-                              <DocumentTextIcon className="h-6 w-6 text-easi-primary" />
+                            <div className="p-2 rounded-full bg-dataidea-primary/10 mr-4">
+                              <DocumentTextIcon className="h-6 w-6 text-dataidea-primary" />
                             </div>
                             <div className="flex-1">
                               <h4 className="text-lg font-semibold mb-2">{resource.title}</h4>
@@ -276,13 +269,13 @@ export default function Resources() {
                         <div className="p-4 border-t border-gray-100 flex justify-between items-center">
                           <Link 
                             href="#"
-                            className="text-easi-primary hover:text-easi-primaryHover font-medium text-sm"
+                            className="text-dataidea-primary hover:text-dataidea-primaryHover font-medium text-sm"
                           >
                             View Details
                           </Link>
                           <Button
                             size="sm"
-                            className="bg-easi-primary hover:bg-easi-primaryHover text-white"
+                            className="bg-dataidea-primary hover:bg-dataidea-primaryHover text-white"
                             onClick={() => {
                               // In a real app, this would trigger the download
                               alert('Download functionality will be available soon');
@@ -312,7 +305,7 @@ export default function Resources() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <BookOpenIcon className="h-16 w-16 text-easi-primary mx-auto mb-6" />
+            <BookOpenIcon className="h-16 w-16 text-dataidea-primary mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-6">Need Something Specific?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-8">
               If you&apos;re looking for specific resources or have suggestions for materials you&apos;d like to see in our library, 
@@ -321,7 +314,7 @@ export default function Resources() {
             <Button
               asChild
               size="lg"
-              className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4"
+              className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4"
             >
               <Link href="/contact">Contact Us</Link>
             </Button>

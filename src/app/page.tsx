@@ -29,7 +29,7 @@ export default function Home() {
       <section className="relative overflow-hidden py-24">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-easi-primary/90 to-easi-dark/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-primary/90 to-dataidea-dark/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -47,7 +47,7 @@ export default function Home() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -78,13 +78,13 @@ export default function Home() {
                 className="text-xl mb-10 text-white/90"
                 variants={fadeInUp}
               >
-                The East African Statistics Institute (EASI) provides comprehensive research in statistical methodology and high-quality training to enhance the quality of national statistics.
+                DATAIDEA provides comprehensive research in statistical methodology and high-quality training to enhance the quality of national statistics.
               </motion.p>
               <motion.div 
                 className="flex flex-wrap gap-6"
                 variants={fadeInUp}
               >
-                <Button size="lg" className="bg-white text-easi-primary hover:bg-gray-100">
+                <Button size="lg" className="bg-white text-dataidea-primary hover:bg-gray-100">
                   Our Programs
                 </Button>
                 <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
@@ -119,7 +119,7 @@ export default function Home() {
                 >
                   <Card className="bg-white rounded-lg shadow-2xl overflow-hidden max-w-md">
                     <div className="p-8">
-                      <h3 className="text-2xl font-bold text-easi-dark mb-6">
+                      <h3 className="text-2xl font-bold text-dataidea-dark mb-6">
                         Our Impact
                       </h3>
                       <div className="space-y-6">
@@ -128,7 +128,7 @@ export default function Home() {
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <div className="text-easi-primary text-4xl font-bold mr-4">15+</div>
+                          <div className="text-dataidea-primary text-4xl font-bold mr-4">15+</div>
                           <div className="text-gray-600">Years of Experience</div>
                         </motion.div>
                         <motion.div 
@@ -136,7 +136,7 @@ export default function Home() {
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <div className="text-easi-primary text-4xl font-bold mr-4">1000+</div>
+                          <div className="text-dataidea-primary text-4xl font-bold mr-4">1000+</div>
                           <div className="text-gray-600">Trained Professionals</div>
                         </motion.div>
                         <motion.div 
@@ -144,12 +144,12 @@ export default function Home() {
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <div className="text-easi-primary text-4xl font-bold mr-4">50+</div>
+                          <div className="text-dataidea-primary text-4xl font-bold mr-4">50+</div>
                           <div className="text-gray-600">Research Projects</div>
                         </motion.div>
                       </div>
                     </div>
-                    <div className="bg-easi-primary p-4 text-center text-white">
+                    <div className="bg-dataidea-primary p-4 text-center text-white">
                       <Button variant="ghost" className="text-white hover:bg-white/10">
                         Discover Our Story →
                       </Button>
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-easi-dark text-white py-24">
+      <section className="bg-dataidea-dark text-white py-24">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center"
@@ -187,7 +187,7 @@ export default function Home() {
             <motion.div variants={fadeInUp}>
               <Button
                 size="lg"
-                className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4 text-lg"
+                className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4 text-lg"
               >
                 Contact Us Today
               </Button>
@@ -216,25 +216,25 @@ export default function Home() {
               {
                 title: "Statistical Research",
                 description: "Research in appropriate statistical and computational methodology to facilitate quality national statistics",
-                icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
+                icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />,
                 link: "/about"
               },
               {
                 title: "Training Programs",
                 description: "Practical, high-quality training programs delivered by experienced professionals in statistics and data analysis",
-                icon: <AcademicCapIcon className="h-12 w-12 text-easi-primary" />,
+                icon: <AcademicCapIcon className="h-12 w-12 text-dataidea-primary" />,
                 link: "/training"
               },
               {
                 title: "Consultancy & Research",
                 description: "Premier management development and excellence in statistical methodologies, systems and software applications",
-                icon: <BeakerIcon className="h-12 w-12 text-easi-primary" />,
+                icon: <BeakerIcon className="h-12 w-12 text-dataidea-primary" />,
                 link: "/consultancy"
               },
               {
                 title: "Tailored Training",
                 description: "Customized training solutions delivered at your premises, focusing on your organization's specific requirements",
-                icon: <UserGroupIcon className="h-12 w-12 text-easi-primary" />,
+                icon: <UserGroupIcon className="h-12 w-12 text-dataidea-primary" />,
                 link: "/training"
               }
             ].map((service, index) => (
@@ -271,7 +271,7 @@ export default function Home() {
                       >
                         <Link 
                           href={service.link}
-                          className="text-easi-primary hover:text-easi-primaryHover font-medium inline-block"
+                          className="text-dataidea-primary hover:text-dataidea-primaryHover font-medium inline-block"
                         >
                           Learn More →
                         </Link>
@@ -302,22 +302,22 @@ export default function Home() {
               {
                 number: "15+",
                 label: "Years Experience",
-                icon: <BuildingOfficeIcon className="h-8 w-8 text-easi-primary" />
+                icon: <BuildingOfficeIcon className="h-8 w-8 text-dataidea-primary" />
               },
               {
                 number: "1000+",
                 label: "Trained Professionals",
-                icon: <UserGroupIcon className="h-8 w-8 text-easi-primary" />
+                icon: <UserGroupIcon className="h-8 w-8 text-dataidea-primary" />
               },
               {
                 number: "50+",
                 label: "Research Projects",
-                icon: <ChartBarIcon className="h-8 w-8 text-easi-primary" />
+                icon: <ChartBarIcon className="h-8 w-8 text-dataidea-primary" />
               },
               {
                 number: "100+",
                 label: "Training Programs",
-                icon: <AcademicCapIcon className="h-8 w-8 text-easi-primary" />
+                icon: <AcademicCapIcon className="h-8 w-8 text-dataidea-primary" />
               }
             ].map((stat, index) => (
               <motion.div
@@ -343,7 +343,7 @@ export default function Home() {
                     {stat.icon}
                   </motion.div>
                   <motion.div 
-                    className="text-4xl font-bold text-easi-primary mb-3"
+                    className="text-4xl font-bold text-dataidea-primary mb-3"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -393,10 +393,10 @@ export default function Home() {
                 variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
               >
-                <Card className="p-6 flex items-center justify-center border border-gray-100 hover:border-easi-primary transition-colors duration-300">
+                <Card className="p-6 flex items-center justify-center border border-gray-100 hover:border-dataidea-primary transition-colors duration-300">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-easi-primary/10 rounded-full flex items-center justify-center mb-2 mx-auto">
-                      <BuildingOfficeIcon className="h-8 w-8 text-easi-primary" />
+                    <div className="w-16 h-16 bg-dataidea-primary/10 rounded-full flex items-center justify-center mb-2 mx-auto">
+                      <BuildingOfficeIcon className="h-8 w-8 text-dataidea-primary" />
                     </div>
                     <p className="text-xs font-medium text-gray-600">{partner.name}</p>
                   </div>
@@ -427,7 +427,7 @@ export default function Home() {
               className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto"
               variants={fadeInUp}
             >
-              Stay updated with the latest news, research insights, and training opportunities from EASI
+              Stay updated with the latest news, research insights, and training opportunities from DATAIDEA
             </motion.p>
             
             <motion.div 

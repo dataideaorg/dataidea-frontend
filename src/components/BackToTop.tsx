@@ -43,7 +43,7 @@ const BackToTop = () => {
           <Button
             onClick={scrollToTop}
             size="icon"
-            className="w-12 h-12 rounded-full bg-easi-primary hover:bg-easi-primaryHover shadow-lg hover:shadow-xl transition-all duration-300"
+            className="w-12 h-12 rounded-full bg-dataidea-primary hover:bg-dataidea-primaryHover shadow-lg hover:shadow-xl transition-all duration-300"
             aria-label="back to top"
           >
             <ArrowUpIcon className="h-6 w-6 text-white" />

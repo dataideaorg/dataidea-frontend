@@ -19,7 +19,7 @@ export default function Training() {
     {
       title: "R Programming for Statistical Analysis",
       description: "Comprehensive training in R programming language for statistical analysis, data visualization, and reporting.",
-      icon: <CodeBracketIcon className="h-12 w-12 text-easi-primary" />,
+      icon: <CodeBracketIcon className="h-12 w-12 text-dataidea-primary" />,
       courses: [
         {
           title: "Introduction to R for Statisticians",
@@ -44,7 +44,7 @@ export default function Training() {
     {
       title: "Python for Data Science",
       description: "Hands-on training in Python programming for data analysis, machine learning, and statistical applications.",
-      icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
+      icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />,
       courses: [
         {
           title: "Python Fundamentals for Data Analysis",
@@ -69,7 +69,7 @@ export default function Training() {
     {
       title: "Monitoring and Evaluation",
       description: "Comprehensive training in designing, implementing, and managing effective M&E systems for programs and projects.",
-      icon: <ClipboardDocumentCheckIcon className="h-12 w-12 text-easi-primary" />,
+      icon: <ClipboardDocumentCheckIcon className="h-12 w-12 text-dataidea-primary" />,
       courses: [
         {
           title: "M&E Fundamentals",
@@ -98,7 +98,7 @@ export default function Training() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-easi-primary/90 to-easi-dark/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-primary/90 to-dataidea-dark/90"></div>
         </div>
         
         {/* Animated shapes */}
@@ -116,7 +116,7 @@ export default function Training() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -151,7 +151,7 @@ export default function Training() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                EASI offers comprehensive training programs in statistical analysis, research methodology, and data science to enhance the capacity of professionals across East Africa.
+                DATAIDEA offers comprehensive training programs in statistical analysis, research methodology, and data science to enhance the capacity of professionals across East Africa.
               </motion.p>
               <motion.div 
                 className="flex flex-wrap gap-4"
@@ -162,7 +162,7 @@ export default function Training() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white text-easi-primary hover:bg-gray-100"
+                  className="bg-white text-dataidea-primary hover:bg-gray-100"
                 >
                   <a
                     href="https://calendar.google.com/calendar/u/0?cid=ZWFzaS5hYy51Z0BnbWFpbC5jb20"
@@ -189,22 +189,22 @@ export default function Training() {
               transition={{ duration: 1, delay: 0.3 }}
             >
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold text-easi-dark mb-4">Upcoming Training / Meetings</h3>
+                <h3 className="text-2xl font-bold text-dataidea-dark mb-4">Upcoming Training / Meetings</h3>
                 <div className="space-y-4">
                   <motion.div 
-                    className="flex items-center p-3 border-l-4 border-easi-primary bg-gray-50"
+                    className="flex items-center p-3 border-l-4 border-dataidea-primary bg-gray-50"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="mr-4">
-                      <CalendarIcon className="h-8 w-8 text-easi-primary" />
+                      <CalendarIcon className="h-8 w-8 text-dataidea-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold">Data Management with R Language</h4>
                       <div className="text-sm text-gray-600 flex flex-wrap gap-x-4">
                         <span>Tuesday, July 29, to Wednesday, July 30, 2025</span>
                         <span>Kampala, Uganda</span>
-                        <a href="https://meet.google.com/ypg-wxdc-dwr" target="_blank" rel="noopener noreferrer" className="text-easi-primary">Join event</a>
+                        <a href="https://meet.google.com/ypg-wxdc-dwr" target="_blank" rel="noopener noreferrer" className="text-dataidea-primary">Join event</a>
                       </div>
                     </div>
                   </motion.div>
@@ -260,13 +260,13 @@ export default function Training() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 text-easi-primary">{training.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-dataidea-primary">{training.title}</h3>
                     <div className="text-gray-700 mb-1"><strong className="text-gray-900">Date:</strong> {training.date}</div>
                     <div className="text-gray-700 mb-1"><strong className="text-gray-900">Location:</strong> {training.location}</div>
                     <p className="text-gray-600 mt-2 mb-4">{training.description}</p>
                     <Button
                       asChild
-                      className="w-full bg-easi-primary hover:bg-easi-primaryHover"
+                      className="w-full bg-dataidea-primary hover:bg-dataidea-primaryHover"
                     >
                       <Link href="/contact">Express Interest</Link>
                     </Button>
@@ -282,34 +282,34 @@ export default function Training() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-yellow-50 border-l-4 border-easi-primary shadow-md mb-12">
+            <Card className="bg-yellow-50 border-l-4 border-dataidea-primary shadow-md mb-12">
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4 text-easi-primary">How to Pay</h2>
+                <h2 className="text-2xl font-bold mb-4 text-dataidea-primary">How to Pay</h2>
                 <p className="mb-4 text-gray-700">
                   To secure your spot in our training, please deposit the required fee via Mobile Money to:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div className="flex flex-col">
-                    <span className="font-semibold text-lg text-easi-primary">Mobile Number:</span>
+                    <span className="font-semibold text-lg text-dataidea-primary">Mobile Number:</span>
                     <span className="font-mono text-lg text-gray-900">+256 749747472</span>
-                    <span className="font-semibold text-lg text-easi-primary">Name:</span>
+                    <span className="font-semibold text-lg text-dataidea-primary">Name:</span>
                     <span className="font-mono text-lg text-gray-900">Ronald Wesonga</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-semibold text-lg text-easi-primary">Mobile Number:</span>
+                    <span className="font-semibold text-lg text-dataidea-primary">Mobile Number:</span>
                     <span className="font-mono text-lg text-gray-900">+256 791429565</span>
-                    <span className="font-semibold text-lg text-easi-primary">Name:</span>
+                    <span className="font-semibold text-lg text-dataidea-primary">Name:</span>
                     <span className="font-mono text-lg text-gray-900">Ronald Wesonga</span>
                   </div>
                 </div>
                 <p className="mb-2 text-gray-700">
                   After payment, capture the transaction ID and fill it in this form{' '}
-                  <a href='https://forms.gle/7yHWruQ7RFBXANTc9' className="text-easi-primary underline" target="_blank" rel="noopener noreferrer">
-                    EASI Training Registration Form
+                  <a href='https://forms.gle/7yHWruQ7RFBXANTc9' className="text-dataidea-primary underline" target="_blank" rel="noopener noreferrer">
+                    DATAIDEA Training Registration Form
                   </a>.
                 </p>
                 <p className="text-gray-600 text-sm">
-                  For any questions, <Link href="/contact" className="text-easi-primary underline">contact us here</Link>.
+                  For any questions, <Link href="/contact" className="text-dataidea-primary underline">contact us here</Link>.
                 </p>
               </div>
             </Card>
@@ -344,7 +344,7 @@ export default function Training() {
               >
                 <div className="bg-white p-6 rounded-lg shadow-md mb-8">
                   <div className="flex flex-col md:flex-row md:items-center mb-6">
-                    <div className="p-4 rounded-full bg-easi-primary/10 mr-6 mb-4 md:mb-0 w-fit">
+                    <div className="p-4 rounded-full bg-dataidea-primary/10 mr-6 mb-4 md:mb-0 w-fit">
                       {category.icon}
                     </div>
                     <div>
@@ -368,7 +368,7 @@ export default function Training() {
                                 <ClockIcon className="h-3 w-3 mr-1" />
                                 {course.duration}
                               </Badge>
-                              <Badge variant="secondary" className="bg-easi-primary/10 text-easi-primary text-xs">
+                              <Badge variant="secondary" className="bg-dataidea-primary/10 text-dataidea-primary text-xs">
                                 {course.level}
                               </Badge>
                             </div>
@@ -412,7 +412,7 @@ export default function Training() {
                 organization: "Uganda Bureau of Statistics"
               },
               {
-                quote: "EASI's M&E training transformed how our organization approaches program evaluation. The practical tools and frameworks have been invaluable.",
+                quote: "DATAIDEA's M&E training transformed how our organization approaches program evaluation. The practical tools and frameworks have been invaluable.",
                 author: "Sarah Nyambura",
                 organization: "Kenya National Bureau of Statistics"
               },
@@ -445,7 +445,7 @@ export default function Training() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-easi-dark text-white py-16">
+      <section className="bg-dataidea-dark text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h2 
@@ -477,7 +477,7 @@ export default function Training() {
               <Button
                 asChild
                 size="lg"
-                className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4"
+                className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4"
               >
                 <Link href="/contact">Request Training</Link>
               </Button>

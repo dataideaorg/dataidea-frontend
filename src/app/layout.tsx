@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 
+const dmSans = DM_Sans({ 
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+});
+
 export const metadata: Metadata = {
-  title: "East African Statistics Institute (EASI)",
-  description: "The East African Statistics Institute provides comprehensive research in statistical methodology and high-quality training to enhance the quality of national statistics.",
+  title: "DATAIDEA",
+  description: "DATAIDEA helps people lean Programming for Data Science. We also design and build Websites and Data Software.",
 };
 
 export default function RootLayout({
@@ -17,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="font-sans antialiased"
+        className={`${dmSans.variable} font-sans antialiased`}
       >
         <div className="flex flex-col min-h-screen">
           <Navbar />

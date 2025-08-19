@@ -19,7 +19,7 @@ export default function Courses() {
     {
       title: "Data Science & Analytics",
       description: "Master the tools and techniques for data analysis, visualization, and machine learning.",
-      icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
+      icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />,
       courses: [
         {
           title: "Python for Data Science",
@@ -28,7 +28,7 @@ export default function Courses() {
           level: "Beginner to Intermediate",
           price: "Free",
           external: true,
-          link: "https://python.easi.ac.ug",
+          link: "https://python.dataidea.ac.ug",
           features: ["Python Basics", "Pandas & NumPy", "Data Visualization", "Machine Learning", "Real-world Projects"]
         },
         {
@@ -54,7 +54,7 @@ export default function Courses() {
     {
       title: "Statistical Analysis",
       description: "Develop strong statistical foundations for research and data analysis.",
-      icon: <AcademicCapIcon className="h-12 w-12 text-easi-primary" />,
+      icon: <AcademicCapIcon className="h-12 w-12 text-dataidea-primary" />,
       courses: [
         {
           title: "Statistical Methods",
@@ -79,7 +79,7 @@ export default function Courses() {
     {
       title: "Professional Development",
       description: "Enhance your professional skills in monitoring, evaluation, and project management.",
-      icon: <UserGroupIcon className="h-12 w-12 text-easi-primary" />,
+      icon: <UserGroupIcon className="h-12 w-12 text-dataidea-primary" />,
       courses: [
         {
           title: "Monitoring & Evaluation",
@@ -142,7 +142,7 @@ export default function Courses() {
       <section className="relative overflow-hidden py-20">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-easi-primary/90 to-easi-dark/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-primary/90 to-dataidea-dark/90"></div>
         </div>
         
         {/* Animated shapes */}
@@ -160,7 +160,7 @@ export default function Courses() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -197,7 +197,7 @@ export default function Courses() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <Button size="lg" className="bg-white text-easi-primary hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-dataidea-primary hover:bg-gray-100">
                 Explore Courses
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/20">
@@ -235,7 +235,7 @@ export default function Courses() {
               >
                 <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
                   <div className="flex flex-col md:flex-row md:items-center mb-8">
-                    <div className="p-4 rounded-full bg-easi-primary/10 mr-6 mb-4 md:mb-0 w-fit">
+                    <div className="p-4 rounded-full bg-dataidea-primary/10 mr-6 mb-4 md:mb-0 w-fit">
                       {category.icon}
                     </div>
                     <div>
@@ -254,7 +254,7 @@ export default function Courses() {
                         <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                           <div className="p-6 h-full flex flex-col">
                             <div className="flex justify-between items-start mb-3">
-                              <h4 className="text-lg font-semibold text-easi-primary">{course.title}</h4>
+                              <h4 className="text-lg font-semibold text-dataidea-primary">{course.title}</h4>
                               {course.external && (
                                 <Badge variant="secondary" className="bg-green-100 text-green-800">
                                   External
@@ -268,7 +268,7 @@ export default function Courses() {
                                 <ClockIcon className="h-3 w-3 mr-1" />
                                 {course.duration}
                               </Badge>
-                              <Badge variant="secondary" className="bg-easi-primary/10 text-easi-primary text-xs">
+                              <Badge variant="secondary" className="bg-dataidea-primary/10 text-dataidea-primary text-xs">
                                 {course.level}
                               </Badge>
                               <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">
@@ -281,7 +281,7 @@ export default function Courses() {
                               <ul className="text-xs text-gray-600 space-y-1">
                                 {course.features.map((feature, idx) => (
                                   <li key={idx} className="flex items-center">
-                                    <span className="w-1.5 h-1.5 bg-easi-primary rounded-full mr-2"></span>
+                                    <span className="w-1.5 h-1.5 bg-dataidea-primary rounded-full mr-2"></span>
                                     {feature}
                                   </li>
                                 ))}
@@ -295,7 +295,7 @@ export default function Courses() {
                                 rel="noopener noreferrer"
                                 className="inline-block"
                               >
-                                <Button className="bg-easi-primary text-white hover:bg-easi-primaryHover w-full">
+                                <Button className="bg-dataidea-primary text-white hover:bg-dataidea-primaryHover w-full">
                                   Visit Course
                                 </Button>
                               </a>
@@ -328,7 +328,7 @@ export default function Courses() {
           >
             <h2 className="text-3xl font-bold mb-4">Why Choose Our Courses?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover the advantages of learning with EASI&apos;s professional training programs
+              Discover the advantages of learning with DATAIDEA&apos;s professional training programs
             </p>
           </motion.div>
           
@@ -343,8 +343,8 @@ export default function Courses() {
               >
                 <Card className="text-center border-0 shadow-sm hover:shadow-md transition-shadow h-full">
                   <div className="p-6">
-                    <div className="p-3 rounded-full bg-easi-primary/10 w-fit mx-auto mb-4">
-                      <div className="text-easi-primary">
+                    <div className="p-3 rounded-full bg-dataidea-primary/10 w-fit mx-auto mb-4">
+                      <div className="text-dataidea-primary">
                         {feature.icon}
                       </div>
                     </div>
@@ -359,7 +359,7 @@ export default function Courses() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-easi-dark text-white py-16">
+      <section className="bg-dataidea-dark text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h2 
@@ -387,7 +387,7 @@ export default function Courses() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Button size="lg" className="bg-easi-primary hover:bg-easi-primaryHover">
+              <Button size="lg" className="bg-dataidea-primary hover:bg-dataidea-primaryHover">
                 Browse All Courses
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/20">

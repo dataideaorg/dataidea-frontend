@@ -38,7 +38,7 @@ export default function Contact() {
       icon: <EnvelopeIcon className="h-6 w-6" />,
       title: "Email Addresses",
       details: [
-        "easi.ac.ug@gmail.com",
+        "dataidea.ac.ug@gmail.com",
         "wesonga@wesonga.com",
         "fullerbbosa@gmail.com"
       ]
@@ -59,7 +59,7 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-easi-dark/90 to-easi-primary/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-dark/90 to-dataidea-primary/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -77,7 +77,7 @@ export default function Contact() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -132,7 +132,7 @@ export default function Contact() {
               >
                 <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
                   <div className="p-6">
-                    <div className="flex justify-center mb-4 text-easi-primary">
+                    <div className="flex justify-center mb-4 text-dataidea-primary">
                       {info.icon}
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{info.title}</h3>
@@ -217,7 +217,7 @@ export default function Contact() {
                       />
                     </div>
                     
-                    <Button className="w-full bg-easi-primary hover:bg-easi-primaryHover py-3">
+                    <Button className="w-full bg-dataidea-primary hover:bg-dataidea-primaryHover py-3">
                       Send Message
                     </Button>
                   </form>
@@ -242,7 +242,7 @@ export default function Contact() {
                       style={{ border: 0 }} 
                       allowFullScreen 
                       loading="lazy"
-                      title="EASI Location"
+                      title="DATAIDEA Location"
                     ></iframe>
                   </div>
                 </div>
@@ -272,7 +272,7 @@ export default function Contact() {
             {[
               {
                 question: "How can I register for a training program?",
-                answer: "You can register for our training programs by filling out the contact form on this page, specifying the program you're interested in, or by emailing us directly at easi.ac.ug@gmail.com."
+                answer: "You can register for our training programs by filling out the contact form on this page, specifying the program you're interested in, or by emailing us directly at dataidea.ac.ug@gmail.com."
               },
               {
                 question: "Do you offer customized training for organizations?",
@@ -283,8 +283,8 @@ export default function Contact() {
                 answer: "Our consultancy services cover a wide range of statistical areas including research design, data analysis, survey methodology, monitoring and evaluation, and statistical capacity building."
               },
               {
-                question: "How can I partner with EASI?",
-                answer: "We welcome partnerships with organizations that share our commitment to advancing statistical excellence in East Africa. Please contact us at easi.ac.ug@gmail.com to discuss potential collaboration opportunities."
+                question: "How can I partner with DATAIDEA?",
+                answer: "We welcome partnerships with organizations that share our commitment to advancing statistical excellence in East Africa. Please contact us at dataidea.ac.ug@gmail.com to discuss potential collaboration opportunities."
               }
             ].map((faq, index) => (
               <motion.div

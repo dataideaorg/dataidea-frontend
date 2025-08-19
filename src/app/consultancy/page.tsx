@@ -17,27 +17,27 @@ export default function Consultancy() {
     {
       title: "Statistical Analysis & Modeling",
       description: "Expert analysis of complex data sets using advanced statistical techniques to extract meaningful insights and support decision-making.",
-      icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />
+      icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />
     },
     {
       title: "Research Design & Methodology",
       description: "Development of robust research designs and methodologies tailored to your specific research questions and objectives.",
-      icon: <BeakerIcon className="h-12 w-12 text-easi-primary" />
+      icon: <BeakerIcon className="h-12 w-12 text-dataidea-primary" />
     },
     {
       title: "Survey Design & Implementation",
       description: "End-to-end survey solutions, from questionnaire design to sampling strategies, data collection, and analysis.",
-      icon: <DocumentTextIcon className="h-12 w-12 text-easi-primary" />
+      icon: <DocumentTextIcon className="h-12 w-12 text-dataidea-primary" />
     },
     {
       title: "Data Visualization & Reporting",
       description: "Creation of compelling data visualizations and comprehensive reports that effectively communicate findings to diverse audiences.",
-      icon: <PresentationChartLineIcon className="h-12 w-12 text-easi-primary" />
+      icon: <PresentationChartLineIcon className="h-12 w-12 text-dataidea-primary" />
     },
     {
       title: "Capacity Building & Technical Support",
       description: "Customized training and ongoing technical support to enhance your team's statistical and analytical capabilities.",
-      icon: <UserGroupIcon className="h-12 w-12 text-easi-primary" />
+      icon: <UserGroupIcon className="h-12 w-12 text-dataidea-primary" />
     }
   ];
 
@@ -46,7 +46,7 @@ export default function Consultancy() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-easi-dark/90 to-easi-primary/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-dark/90 to-dataidea-primary/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -64,7 +64,7 @@ export default function Consultancy() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -98,7 +98,7 @@ export default function Consultancy() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              EASI provides expert statistical consultancy services to government agencies, 
+              DATAIDEA provides expert statistical consultancy services to government agencies, 
               research institutions, and private organizations across East Africa.
             </motion.p>
             <motion.div
@@ -109,7 +109,7 @@ export default function Consultancy() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-easi-primary hover:bg-gray-100 px-8 py-4"
+                className="bg-white text-dataidea-primary hover:bg-gray-100 px-8 py-4"
               >
                 <Link href="/contact">Request Consultation</Link>
               </Button>
@@ -210,7 +210,7 @@ export default function Consultancy() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-easi-primary text-white flex items-center justify-center font-bold text-xl mr-6">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-dataidea-primary text-white flex items-center justify-center font-bold text-xl mr-6">
                   {step.step}
                 </div>
                 <div>
@@ -224,7 +224,7 @@ export default function Consultancy() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-easi-dark text-white py-16">
+      <section className="bg-dataidea-dark text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h2 
@@ -254,7 +254,7 @@ export default function Consultancy() {
               <Button
                 asChild
                 size="lg"
-                className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4"
+                className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4"
               >
                 <Link href="/contact">Get in Touch</Link>
               </Button>

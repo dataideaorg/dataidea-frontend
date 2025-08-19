@@ -15,6 +15,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "var(--color-border)",
         input: "var(--color-input)",
@@ -22,8 +25,8 @@ module.exports = {
         background: "var(--color-background)",
         foreground: "var(--color-foreground)",
         primary: {
-          DEFAULT: "#dd8604",
-          hover: "#c77804",
+          DEFAULT: "#008374",
+          hover: "#006d61",
           foreground: "#ffffff",
         },
         secondary: {
@@ -31,13 +34,13 @@ module.exports = {
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#f3a42d",
+          DEFAULT: "#00a396",
           foreground: "#ffffff",
         },
-        easi: {
-          primary: "#dd8604",
-          primaryHover: "#c77804",
-          secondary: "#f3a42d",
+        dataidea: {
+          primary: "#008374",
+          primaryHover: "#006d61",
+          secondary: "#00a396",
           dark: "#333333",
           light: "#ffffff",
           gray: "#666666",

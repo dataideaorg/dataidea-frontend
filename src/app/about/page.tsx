@@ -19,21 +19,21 @@ export default function About() {
       title: "Chairman, Board of Directors",
       shortBio: "Associate Professor of Statistics and Applied Computing. Currently the Deputy Vice-Chancellor of Kyambogo University responsible for Finance and Administration.",
       education: "PhD in Statistics (1994) from the University of Edinburgh, Scotland",
-      icon: <AcademicCapIcon className="h-6 w-6 text-easi-primary" />
+      icon: <AcademicCapIcon className="h-6 w-6 text-dataidea-primary" />
     },
     {
       name: "Prof. Ronald Wesonga",
       title: "Founding Director",
       shortBio: "Statistician based at the Department of Statistics, Sultan Qaboos University. Formerly a visiting Professor at the Institute of Social Research, Makerere University.",
       education: "Studied at the Institute of Statistics and Applied Economics, Makerere University",
-      icon: <UserIcon className="h-6 w-6 text-easi-primary" />
+      icon: <UserIcon className="h-6 w-6 text-dataidea-primary" />
     },
     {
       name: "Dr. Abraham Owino Yeyo",
       title: "Director",
       shortBio: "Statistician involved in capacity building in Research, Monitoring and Evaluation and Community Development, currently lecturing at Makerere University.",
       education: "Lecturer at Makerere University School of Statistics and Planning",
-      icon: <BuildingLibraryIcon className="h-6 w-6 text-easi-primary" />
+      icon: <BuildingLibraryIcon className="h-6 w-6 text-dataidea-primary" />
     }
   ];
 
@@ -41,22 +41,22 @@ export default function About() {
     {
       title: "Excellence",
       description: "We are committed to the highest standards of statistical methodology and research.",
-      icon: <AcademicCapIcon className="h-12 w-12 text-easi-primary" />
+      icon: <AcademicCapIcon className="h-12 w-12 text-dataidea-primary" />
     },
     {
       title: "Innovation",
       description: "We continuously seek new approaches to solve complex statistical challenges.",
-      icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />
+      icon: <ChartBarIcon className="h-12 w-12 text-dataidea-primary" />
     },
     {
       title: "Integrity",
       description: "We uphold ethical standards and transparency in all our work and relationships.",
-      icon: <UserIcon className="h-12 w-12 text-easi-primary" />
+      icon: <UserIcon className="h-12 w-12 text-dataidea-primary" />
     },
     {
       title: "Collaboration",
       description: "We believe in the power of partnerships to achieve greater impact across the region.",
-      icon: <BuildingLibraryIcon className="h-12 w-12 text-easi-primary" />
+      icon: <BuildingLibraryIcon className="h-12 w-12 text-dataidea-primary" />
     }
   ];
 
@@ -65,7 +65,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-easi-dark/90 to-easi-primary/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-dark/90 to-dataidea-primary/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -83,7 +83,7 @@ export default function About() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
+            className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
             animate={{ 
               x: [0, 50, 0],
               y: [0, -30, 0],
@@ -109,7 +109,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              About <span className="text-white">EASI</span>
+              About <span className="text-white">DATAIDEA</span>
             </motion.h1>
             <motion.p 
               className="text-xl text-white/90"
@@ -117,7 +117,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              The East African Statistics Institute (EASI) was established to provide primarily a complementary role of research in appropriate statistical and computational methodology that facilitate production and sustenance of quality national statistics.
+              DATAIDEA was established to provide primarily a complementary role of research in appropriate statistical and computational methodology that facilitate production and sustenance of quality national statistics.
             </motion.p>
           </motion.div>
         </div>
@@ -133,8 +133,8 @@ export default function About() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-easi-primary h-full">
-                <h2 className="text-3xl font-bold mb-4 text-easi-dark">Our Mission</h2>
+              <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-dataidea-primary h-full">
+                <h2 className="text-3xl font-bold mb-4 text-dataidea-dark">Our Mission</h2>
                 <p className="text-gray-600">
                   To provide high-quality research in statistical methodology and computational techniques that enhance the production and sustainability of quality national statistics across East Africa.
                 </p>
@@ -147,8 +147,8 @@ export default function About() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-easi-primary h-full">
-                <h2 className="text-3xl font-bold mb-4 text-easi-dark">Our Vision</h2>
+              <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-dataidea-primary h-full">
+                <h2 className="text-3xl font-bold mb-4 text-dataidea-dark">Our Vision</h2>
                 <p className="text-gray-600">
                   To be the leading center of excellence in statistical research, methodology development, and capacity building in East Africa and beyond.
                 </p>
@@ -170,7 +170,7 @@ export default function About() {
           >
             <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Over the years, EASI has made significant contributions to statistical development across East Africa
+              Over the years, DATAIDEA has made significant contributions to statistical development across East Africa
             </p>
           </motion.div>
           
@@ -189,7 +189,7 @@ export default function About() {
                 viewport={{ once: true }}
               >
                 <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                  <div className="text-3xl font-bold text-easi-primary mb-2">{stat.number}</div>
+                  <div className="text-3xl font-bold text-dataidea-primary mb-2">{stat.number}</div>
                   <div className="text-gray-600">{stat.label}</div>
                 </Card>
               </motion.div>
@@ -225,17 +225,17 @@ export default function About() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <div className="p-0 flex flex-col h-full">
-                    <div className="relative bg-gradient-to-br from-easi-primary/10 to-easi-secondary/10 p-8">
+                    <div className="relative bg-gradient-to-br from-dataidea-primary/10 to-dataidea-secondary/10 p-8">
                       <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
                         {member.icon}
                       </div>
-                      <Badge className="absolute top-4 right-4 bg-easi-primary text-white">
+                      <Badge className="absolute top-4 right-4 bg-dataidea-primary text-white">
                         Leadership
                       </Badge>
                     </div>
                     <div className="p-6 flex-grow">
                       <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                      <p className="text-easi-primary font-medium mb-4">{member.title}</p>
+                      <p className="text-dataidea-primary font-medium mb-4">{member.title}</p>
                       <p className="text-gray-600 mb-4 text-sm">{member.shortBio}</p>
                       <div className="flex items-center mb-4">
                         <AcademicCapIcon className="h-5 w-5 text-gray-500 mr-2" />
@@ -301,7 +301,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-easi-dark text-white py-16">
+      <section className="bg-dataidea-dark text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h2 
@@ -320,7 +320,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Partner with EASI to advance statistical excellence and contribute to evidence-based decision making across East Africa.
+              Partner with DATAIDEA to advance statistical excellence and contribute to evidence-based decision making across East Africa.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -331,7 +331,7 @@ export default function About() {
               <Button
                 asChild
                 size="lg"
-                className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4"
+                className="bg-dataidea-primary hover:bg-dataidea-primaryHover px-8 py-4"
               >
                 <Link href="/contact">Contact Us Today</Link>
               </Button>

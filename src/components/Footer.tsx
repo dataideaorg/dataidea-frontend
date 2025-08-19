@@ -41,7 +41,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-easi-dark text-white">
+    <footer className="bg-dataidea-dark text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -49,15 +49,15 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <Image
-                src="/EASI-Logo.png"
-                alt="EASI Logo"
+                src="/DATAIDEA-Logo.png"
+                alt="DATAIDEA Logo"
                 width={40}
                 height={40}
                 className="brightness-0 invert"
               />
             </div>
             <p className="text-sm mb-6">
-              The East African Statistics Institute (EASI) provides comprehensive research 
+              DATAIDEA provides comprehensive research 
               in statistical methodology and high-quality training to enhance the quality 
               of national statistics.
             </p>
@@ -67,7 +67,7 @@ const Footer = () => {
                 href="https://x.com/easiacug" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-easi-primary transition-colors"
+                className="hover:text-dataidea-primary transition-colors"
               >
                 <TwitterIcon />
               </a>
@@ -75,7 +75,7 @@ const Footer = () => {
                 href="https://youtube.com/@easiacug" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-easi-primary transition-colors"
+                className="hover:text-dataidea-primary transition-colors"
               >
                 <YouTubeIcon />
               </a>
@@ -87,17 +87,17 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="hover:text-easi-primary transition-colors">
+                <Link href="/about" className="hover:text-dataidea-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/training" className="hover:text-easi-primary transition-colors">
+                <Link href="/training" className="hover:text-dataidea-primary transition-colors">
                   Training
                 </Link>
               </li>
               <li>
-                <Link href="/consultancy" className="hover:text-easi-primary transition-colors">
+                <Link href="/consultancy" className="hover:text-dataidea-primary transition-colors">
                   Consultancy
                 </Link>
               </li>
@@ -109,28 +109,28 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <MapPinIcon className="h-5 w-5 text-easi-primary mt-1 flex-shrink-0" />
+                <MapPinIcon className="h-5 w-5 text-dataidea-primary mt-1 flex-shrink-0" />
                 <span className="text-sm">
                   Plot 15 Baskerville Avenue, Kololo<br />
                   P.O. Box 11140 Kampala (Uganda)
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <PhoneIcon className="h-5 w-5 text-easi-primary" />
+                <PhoneIcon className="h-5 w-5 text-dataidea-primary" />
                 <a 
                   href="tel:+256774128257"
-                  className="hover:text-easi-primary transition-colors text-sm"
+                  className="hover:text-dataidea-primary transition-colors text-sm"
                 >
                   +256 774 128 257
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <EnvelopeIcon className="h-5 w-5 text-easi-primary" />
+                <EnvelopeIcon className="h-5 w-5 text-dataidea-primary" />
                 <a 
-                  href="mailto:easi.ac.ug@gmail.com"
-                  className="hover:text-easi-primary transition-colors text-sm"
+                  href="mailto:dataidea.ac.ug@gmail.com"
+                  className="hover:text-dataidea-primary transition-colors text-sm"
                 >
-                  easi.ac.ug@gmail.com
+                  dataidea.ac.ug@gmail.com
                 </a>
               </li>
             </ul>
@@ -148,12 +148,12 @@ const Footer = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-gray-700 border-gray-600 focus:border-easi-primary text-white placeholder:text-gray-400"
+                className="bg-gray-700 border-gray-600 focus:border-dataidea-primary text-white placeholder:text-gray-400"
                 required
               />
               <Button
                 type="submit"
-                className="w-full bg-easi-primary hover:bg-easi-primaryHover"
+                className="w-full bg-dataidea-primary hover:bg-dataidea-primaryHover"
               >
                 Subscribe
               </Button>
@@ -170,10 +170,10 @@ const Footer = () => {
               © {currentYear} East African Statistics Institute. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="/privacy" className="hover:text-easi-primary transition-colors">
+              <a href="/privacy" className="hover:text-dataidea-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="/terms" className="hover:text-easi-primary transition-colors">
+              <a href="/terms" className="hover:text-dataidea-primary transition-colors">
                 Terms of Service
               </a>
             </div>
