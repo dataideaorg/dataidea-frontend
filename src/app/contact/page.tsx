@@ -14,6 +14,22 @@ import {
   ClockIcon 
 } from '@heroicons/react/24/outline';
 
+// Animation variants for consistent animations
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
 export default function Contact() {
   const contactInfo = [
     {
@@ -57,9 +73,10 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-24 md:px-32 lg:px-64">
+        {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-dataidea-dark/90 to-dataidea-primary/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#008374] to-[#008374]/80"></div>
         </div>
         
         {/* Animated shapes */}
@@ -77,7 +94,7 @@ export default function Contact() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-dataidea-primary/20 blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
             animate={{ 
               x: [0, -50, 0],
               y: [0, -30, 0],
@@ -93,23 +110,19 @@ export default function Contact() {
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             className="max-w-3xl mx-auto text-center text-white"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
           >
             <motion.h1 
-              className="text-4xl lg:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl lg:text-5xl font-bold mb-8"
+              variants={fadeInUp}
             >
               Contact <span className="text-white">Us</span>
             </motion.h1>
             <motion.p 
               className="text-xl text-white/90"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              variants={fadeInUp}
             >
               Have questions or want to learn more about our services? 
               We&apos;re here to help. Reach out to us using the contact information below or fill out the form.
@@ -119,20 +132,21 @@ export default function Contact() {
       </section>
 
       {/* Contact Information Grid */}
-      <section className="py-16">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
                   <div className="p-6">
-                    <div className="flex justify-center mb-4 text-dataidea-primary">
+                    <div className="flex justify-center mb-4 text-easi-primary">
                       {info.icon}
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{info.title}</h3>
@@ -150,15 +164,15 @@ export default function Contact() {
       </section>
 
       {/* Contact Form and Map Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeInUp}
             >
               <Card className="shadow-lg">
                 <div className="p-8">
@@ -217,7 +231,7 @@ export default function Contact() {
                       />
                     </div>
                     
-                    <Button className="w-full bg-dataidea-primary hover:bg-dataidea-primaryHover py-3">
+                    <Button className="w-full bg-easi-primary hover:bg-easi-primaryHover py-3">
                       Send Message
                     </Button>
                   </form>
@@ -227,10 +241,10 @@ export default function Contact() {
             
             {/* Map */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeInUp}
             >
               <Card className="shadow-lg h-full">
                 <div className="p-0 h-full">
@@ -253,17 +267,17 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
               Find answers to common questions about our services and programs
             </p>
           </motion.div>
@@ -289,10 +303,11 @@ export default function Contact() {
             ].map((faq, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <div className="p-6">
