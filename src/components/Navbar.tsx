@@ -24,7 +24,7 @@ const Navbar = () => {
     { name: 'Training', href: '/training' },
     { name: 'Consultancy', href: '/consultancy' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Blog', href: 'https://blog.dataidea.ac.ug/', external: true },
+    { name: 'Blog', href: 'https://blog.dataidea.org/', external: true },
     { name: 'Contact', href: '/contact' },
   ];
 
