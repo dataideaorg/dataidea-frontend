@@ -212,71 +212,9 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInUp}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4">Our Leadership Team</h2>
-            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
-              Our team consists of experienced statisticians and researchers dedicated to advancing statistical excellence across East Africa.
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={fadeInUp}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <div className="p-0 flex flex-col h-full">
-                    <div className="relative bg-gradient-to-br from-easi-primary/10 to-easi-secondary/10 p-8">
-                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                        {member.icon}
-                      </div>
-                      <Badge className="absolute top-4 right-4 bg-easi-primary text-white">
-                        Leadership
-                      </Badge>
-                    </div>
-                    <div className="p-6 flex-grow">
-                      <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                      <p className="text-easi-primary font-medium mb-4">{member.title}</p>
-                      <p className="text-gray-600 mb-4 text-sm">{member.shortBio}</p>
-                      <div className="flex items-center mb-4">
-                        <AcademicCapIcon className="h-5 w-5 text-gray-500 mr-2" />
-                        <p className="text-sm text-gray-500">{member.education}</p>
-                      </div>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="w-full hover:bg-easi-primary hover:text-white"
-                        onClick={() => {
-                          alert('Full biography coming soon');
-                        }}
-                      >
-                        Read More
-                      </Button>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"

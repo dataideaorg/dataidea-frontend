@@ -59,6 +59,21 @@ export default function Home() {
             }}
           />
         </div>
+
+        {/* + Pattern */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Grid of plus signs */}
+          <div className="absolute inset-0 grid grid-cols-40 gap-2">
+            {[...Array(500)].map((_, i) => (
+              <div
+                key={i}
+                className="text-white/10 font-bold text-md md:text-xl lg:text-2xl flex items-center justify-center"
+              >
+                +
+              </div>
+            ))}
+          </div>
+        </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
