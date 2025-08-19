@@ -8,15 +8,9 @@ import {
   AcademicCapIcon, 
   UserIcon, 
   BuildingLibraryIcon, 
-  ChartBarIcon,
-  SparklesIcon
+  ChartBarIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-};
 
 export default function About() {
   const teamMembers = [
