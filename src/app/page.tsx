@@ -99,11 +99,19 @@ export default function Home() {
                 className="flex flex-wrap gap-6"
                 variants={fadeInUp}
               >
-                <Button size="lg" className="bg-[#008374] text-white hover:bg-gray-100 border-white border-1 rounded-sm px-4 py-2 hover:cursor-pointer hover:text-[#008374]">
-                  Our Programs
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#008374] text-white hover:bg-gray-100 border-white border-1 rounded-sm px-4 py-2 hover:cursor-pointer hover:text-[#008374]"
+                >
+                  <Link href="/courses">Our Programs</Link>
                 </Button>
-                <Button size="lg" className="bg-[#008374] border-white text-white border-1 text-white rounded-sm px-4 py-2 hover:cursor-pointer hover:text-[#008374] hover:bg-white">
-                  Learn More
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#008374] border-white text-white border-1 text-white rounded-sm px-4 py-2 hover:cursor-pointer hover:text-[#008374] hover:bg-white"
+                >
+                  <Link href="/contact">Learn More</Link>
                 </Button>
               </motion.div>
             </motion.div>
