@@ -206,7 +206,7 @@ export default function Consultancy() {
             ))}
           </div>
         </div>
-
+        
         {/* Animated shapes */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div 
@@ -234,14 +234,14 @@ export default function Consultancy() {
             }}
           />
         </div>
-
+        
         <div className="container mx-auto px-6 md:px-12 py-20 lg:py-24 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Hero Content */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
               className="text-center lg:text-left"
             >
               <motion.div variants={fadeInUp} className="mb-6">
@@ -251,18 +251,18 @@ export default function Consultancy() {
                 </Badge>
               </motion.div>
 
-              <motion.h1 
-                variants={fadeInUp}
+            <motion.h1 
+              variants={fadeInUp}
                 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight"
-              >
+            >
                 Build Your 
                 <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                   Digital Future
                 </span>
-              </motion.h1>
+            </motion.h1>
 
-              <motion.p 
-                variants={fadeInUp}
+            <motion.p 
+              variants={fadeInUp}
                 className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed"
               >
                 From <strong>simple websites to complex AI applications</strong>, we transform your ideas into 
@@ -270,7 +270,7 @@ export default function Consultancy() {
                 <span className="block mt-2 text-lg">
                   Trusted by 100+ organizations across East Africa.
                 </span>
-              </motion.p>
+            </motion.p>
 
               {/* Key Benefits */}
               <motion.div variants={fadeInUp} className="mb-8">
@@ -292,13 +292,13 @@ export default function Consultancy() {
               </motion.div>
 
               {/* CTA Buttons */}
-              <motion.div 
-                variants={fadeInUp}
+            <motion.div
+              variants={fadeInUp}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              >
-                <Button 
-                  asChild
-                  size="lg"
+            >
+              <Button
+                asChild
+                size="lg"
                   className="bg-white text-[#008374] hover:bg-gray-100 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <Link href="/contact">Get Free Consultation</Link>
@@ -385,8 +385,8 @@ export default function Consultancy() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -394,13 +394,15 @@ export default function Consultancy() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">Our Consultancy Services</h2>
-            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
-              We offer a comprehensive range of software development services to meet your organization&apos;s needs
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              Our Software Development Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Comprehensive solutions tailored to your business needs, from concept to deployment
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -408,15 +410,63 @@ export default function Consultancy() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeInUp}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <div className="p-6 text-center">
-                    <div className="flex justify-center mb-4">
+                <Card className="h-full bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 overflow-hidden">
+                  {/* Header with Gradient */}
+                  <div className={`h-20 bg-gradient-to-r ${service.color} relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-black/10"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white">
                       {service.icon}
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                    
+                    {/* Features */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-sm mb-3 text-gray-900">Key Features:</h4>
+                      <div className="space-y-2">
+                        {service.features.slice(0, 3).map((feature, idx) => (
+                          <div key={idx} className="flex items-center text-sm text-gray-600">
+                            <CheckCircleIcon className="w-3 h-3 text-[#008374] mr-2 flex-shrink-0" />
+                            {feature}
+                          </div>
+                        ))}
+                        {service.features.length > 3 && (
+                          <div className="text-sm text-gray-500">
+                            +{service.features.length - 3} more features
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Pricing and Timeline */}
+                    <div className="flex items-center justify-between mb-4 text-sm">
+                      <div className="flex items-center text-[#008374] font-semibold">
+                        <CurrencyDollarIcon className="w-4 h-4 mr-1" />
+                        {service.price}
+                      </div>
+                      <div className="flex items-center text-gray-500">
+                        <ClockIcon className="w-4 h-4 mr-1" />
+                        {service.timeline}
+                      </div>
+                    </div>
+
+                    <Button 
+                      asChild
+                      className="w-full bg-[#008374] hover:bg-[#006A5C] text-white font-semibold"
+                    >
+                      <Link href="/contact" className="flex items-center justify-center">
+                        Get Quote
+                        <ArrowRightIcon className="w-4 h-4 ml-1" />
+                      </Link>
+                    </Button>
                   </div>
                 </Card>
               </motion.div>
@@ -425,9 +475,9 @@ export default function Consultancy() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
+      {/* Portfolio Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -435,65 +485,191 @@ export default function Consultancy() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">Our Consultancy Process</h2>
-            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
-              We follow a structured approach to ensure we deliver high-quality solutions that meet your specific needs
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              Our Recent Projects
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Real solutions delivering measurable results for our clients across East Africa
             </p>
           </motion.div>
-          
-          <div className="max-w-3xl mx-auto">
-            {[
-              {
-                step: "1",
-                title: "Initial Consultation",
-                description: "We begin with a thorough discussion to understand your needs, objectives, and challenges."
-              },
-              {
-                step: "2",
-                title: "Proposal Development",
-                description: "Based on your requirements, we develop a detailed proposal outlining methodology, timeline, and deliverables."
-              },
-              {
-                step: "3",
-                title: "Project Execution",
-                description: "Our team of experts implements the agreed methodology, keeping you informed throughout the process."
-              },
-              {
-                step: "4",
-                title: "Results Presentation",
-                description: "We present our findings and recommendations in a clear, actionable format tailored to your audience."
-              },
-              {
-                step: "5",
-                title: "Follow-up Support",
-                description: "We provide ongoing support to help you implement recommendations and address any questions that arise."
-              }
-            ].map((step, index) => (
-              <motion.div 
-                key={index} 
-                className="flex mb-8 last:mb-0"
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {portfolio.map((project, index) => (
+              <motion.div
+                key={index}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeInUp}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-easi-primary text-white flex items-center justify-center font-bold text-xl mr-6">
-                  {step.step}
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
-                </div>
+                <Card className="overflow-hidden bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+                  {/* Project Image */}
+                  <div className="relative h-48 bg-gradient-to-br from-[#008374] to-[#006A5C] overflow-hidden">
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-2">
+                          <CodeBracketIcon className="w-8 h-8" />
+                        </div>
+                        <div className="text-sm font-medium opacity-90">{project.client}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{project.description}</p>
+                    
+                    {/* Technology Stack */}
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-xs text-gray-900 mb-2">Technology Stack</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {project.technology.map((tech, idx) => (
+                          <Badge key={idx} variant="secondary" className="bg-[#008374]/10 text-[#008374] text-xs">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Results */}
+                    <div className="p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center mb-1">
+                        <TrophyIcon className="w-4 h-4 text-yellow-400 mr-1" />
+                        <span className="font-semibold text-xs text-gray-900">Results</span>
+                      </div>
+                      <p className="text-gray-600 text-xs">{project.results}</p>
+                    </div>
+                  </div>
+                </Card>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-easi-dark text-white py-24">
-        <div className="container mx-auto px-4">
+      {/* Testimonials */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Trusted by organizations across East Africa for delivering exceptional software solutions
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div 
+                key={index} 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="p-6 h-full bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                  {/* Rating */}
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+
+                  {/* Quote */}
+                  <p className="text-gray-600 mb-6 leading-relaxed italic">
+                    "{testimonial.quote}"
+                  </p>
+
+                  {/* Author Info */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 bg-gradient-to-r from-[#008374] to-[#00A08A] rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm">
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <div>
+                        <div className="font-semibold text-gray-900 text-sm">{testimonial.name}</div>
+                        <div className="text-xs text-gray-600">{testimonial.title}</div>
+                        <div className="text-xs text-[#008374] font-medium">{testimonial.company}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Project */}
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <Badge variant="secondary" className="bg-gray-100 text-gray-700 text-xs">
+                      Project: {testimonial.project}
+                    </Badge>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              Why Choose DATAIDEA?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              We combine technical excellence with deep market understanding to deliver solutions that drive results
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((reason, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-[#008374]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="text-[#008374]">
+                    {reason.icon}
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">{reason.title}</h3>
+                <p className="text-gray-600">{reason.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center"
             initial="hidden"
@@ -502,26 +678,41 @@ export default function Consultancy() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="text-3xl font-bold mb-6"
+              className="text-4xl lg:text-5xl font-bold mb-6"
               variants={fadeInUp}
             >
-              Ready to Work With Us?
+              Ready to Build
+              <span className="block bg-gradient-to-r from-[#008374] to-[#00A08A] bg-clip-text text-transparent">
+                Something Amazing?
+              </span>
             </motion.h2>
+            
             <motion.p 
-              className="text-xl mb-10 max-w-2xl mx-auto"
+              className="text-xl lg:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
               variants={fadeInUp}
             >
-              Contact us today to discuss your statistical consultancy needs and how we can support your organization.
+              Transform your ideas into powerful software solutions. Get a free consultation and 
+              <strong className="text-white"> project quote within 24 hours.</strong>
             </motion.p>
+
             <motion.div
+              className="flex flex-col sm:flex-row gap-6 justify-center"
               variants={fadeInUp}
             >
               <Button
                 asChild
                 size="lg"
-                className="bg-easi-primary hover:bg-easi-primaryHover px-8 py-4 text-lg"
+                className="bg-[#008374] hover:bg-[#006A5C] text-white font-bold px-10 py-4 text-lg shadow-2xl hover:shadow-[#008374]/50 transition-all duration-300"
               >
-                <Link href="/contact">Get in Touch</Link>
+                <Link href="/contact">Get Free Consultation</Link>
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold px-10 py-4 text-lg transition-all duration-300"
+              >
+                View All Projects
               </Button>
             </motion.div>
           </motion.div>
