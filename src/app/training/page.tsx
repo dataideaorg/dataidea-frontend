@@ -65,7 +65,7 @@ export default function Training() {
       featured: true,
       category: "Data Science",
       level: "Beginner to Intermediate",
-      duration: "2 days",
+          duration: "2 days",
       instructor: "Dr. John Mukasa",
       link: "https://meet.google.com/ypg-wxdc-dwr",
       highlights: [
@@ -118,7 +118,7 @@ export default function Training() {
       featured: false,
       category: "Web Development",
       level: "Beginner to Intermediate",
-      duration: "5 days",
+          duration: "5 days",
       instructor: "James Okello",
       highlights: [
         "React & Node.js",
@@ -202,7 +202,7 @@ export default function Training() {
             ))}
           </div>
         </div>
-
+        
         {/* Animated shapes */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div 
@@ -230,11 +230,11 @@ export default function Training() {
             }}
           />
         </div>
-
+        
         <div className="container mx-auto px-6 md:px-12 py-20 lg:py-24 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Hero Content */}
-            <motion.div
+            <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
@@ -292,13 +292,13 @@ export default function Training() {
                 variants={fadeInUp}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
-                <Button 
+                <Button
                   size="lg"
                   className="bg-white text-[#008374] hover:bg-gray-100 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   View Upcoming Training
                 </Button>
-                <Button 
+                <Button
                   asChild
                   size="lg" 
                   variant="outline"
@@ -565,10 +565,10 @@ export default function Training() {
               Choose your specialization and master the skills that matter most in today's tech industry
             </p>
           </motion.div>
-
+          
           <div className="grid md:grid-cols-3 gap-8">
             {trainingCategories.map((category, index) => (
-              <motion.div
+              <motion.div 
                 key={index}
                 initial="hidden"
                 whileInView="visible"
@@ -583,7 +583,7 @@ export default function Training() {
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                        {category.icon}
+                      {category.icon}
                       </div>
                     </div>
                     
@@ -599,8 +599,8 @@ export default function Training() {
                       </div>
                     </div>
                   </div>
-
-                  <div className="p-6">
+                  
+                          <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-3">{category.title}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{category.description}</p>
                     
@@ -612,7 +612,7 @@ export default function Training() {
                           <div key={idx} className="flex items-center text-sm text-gray-600">
                             <CheckCircleIcon className="w-3 h-3 text-[#008374] mr-2 flex-shrink-0" />
                             {topic}
-                          </div>
+                            </div>
                         ))}
                         {category.topics.length > 4 && (
                           <div className="text-sm text-gray-500">
@@ -781,7 +781,7 @@ export default function Training() {
               Hear how our intensive training programs have transformed careers and organizations
             </p>
           </motion.div>
-
+          
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -850,7 +850,7 @@ export default function Training() {
                       <div className="w-12 h-12 bg-gradient-to-r from-[#008374] to-[#00A08A] rounded-full flex items-center justify-center text-white font-bold mr-4">
                         {testimonial.image}
                       </div>
-                      <div>
+                    <div>
                         <div className="font-semibold text-gray-900">{testimonial.name}</div>
                         <div className="text-sm text-gray-600">{testimonial.title}</div>
                         <div className="text-sm text-[#008374] font-medium">{testimonial.company}</div>
@@ -993,14 +993,14 @@ export default function Training() {
               className="flex flex-col sm:flex-row gap-6 justify-center"
               variants={fadeInUp}
             >
-              <Button 
+              <Button
                 size="lg"
                 className="bg-[#008374] hover:bg-[#006A5C] text-white font-bold px-10 py-4 text-lg shadow-2xl hover:shadow-[#008374]/50 transition-all duration-300"
               >
                 Reserve Your Spot
               </Button>
               
-              <Button 
+              <Button
                 asChild
                 size="lg" 
                 variant="outline"
