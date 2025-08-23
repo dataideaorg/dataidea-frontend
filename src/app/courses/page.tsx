@@ -62,7 +62,7 @@ export default function Courses() {
       subtitle: "Perfect for absolute beginners",
       description: "Master Python programming from scratch with hands-on projects and real-world applications.",
       category: "data-science",
-      duration: "8 weeks",
+          duration: "8 weeks",
       level: "Beginner",
       price: 0,
       originalPrice: 199,
@@ -70,8 +70,8 @@ export default function Courses() {
       students: 1247,
       popular: true,
       featured: true,
-      external: true,
-      link: "https://python.dataidea.ac.ug",
+          external: true,
+          link: "https://python.dataidea.ac.ug",
       instructor: "Dr. John Mukasa",
       image: "/api/placeholder/400/240",
       features: [
@@ -94,14 +94,14 @@ export default function Courses() {
       subtitle: "Transform data into insights",
       description: "Learn to analyze and visualize data using Python's powerful libraries like Pandas and Matplotlib.",
       category: "data-science",
-      duration: "6 weeks",
+          duration: "6 weeks",
       level: "Intermediate",
       price: 299,
       rating: 4.8,
       students: 892,
       popular: false,
       featured: false,
-      external: false,
+          external: false,
       instructor: "Sarah Nakamya",
       image: "/api/placeholder/400/240",
       features: [
@@ -124,7 +124,7 @@ export default function Courses() {
       subtitle: "Build intelligent systems",
       description: "Deep dive into machine learning algorithms and build predictive models that solve real problems.",
       category: "data-science",
-      duration: "10 weeks",
+          duration: "10 weeks",
       level: "Intermediate",
       price: 499,
       rating: 4.9,
@@ -155,13 +155,13 @@ export default function Courses() {
       description: "Build advanced neural networks and work with cutting-edge AI technologies using PyTorch.",
       category: "data-science",
       duration: "12 weeks",
-      level: "Advanced",
+          level: "Advanced",
       price: 699,
       rating: 4.9,
       students: 423,
       popular: false,
       featured: true,
-      external: false,
+          external: false,
       instructor: "Dr. Grace Namuli",
       image: "/api/placeholder/400/240",
       features: [
@@ -184,14 +184,14 @@ export default function Courses() {
       subtitle: "The language of the web",
       description: "Master JavaScript from basics to advanced concepts and start your web development journey.",
       category: "web-dev",
-      duration: "6 weeks",
-      level: "Beginner",
+          duration: "6 weeks",
+          level: "Beginner",
       price: 249,
       rating: 4.7,
       students: 956,
       popular: false,
       featured: false,
-      external: false,
+          external: false,
       instructor: "James Okello",
       image: "/api/placeholder/400/240",
       features: [
@@ -214,14 +214,14 @@ export default function Courses() {
       subtitle: "Build modern user interfaces",
       description: "Create stunning, responsive web applications using React, the most popular frontend framework.",
       category: "web-dev",
-      duration: "8 weeks",
-      level: "Intermediate",
+          duration: "8 weeks",
+          level: "Intermediate",
       price: 399,
       rating: 4.8,
       students: 721,
       popular: true,
       featured: false,
-      external: false,
+          external: false,
       instructor: "Mary Tusiime",
       image: "/api/placeholder/400/240",
       features: [
@@ -245,13 +245,13 @@ export default function Courses() {
       description: "Build robust, scalable backend systems and APIs using Python's Django framework.",
       category: "web-dev",
       duration: "10 weeks",
-      level: "Intermediate",
+          level: "Intermediate",
       price: 449,
       rating: 4.8,
       students: 567,
       popular: false,
       featured: false,
-      external: false,
+          external: false,
       instructor: "Ronald Wesonga",
       image: "/api/placeholder/400/240",
       features: [
@@ -274,14 +274,14 @@ export default function Courses() {
       subtitle: "Lead teams to success",
       description: "Master project management methodologies and tools to deliver successful projects on time and budget.",
       category: "project-mgmt",
-      duration: "8 weeks",
+          duration: "8 weeks",
       level: "Beginner",
       price: 349,
       rating: 4.7,
       students: 445,
       popular: false,
       featured: false,
-      external: false,
+          external: false,
       instructor: "Abraham Owino",
       image: "/api/placeholder/400/240",
       features: [
@@ -364,7 +364,7 @@ export default function Courses() {
             ))}
           </div>
         </div>
-
+        
         {/* Animated shapes */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div 
@@ -392,14 +392,14 @@ export default function Courses() {
             }}
           />
         </div>
-
+        
         <div className="container mx-auto px-6 md:px-12 py-20 lg:py-24 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Hero Content */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
               className="text-center lg:text-left"
             >
               <motion.div variants={fadeInUp} className="mb-6">
@@ -409,25 +409,25 @@ export default function Courses() {
                 </Badge>
               </motion.div>
 
-              <motion.h1 
-                variants={fadeInUp}
+            <motion.h1 
+              variants={fadeInUp}
                 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight"
-              >
+            >
                 Learn 
                 <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                   Future-Ready Skills
                 </span>
-              </motion.h1>
+            </motion.h1>
 
-              <motion.p 
-                variants={fadeInUp}
+            <motion.p 
+              variants={fadeInUp}
                 className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed"
-              >
+            >
                 Master <strong>in-demand technologies</strong> with our comprehensive courses designed by industry experts. 
                 <span className="block mt-2 text-lg">
                   From beginner to expert, we've got you covered.
                 </span>
-              </motion.p>
+            </motion.p>
 
               {/* Key Stats */}
               <motion.div variants={fadeInUp} className="mb-8">
@@ -610,10 +610,10 @@ export default function Courses() {
               {filteredCourses.length} course{filteredCourses.length !== 1 ? 's' : ''} available
             </p>
           </motion.div>
-
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCourses.map((course, index) => (
-              <motion.div
+              <motion.div 
                 key={course.id}
                 initial="hidden"
                 whileInView="visible"
@@ -663,18 +663,18 @@ export default function Courses() {
                       </div>
                     </div>
                   </div>
-
+                  
                   <div className="p-6">
                     {/* Header */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-xl font-bold text-gray-900 line-clamp-2">{course.title}</h3>
-                        {course.external && (
+                              {course.external && (
                           <Badge variant="secondary" className="bg-green-100 text-green-800 ml-2">
-                            External
-                          </Badge>
-                        )}
-                      </div>
+                                  External
+                                </Badge>
+                              )}
+                            </div>
                       <p className="text-[#008374] font-medium text-sm mb-2">{course.subtitle}</p>
                       <p className="text-gray-600 text-sm line-clamp-2">{course.description}</p>
                     </div>
@@ -684,7 +684,7 @@ export default function Courses() {
                       <div className="flex items-center space-x-4">
                         <div className="flex items-center">
                           <ClockIcon className="w-4 h-4 mr-1" />
-                          {course.duration}
+                                {course.duration}
                         </div>
                         <div className="flex items-center">
                           <UserGroupIcon className="w-4 h-4 mr-1" />
@@ -695,8 +695,8 @@ export default function Courses() {
                         <StarIcon className="w-4 h-4 text-amber-400 fill-current mr-1" />
                         <span className="font-medium">{course.rating}</span>
                       </div>
-                    </div>
-
+                            </div>
+                            
                     {/* Features */}
                     <div className="mb-6">
                       <h4 className="font-semibold text-sm mb-3 text-gray-900">What you'll learn:</h4>
@@ -704,7 +704,7 @@ export default function Courses() {
                         {course.features.slice(0, 3).map((feature, idx) => (
                           <div key={idx} className="flex items-center text-sm text-gray-600">
                             <CheckCircleIcon className="w-4 h-4 text-[#008374] mr-2 flex-shrink-0" />
-                            {feature}
+                                    {feature}
                           </div>
                         ))}
                         {course.features.length > 3 && (
@@ -728,23 +728,23 @@ export default function Courses() {
                             )}
                           </>
                         )}
-                      </div>
-                      
-                      {course.external ? (
+                            </div>
+                            
+                            {course.external ? (
                         <Button
                           asChild
                           className="bg-[#008374] hover:bg-[#006A5C] text-white px-6"
                         >
-                          <a
-                            href={course.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                              <a 
+                                href={course.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
                             className="flex items-center"
-                          >
+                              >
                             Start Now
                             <ArrowRightIcon className="w-4 h-4 ml-1" />
                           </a>
-                        </Button>
+                                </Button>
                       ) : (
                         <Button
                           asChild
@@ -754,12 +754,12 @@ export default function Courses() {
                             Enroll Now
                             <ArrowRightIcon className="w-4 h-4 ml-1" />
                           </Link>
-                        </Button>
-                      )}
+                              </Button>
+                            )}
                     </div>
-                  </div>
-                </Card>
-              </motion.div>
+                          </div>
+                        </Card>
+                      </motion.div>
             ))}
           </div>
 
@@ -937,8 +937,8 @@ export default function Courses() {
                         <div className="text-sm text-gray-600">{testimonial.title}</div>
                         <div className="text-xs text-[#008374] font-medium">{testimonial.course}</div>
                       </div>
-                    </div>
                   </div>
+                </div>
                 </Card>
               </motion.div>
             ))}
@@ -963,7 +963,7 @@ export default function Courses() {
               We're more than just an education platform - we're your career transformation partner
             </p>
           </motion.div>
-
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
