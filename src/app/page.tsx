@@ -65,7 +65,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-
+        
         {/* Animated shapes */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div 
@@ -97,7 +97,7 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12 py-5 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Hero Content */}
-            <motion.div
+            <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
@@ -156,7 +156,7 @@ export default function Home() {
               >
                 <Button 
                   asChild
-                  size="lg"
+                  size="lg" 
                   className="bg-white text-[#008374] hover:bg-gray-100 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <Link href="/courses" className="flex items-center">
@@ -177,7 +177,7 @@ export default function Home() {
                 </Button>
               </motion.div>
             </motion.div>
-
+            
             {/* Right Column - Visual */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -201,12 +201,12 @@ export default function Home() {
                     { name: "Web Development", students: "300+", icon: CodeBracketIcon },
                     { name: "Project Management", students: "200+", icon: UserGroupIcon }
                   ].map((course, index) => (
-                    <motion.div 
+                <motion.div 
                       key={index}
                       className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-[#008374]/5 transition-colors cursor-pointer"
                       whileHover={{ scale: 1.02 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
                       <course.icon className="w-6 h-6 text-[#008374] mr-4" />
                       <div className="flex-1">
                         <div className="font-semibold text-gray-900">{course.name}</div>
@@ -215,13 +215,13 @@ export default function Home() {
                       <ArrowRightIcon className="w-5 h-5 text-gray-400" />
                     </motion.div>
                   ))}
-                </div>
+                    </div>
 
                 <div className="mt-6 text-center">
                   <Button asChild className="w-full bg-[#008374] hover:bg-[#006A5C]">
                     <Link href="/courses">View All Courses</Link>
-                  </Button>
-                </div>
+                        </Button>
+                      </div>
               </div>
 
               {/* Floating Elements */}
@@ -419,7 +419,7 @@ export default function Home() {
             ))}
           </div>
 
-          <motion.div 
+                      <motion.div
             className="text-center mt-12"
             initial="hidden"
             whileInView="visible"
@@ -449,7 +449,7 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               See how our students have transformed their careers
             </p>
-          </motion.div>
+                      </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -570,25 +570,25 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <motion.div 
+                  <motion.div 
                   className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                >
-                  {stat.icon}
-                </motion.div>
-                <motion.div 
+                  >
+                    {stat.icon}
+                  </motion.div>
+                  <motion.div 
                   className="text-4xl lg:text-5xl font-bold mb-2"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  {stat.number}
-                </motion.div>
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {stat.number}
+                  </motion.div>
                 <div className="text-white/90 font-medium">
-                  {stat.label}
-                </div>
+                    {stat.label}
+                  </div>
               </motion.div>
             ))}
           </div>
@@ -753,7 +753,7 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="text-center"
             initial="hidden"
             whileInView="visible"
@@ -777,7 +777,7 @@ export default function Home() {
               Don't wait for the perfect moment. Start building the skills that will change your career and life. 
               <strong className="text-white"> Join 1000+ successful students who trusted DATAIDEA.</strong>
             </motion.p>
-
+            
             <motion.div 
               className="mb-12"
               variants={fadeInUp}
@@ -832,32 +832,32 @@ export default function Home() {
             >
               <p className="text-gray-400 mb-6">Follow us for daily tech tips and career advice</p>
               <div className="flex justify-center gap-6">
-                <motion.a
-                  href="https://x.com/dataideaorg"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <motion.a
+                href="https://x.com/dataideaorg"
+                target="_blank"
+                rel="noopener noreferrer"
                   className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                whileTap={{ scale: 0.95 }}
+              >
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>
-                </motion.a>
+              </motion.a>
 
-                <motion.a
-                  href="https://youtube.com/@dataideaorg"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <motion.a
+                href="https://youtube.com/@dataideaorg"
+                target="_blank"
+                rel="noopener noreferrer"
                   className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                whileTap={{ scale: 0.95 }}
+              >
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                   </svg>
                 </motion.a>
-              </div>
+                </div>
             </motion.div>
           </motion.div>
         </div>
