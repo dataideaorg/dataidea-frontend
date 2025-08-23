@@ -1,20 +1,21 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Label } from '@/components/ui/label';
+import { Badge } from '@/components/ui/badge';
 import { 
-  MapPinIcon, 
-  PhoneIcon, 
-  EnvelopeIcon, 
-  ClockIcon 
+  PhoneIcon,
+  EnvelopeIcon,
+  MapPinIcon,
+  ClockIcon,
+  ChatBubbleLeftRightIcon,
+  CheckCircleIcon,
+  SparklesIcon,
+  ArrowRightIcon
 } from '@heroicons/react/24/outline';
 
-// Animation variants for consistent animations
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
@@ -31,244 +32,117 @@ const staggerContainer = {
 };
 
 export default function Contact() {
-  const contactInfo = [
-    {
-      icon: <MapPinIcon className="h-6 w-6" />,
-      title: "Our Location",
-      details: [
-        "Plot 15 Baskerville Avenue, Kololo",
-        "P.O. Box 11140",
-        "Kampala, Uganda"
-      ]
-    },
-    {
-      icon: <PhoneIcon className="h-6 w-6" />,
-      title: "Phone Numbers",
-      details: [
-        "+256 774 128 257",
-        "+256 700 123 456",
-        "+256 772 987 654",
-      ]
-    },
-    {
-      icon: <EnvelopeIcon className="h-6 w-6" />,
-      title: "Email Addresses",
-      details: [
-        "dataidea.ac.ug@gmail.com",
-        "wesonga@wesonga.com",
-        "fullerbbosa@gmail.com"
-      ]
-    },
-    {
-      icon: <ClockIcon className="h-6 w-6" />,
-      title: "Working Hours",
-      details: [
-        "Mon - Fri: 8:00 AM - 5:00 PM",
-        "Sat: 9:00 AM - 1:00 PM",
-        "Sun: Closed"
-      ]
-    }
-  ];
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: '',
+    message: '',
+    budget: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setSubmitted(true);
+    
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: '',
+        budget: ''
+      });
+    }, 3000);
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-24 md:px-32 lg:px-64">
-        {/* Background with gradient overlay */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#008374] to-[#008374]/80"></div>
-        </div>
-        
-        {/* Animated shapes */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <motion.div 
-            className="absolute top-20 left-10 w-64 h-64 rounded-full bg-white/10 blur-3xl"
-            animate={{ 
-              x: [0, 30, 0],
-              y: [0, 40, 0],
-            }}
-            transition={{ 
-              repeat: Infinity,
-              duration: 15,
-              ease: "easeInOut" 
-            }}
-          />
-          <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-easi-primary/20 blur-3xl"
-            animate={{ 
-              x: [0, -50, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{ 
-              repeat: Infinity,
-              duration: 18,
-              ease: "easeInOut" 
-            }}
-          />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
-            className="max-w-3xl mx-auto text-center text-white"
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-          >
-            <motion.h1 
-              className="text-4xl lg:text-5xl font-bold mb-8"
-              variants={fadeInUp}
+      <section className="relative bg-gradient-to-br from-[#008374] to-[#006A5C] text-white overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 py-20 lg:py-24 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
             >
-              Contact <span className="text-white">Us</span>
-            </motion.h1>
-            <motion.p 
-              className="text-xl text-white/90"
-              variants={fadeInUp}
-            >
-              Have questions or want to learn more about our services? 
-              We&apos;re here to help. Reach out to us using the contact information below or fill out the form.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Information Grid */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactInfo.map((info, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={fadeInUp}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
-                  <div className="p-6">
-                    <div className="flex justify-center mb-4 text-easi-primary">
-                      {info.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">{info.title}</h3>
-                    <div>
-                      {info.details.map((detail, i) => (
-                        <p key={i} className="text-gray-600 mb-1">{detail}</p>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
+              <motion.div variants={fadeInUp} className="mb-6">
+                <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm font-medium">
+                  <SparklesIcon className="w-4 h-4 mr-2" />
+                  Get In Touch Today
+                </Badge>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Contact Form and Map Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeInUp}
-            >
-              <Card className="shadow-lg">
-                <div className="p-8">
-                  <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
-                  <form className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Your Name *</Label>
-                        <Input id="name" placeholder="John Doe" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Your Email *</Label>
-                        <Input id="email" type="email" placeholder="john@example.com" required />
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
-                        <Input id="phone" placeholder="+256 774 123 456" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="organization">Organization</Label>
-                        <Input id="organization" placeholder="Your Organization" />
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="inquiry-type">Inquiry Type</Label>
-                      <Select>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select inquiry type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="general">General Inquiry</SelectItem>
-                          <SelectItem value="training">Training Programs</SelectItem>
-                          <SelectItem value="consultancy">Consultancy Services</SelectItem>
-                          <SelectItem value="partnership">Partnership Opportunities</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input id="subject" placeholder="Training Inquiry" />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Your Message *</Label>
-                      <Textarea 
-                        id="message"
-                        placeholder="Tell us about your needs..."
-                        rows={4}
-                        required
-                      />
-                    </div>
-                    
-                    <Button className="w-full bg-easi-primary hover:bg-easi-primaryHover py-3">
-                      Send Message
-                    </Button>
-                  </form>
-                </div>
-              </Card>
-            </motion.div>
-            
-            {/* Map */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeInUp}
-            >
-              <Card className="shadow-lg h-full">
-                <div className="p-0 h-full">
-                  <div className="h-full min-h-[500px] w-full rounded-lg overflow-hidden">
-                    <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7512501188808!2d32.59823291070469!3d0.33222059966312184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbbe17c0c8ef%3A0x569e2dd06779b13e!2s15a%20Baskerville%20Ave%2C%20Kampala!5e0!3m2!1sen!2sug!4v1753125417714!5m2!1sen!2sug"
-                      width="100%" 
-                      height="100%" 
-                      style={{ border: 0 }} 
-                      allowFullScreen 
-                      loading="lazy"
-                      title="DATAIDEA Location"
-                    ></iframe>
-                  </div>
-                </div>
-              </Card>
+              <motion.h1 
+                variants={fadeInUp}
+                className="text-4xl lg:text-6xl font-bold mb-6 leading-tight"
+              >
+                Let&apos;s Build 
+                <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                  Something Amazing
+                </span>
+              </motion.h1>
+
+              <motion.p 
+                variants={fadeInUp}
+                className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed"
+              >
+                Ready to transform your ideas into powerful software solutions? 
+                <strong> Get a free consultation</strong> and project quote within 24 hours.
+              </motion.p>
+
+              <motion.div 
+                variants={fadeInUp}
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+              >
+                <Button 
+                  asChild
+                  size="lg"
+                  className="bg-white text-[#008374] hover:bg-gray-100 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <a href="tel:+256700000000">Call Us Now</a>
+                </Button>
+                <Button 
+                  asChild
+                  size="lg" 
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#008374] font-semibold px-8 py-4 text-lg transition-all duration-300"
+                >
+                  <a href="https://wa.me/256700000000" target="_blank" className="flex items-center">
+                    <ChatBubbleLeftRightIcon className="w-5 h-5 mr-2" />
+                    WhatsApp Chat
+                  </a>
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Contact Methods Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -276,47 +150,265 @@ export default function Contact() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
-              Find answers to common questions about our services and programs
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              How Would You Like to Connect?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Choose the communication method that works best for you.
             </p>
           </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                question: "How can I register for a training program?",
-                answer: "You can register for our training programs by filling out the contact form on this page, specifying the program you're interested in, or by emailing us directly at dataidea.ac.ug@gmail.com."
+                icon: <PhoneIcon className="w-6 h-6" />,
+                title: "Call Us",
+                description: "Speak directly with our team",
+                value: "+256 700 000 000",
+                action: "tel:+256700000000",
+                available: "Mon-Fri 9AM-6PM EAT"
               },
               {
-                question: "Do you offer customized training for organizations?",
-                answer: "Yes, we offer customized training programs tailored to the specific needs of your organization. Contact us to discuss your requirements and we'll design a program that meets your objectives."
+                icon: <EnvelopeIcon className="w-6 h-6" />,
+                title: "Email Us",
+                description: "Get detailed responses",
+                value: "hello@dataidea.ac.ug",
+                action: "mailto:hello@dataidea.ac.ug",
+                available: "24/7 response within 4 hours"
               },
               {
-                question: "What areas do your consultancy services cover?",
-                answer: "Our consultancy services cover a wide range of statistical areas including research design, data analysis, survey methodology, monitoring and evaluation, and statistical capacity building."
+                icon: <ChatBubbleLeftRightIcon className="w-6 h-6" />,
+                title: "WhatsApp Chat",
+                description: "Quick questions and support",
+                value: "+256 700 000 000",
+                action: "https://wa.me/256700000000",
+                available: "Mon-Sun 8AM-10PM EAT"
               },
               {
-                question: "How can I partner with DATAIDEA?",
-                answer: "We welcome partnerships with organizations that share our commitment to advancing statistical excellence in East Africa. Please contact us at dataidea.ac.ug@gmail.com to discuss potential collaboration opportunities."
+                icon: <MapPinIcon className="w-6 h-6" />,
+                title: "Visit Our Office",
+                description: "Meet us in person",
+                value: "Kampala, Uganda",
+                action: "#",
+                available: "By appointment only"
               }
-            ].map((faq, index) => (
+            ].map((method, index) => (
               <motion.div
                 key={index}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeInUp}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                    <p className="text-gray-600">{faq.answer}</p>
+                <Card className="h-full bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 text-center p-8">
+                  <div className="w-16 h-16 bg-[#008374]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#008374] transition-colors duration-300">
+                    <div className="text-[#008374] group-hover:text-white transition-colors duration-300">
+                      {method.icon}
+                    </div>
                   </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
+                  <p className="text-gray-600 mb-4">{method.description}</p>
+                  
+                  <div className="mb-4">
+                    <div className="font-semibold text-[#008374] mb-1">{method.value}</div>
+                    <div className="text-sm text-gray-500">{method.available}</div>
+                  </div>
+                  
+                  <Button 
+                    asChild
+                    className="w-full bg-[#008374] hover:bg-[#006A5C] text-white"
+                  >
+                    <a 
+                      href={method.action}
+                      target={method.action.startsWith('http') ? '_blank' : '_self'}
+                      className="flex items-center justify-center"
+                    >
+                      Contact Now
+                      <ArrowRightIcon className="w-4 h-4 ml-2" />
+                    </a>
+                  </Button>
                 </Card>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeInUp}
+            >
+              <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                  Send Us a Message
+                </h3>
+                <p className="text-gray-600 mb-8">
+                  Fill out the form below and we&apos;ll get back to you within 24 hours.
+                </p>
+
+                {submitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-12"
+                  >
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircleIcon className="w-8 h-8 text-green-600" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">Message Sent!</h4>
+                    <p className="text-gray-600">We&apos;ll get back to you within 24 hours.</p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#008374] focus:border-transparent outline-none transition-all duration-300"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#008374] focus:border-transparent outline-none transition-all duration-300"
+                          placeholder="your.email@example.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">
+                        Service Interested In *
+                      </label>
+                      <select
+                        name="service"
+                        value={formData.service}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#008374] focus:border-transparent outline-none transition-all duration-300"
+                      >
+                        <option value="">Select a service</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Mobile App Development">Mobile App Development</option>
+                        <option value="AI/ML Solutions">AI/ML Solutions</option>
+                        <option value="Training Programs">Training Programs</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">
+                        Project Details *
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        rows={5}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#008374] focus:border-transparent outline-none transition-all duration-300 resize-none"
+                        placeholder="Tell us about your project..."
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#008374] hover:bg-[#006A5C] text-white font-semibold py-4 text-lg transition-all duration-300"
+                    >
+                      {isSubmitting ? (
+                        <div className="flex items-center justify-center">
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                          Sending Message...
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center">
+                          Send Message
+                          <ArrowRightIcon className="w-5 h-5 ml-2" />
+                        </div>
+                      )}
+                    </Button>
+                  </form>
+                )}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeInUp}
+              className="space-y-8"
+            >
+              <div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                  Let&apos;s Start a Conversation
+                </h3>
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  Whether you&apos;re looking to build a new application or train your team, 
+                  we&apos;re here to help with tailored solutions.
+                </p>
+              </div>
+
+              <Card className="p-6 bg-gradient-to-r from-[#008374]/5 to-[#006A5C]/5 border-0">
+                <div className="flex items-center mb-4">
+                  <ClockIcon className="w-6 h-6 text-[#008374] mr-3" />
+                  <h4 className="text-lg font-semibold text-gray-900">Office Hours</h4>
+                </div>
+                <div className="space-y-2 text-gray-600">
+                  <div className="flex justify-between">
+                    <span>Monday - Friday</span>
+                    <span className="font-medium">9:00 AM - 6:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Saturday</span>
+                    <span className="font-medium">10:00 AM - 4:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Sunday</span>
+                    <span className="font-medium">Closed</span>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-0">
+                <div className="flex items-center mb-4">
+                  <MapPinIcon className="w-6 h-6 text-blue-600 mr-3" />
+                  <h4 className="text-lg font-semibold text-gray-900">Our Location</h4>
+                </div>
+                <div className="text-gray-600">
+                  <p className="mb-2">Kampala, Uganda</p>
+                  <p className="mb-4">East Africa&apos;s Technology Hub</p>
+                  <p className="text-sm text-blue-600">
+                    🌍 We serve clients globally through remote collaboration
+                  </p>
+                </div>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
