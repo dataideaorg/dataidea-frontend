@@ -15,13 +15,11 @@ import {
   StarIcon,
   CheckCircleIcon,
   ArrowRightIcon,
-  CurrencyDollarIcon,
   PlayCircleIcon,
   FireIcon,
   TrophyIcon,
   BoltIcon,
   MagnifyingGlassIcon,
-  FunnelIcon,
   RocketLaunchIcon,
   LightBulbIcon,
   ShieldCheckIcon
@@ -92,7 +90,7 @@ export default function Courses() {
       id: 2,
       title: "Data Analysis with Python",
       subtitle: "Transform data into insights",
-      description: "Learn to analyze and visualize data using Python's powerful libraries like Pandas and Matplotlib.",
+      description: "Learn to analyze and visualize data using Python&apos;s powerful libraries like Pandas and Matplotlib.",
       category: "data-science",
           duration: "6 weeks",
       level: "Intermediate",
@@ -242,7 +240,7 @@ export default function Courses() {
       id: 7,
       title: "Backend Development with Django",
       subtitle: "Power your applications",
-      description: "Build robust, scalable backend systems and APIs using Python's Django framework.",
+      description: "Build robust, scalable backend systems and APIs using Python&apos;s Django framework.",
       category: "web-dev",
       duration: "10 weeks",
           level: "Intermediate",
@@ -425,7 +423,7 @@ export default function Courses() {
             >
                 Master <strong>in-demand technologies</strong> with our comprehensive courses designed by industry experts. 
                 <span className="block mt-2 text-lg">
-                  From beginner to expert, we've got you covered.
+                  From beginner to expert, we&apos;ve got you covered.
                 </span>
             </motion.p>
 
@@ -699,7 +697,7 @@ export default function Courses() {
                             
                     {/* Features */}
                     <div className="mb-6">
-                      <h4 className="font-semibold text-sm mb-3 text-gray-900">What you'll learn:</h4>
+                      <h4 className="font-semibold text-sm mb-3 text-gray-900">What you&apos;ll learn:</h4>
                       <div className="space-y-2">
                         {course.features.slice(0, 3).map((feature, idx) => (
                           <div key={idx} className="flex items-center text-sm text-gray-600">
@@ -925,7 +923,7 @@ export default function Courses() {
                     ))}
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed italic">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -960,7 +958,7 @@ export default function Courses() {
               Why Choose DATAIDEA?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We're more than just an education platform - we're your career transformation partner
+              We&apos;re more than just an education platform - we&apos;re your career transformation partner
             </p>
           </motion.div>
           
@@ -1053,7 +1051,7 @@ export default function Courses() {
               className="text-xl lg:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
               variants={fadeInUp}
             >
-              Join thousands of successful students who've already transformed their careers with DATAIDEA. 
+              Join thousands of successful students who&apos;ve already transformed their careers with DATAIDEA. 
               <strong className="text-white"> Your future starts today.</strong>
             </motion.p>
 

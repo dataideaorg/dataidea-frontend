@@ -6,10 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
   ChartBarIcon, 
-  DocumentTextIcon, 
-  PresentationChartLineIcon, 
-  UserGroupIcon,
-  BeakerIcon,
   CodeBracketIcon,
   CpuChipIcon,
   GlobeAltIcon,
@@ -23,10 +19,8 @@ import {
   TrophyIcon,
   CurrencyDollarIcon,
   BuildingOfficeIcon,
-  LightBulbIcon,
   ShieldCheckIcon,
   CogIcon,
-  BoltIcon,
   StarIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -588,7 +582,7 @@ export default function Consultancy() {
 
                   {/* Quote */}
                   <p className="text-gray-600 mb-6 leading-relaxed italic">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
 
                   {/* Author Info */}

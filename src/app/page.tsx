@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 import { 
   ChartBarIcon, 
-  AcademicCapIcon, 
   CodeBracketIcon,
   UserGroupIcon, 
   BuildingOfficeIcon,
@@ -254,7 +253,7 @@ export default function Home() {
               Why Choose DATAIDEA?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We don't just teach technology – we transform careers and build futures
+                              We don&apos;t just teach technology – we transform careers and build futures
             </p>
           </motion.div>
 
@@ -269,7 +268,7 @@ export default function Home() {
               {
                 icon: <UserGroupIcon className="h-8 w-8" />,
                 title: "Expert Mentorship", 
-                description: "Get guidance from industry professionals who've built successful careers.",
+                description: "Get guidance from industry professionals who&apos;ve built successful careers.",
                 stat: "15+ Years Experience"
               },
               {
@@ -380,7 +379,7 @@ export default function Home() {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold mb-3 text-gray-900">What you'll learn:</h4>
+                    <h4 className="font-semibold mb-3 text-gray-900">What you&apos;ll learn:</h4>
                     <div className="space-y-2">
                       {course.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center">
@@ -454,7 +453,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                quote: "DATAIDEA's Python course got me my dream job as a Data Scientist at a top tech company. The hands-on projects were incredibly valuable.",
+                quote: "DATAIDEA&apos;s Python course got me my dream job as a Data Scientist at a top tech company. The hands-on projects were incredibly valuable.",
                 name: "Sarah Mukisa",
                 title: "Data Scientist at Microsoft",
                 image: "SM",
@@ -490,7 +489,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed italic">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-[#008374] rounded-full flex items-center justify-center text-white font-bold mr-4">
@@ -633,7 +632,7 @@ export default function Home() {
                   answer: "We offer both live interactive sessions and recorded content so you can learn on your schedule."
                 },
                 {
-                  question: "What if I can't keep up?",
+                  question: "What if I can&apos;t keep up?",
                   answer: "We provide one-on-one mentorship and additional support to ensure every student succeeds."
                 },
                 {
@@ -774,7 +773,7 @@ export default function Home() {
               className="text-xl lg:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
               variants={fadeInUp}
             >
-              Don't wait for the perfect moment. Start building the skills that will change your career and life. 
+              Don&apos;t wait for the perfect moment. Start building the skills that will change your career and life. 
               <strong className="text-white"> Join 1000+ successful students who trusted DATAIDEA.</strong>
             </motion.p>
             

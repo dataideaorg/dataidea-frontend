@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,21 +8,17 @@ import { Badge } from '@/components/ui/badge';
 import { 
   CodeBracketIcon, 
   ChartBarIcon, 
-  ClipboardDocumentCheckIcon,
   CalendarIcon,
   ClockIcon,
   UserGroupIcon,
   StarIcon,
   CheckCircleIcon,
   ArrowRightIcon,
-  PlayCircleIcon,
   FireIcon,
   TrophyIcon,
   MapPinIcon,
-  GlobeAltIcon,
   AcademicCapIcon,
   RocketLaunchIcon,
-  LightBulbIcon,
   ShieldCheckIcon,
   CurrencyDollarIcon,
   BuildingOfficeIcon
@@ -46,7 +42,6 @@ const staggerContainer = {
 };
 
 export default function Training() {
-  const [activeTab, setActiveTab] = useState('upcoming');
 
   const upcomingTrainings = [
     {
@@ -65,7 +60,7 @@ export default function Training() {
       featured: true,
       category: "Data Science",
       level: "Beginner to Intermediate",
-          duration: "2 days",
+      duration: "2 days",
       instructor: "Dr. John Mukasa",
       link: "https://meet.google.com/ypg-wxdc-dwr",
       highlights: [
@@ -491,7 +486,7 @@ export default function Training() {
 
                     {/* Highlights */}
                     <div className="mb-4">
-                      <h4 className="font-semibold text-sm mb-2 text-gray-900">What you'll learn:</h4>
+                      <h4 className="font-semibold text-sm mb-2 text-gray-900">What you&apos;ll learn:</h4>
                       <div className="space-y-1">
                         {training.highlights.slice(0, 3).map((highlight, idx) => (
                           <div key={idx} className="flex items-center text-sm text-gray-600">
@@ -562,7 +557,7 @@ export default function Training() {
               Training Tracks
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose your specialization and master the skills that matter most in today's tech industry
+              Choose your specialization and master the skills that matter most in today&apos;s tech industry
             </p>
           </motion.div>
           
@@ -653,7 +648,7 @@ export default function Training() {
               Flexible Payment Options
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We've made it easy for you to invest in your future with multiple convenient payment methods
+              We&apos;ve made it easy for you to invest in your future with multiple convenient payment methods
             </p>
           </motion.div>
 
@@ -795,7 +790,7 @@ export default function Training() {
                 achievement: "Promoted within 3 months"
               },
               {
-                quote: "DATAIDEA's web development bootcamp gave me the skills to build enterprise applications. I now lead a team of developers at my company.",
+                quote: "DATAIDEA&apos;s web development bootcamp gave me the skills to build enterprise applications. I now lead a team of developers at my company.",
                 name: "James Okello",
                 title: "Lead Developer",
                 company: "Safaricom",
@@ -841,7 +836,7 @@ export default function Training() {
 
                   {/* Quote */}
                   <p className="text-gray-600 mb-6 leading-relaxed italic">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
 
                   {/* Author Info */}

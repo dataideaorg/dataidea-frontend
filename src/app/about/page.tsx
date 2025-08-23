@@ -5,31 +5,22 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
-  AcademicCapIcon, 
-  UserIcon, 
   BuildingLibraryIcon, 
-  ChartBarIcon,
   StarIcon,
-  CheckCircleIcon,
-  ArrowRightIcon,
   RocketLaunchIcon,
   LightBulbIcon,
   ShieldCheckIcon,
   TrophyIcon,
   HeartIcon,
-  GlobeAltIcon,
   UsersIcon,
   CalendarIcon,
-  MapPinIcon,
-  CurrencyDollarIcon,
   BoltIcon,
   BeakerIcon,
-  CogIcon,
   EyeIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import Image from 'next/image';
+
 
 // Animation variants for consistent animations
 const fadeInUp = {
@@ -66,7 +57,7 @@ export default function About() {
     {
       year: "2009",
       title: "DATAIDEA Founded",
-      description: "Established as East Africa's premier statistical consulting and training institute",
+      description: "Established as East Africa&apos;s premier statistical consulting and training institute",
       icon: <RocketLaunchIcon className="w-6 h-6" />
     },
     {
@@ -224,7 +215,7 @@ export default function About() {
               >
                 Empowering 
                 <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                  Africa's Tech Future
+                  Africa&apos;s Tech Future
                 </span>
               </motion.h1>
 
@@ -232,10 +223,10 @@ export default function About() {
                 variants={fadeInUp}
                 className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed"
               >
-                Since 2009, DATAIDEA has been <strong>East Africa's premier institution</strong> for 
+                Since 2009, DATAIDEA has been <strong>East Africa&apos;s premier institution</strong> for 
                 technology education and software development.
                 <span className="block mt-2 text-lg">
-                  We've trained 5,000+ professionals and built 100+ software solutions.
+                  We&apos;ve trained 5,000+ professionals and built 100+ software solutions.
                 </span>
               </motion.p>
 
@@ -368,7 +359,7 @@ export default function About() {
               Our Journey
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              15 years of innovation, growth, and impact across East Africa's technology landscape
+              15 years of innovation, growth, and impact across East Africa&apos;s technology landscape
             </p>
           </motion.div>
 
@@ -473,7 +464,7 @@ export default function About() {
               Meet Our Leadership Team
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Experienced professionals dedicated to empowering Africa's next generation of tech talent
+              Experienced professionals dedicated to empowering Africa&apos;s next generation of tech talent
             </p>
           </motion.div>
 
@@ -633,7 +624,7 @@ export default function About() {
               className="text-xl lg:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
               variants={fadeInUp}
             >
-              Become part of DATAIDEA's mission to transform Africa through technology education. 
+              Become part of DATAIDEA&apos;s mission to transform Africa through technology education. 
               <strong className="text-white"> Your journey to excellence starts here.</strong>
             </motion.p>
 

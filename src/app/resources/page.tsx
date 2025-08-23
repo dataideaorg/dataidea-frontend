@@ -6,29 +6,21 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
-  DocumentTextIcon, 
   ArrowDownTrayIcon, 
   BookOpenIcon,
-  ChartBarIcon,
-  AcademicCapIcon,
   ComputerDesktopIcon,
   CodeBracketIcon,
   PlayCircleIcon,
-  CpuChipIcon,
   LightBulbIcon,
   SparklesIcon,
   ClockIcon,
-  EyeIcon,
   StarIcon,
   ArrowRightIcon,
   CheckCircleIcon,
   UsersIcon,
   RocketLaunchIcon,
   TrophyIcon,
-  MagnifyingGlassIcon,
-  FunnelIcon,
-  GlobeAltIcon,
-  CalendarIcon
+  MagnifyingGlassIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
@@ -608,7 +600,7 @@ export default function Resources() {
               className="text-xl lg:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
               variants={fadeInUp}
             >
-              Join thousands of learners who've already transformed their careers with our free resources. 
+              Join thousands of learners who&apos;ve already transformed their careers with our free resources. 
               <strong className="text-white"> Start your journey today.</strong>
             </motion.p>
 
