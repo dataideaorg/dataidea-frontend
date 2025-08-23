@@ -130,7 +130,7 @@ export default function About() {
               className="text-xl text-white/90"
               variants={fadeInUp}
             >
-              DATAIDEA was established to provide primarily a complementary role of research in appropriate statistical and computational methodology that facilitate production and sustenance of quality national statistics.
+              DATAIDEA was established to provide high-quality training in Programming for Data Science, Web Development, and Project Management. We also build innovative software solutions for individuals and organizations.
             </motion.p>
           </motion.div>
         </div>
@@ -149,7 +149,7 @@ export default function About() {
               <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-easi-primary h-full">
                 <h2 className="text-3xl font-bold mb-4 text-easi-dark">Our Mission</h2>
                 <p className="text-gray-600">
-                  To provide high-quality research in statistical methodology and computational techniques that enhance the production and sustainability of quality national statistics across East Africa.
+                  To empower individuals and organizations with the skills in software development and data science needed to thrive in the digital economy.
                 </p>
               </Card>
             </motion.div>
@@ -163,7 +163,7 @@ export default function About() {
               <Card className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-easi-primary h-full">
                 <h2 className="text-3xl font-bold mb-4 text-easi-dark">Our Vision</h2>
                 <p className="text-gray-600">
-                  To be the leading center of excellence in statistical research, methodology development, and capacity building in East Africa and beyond.
+                  To be the leading center of excellence in technology education and software solutions in East Africa and beyond.
                 </p>
               </Card>
             </motion.div>

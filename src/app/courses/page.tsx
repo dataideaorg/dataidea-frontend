@@ -33,81 +33,90 @@ const staggerContainer = {
 export default function Courses() {
   const courseCategories = [
     {
-      title: "Data Science & Analytics",
+      title: "Programming for Data Science",
       description: "Master the tools and techniques for data analysis, visualization, and machine learning.",
       icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
-          title: "Python for Data Science",
+          title: "Introduction to Programming with Python",
           description: "Comprehensive course covering Python fundamentals, data manipulation, visualization, and machine learning.",
           duration: "8 weeks",
-          level: "Beginner to Intermediate",
+          level: "Beginner",
           price: "Free",
           external: true,
           link: "https://python.dataidea.ac.ug",
-          features: ["Python Basics", "Pandas & NumPy", "Data Visualization", "Machine Learning", "Real-world Projects"]
+          features: ["Python Basics", "Pandas & NumPy", "Data Visualization", "Introduction to Machine Learning"]
         },
         {
-          title: "R Programming for Statistics",
-          description: "Learn statistical analysis and data visualization using R programming language.",
+          title: "Data Analysis with Python",
+          description: "Learn statistical analysis and data visualization using Python.",
           duration: "6 weeks",
-          level: "Beginner",
+          level: "Intermediate",
           price: "$299",
           external: false,
-          features: ["R Fundamentals", "Statistical Analysis", "Data Visualization", "Reporting"]
+          features: ["Advanced Pandas", "Statistical Analysis", "Data Visualization", "Reporting"]
         },
         {
-          title: "Advanced Machine Learning",
+          title: "Machine Learning with Python + SK learn",
           description: "Deep dive into machine learning algorithms and their practical applications.",
           duration: "10 weeks",
-          level: "Advanced",
+          level: "Intermediate",
           price: "$499",
           external: false,
-          features: ["Supervised Learning", "Unsupervised Learning", "Deep Learning", "Model Deployment"]
+          features: ["Supervised Learning", "Unsupervised Learning", "Scikit-learn", "Model Deployment"]
+        },
+        {
+          title: "Deep Learning with Python + PyTorch",
+          description: "Explore deep learning concepts and build neural networks with PyTorch.",
+          duration: "10 weeks",
+          level: "Advanced",
+          price: "$599",
+          external: false,
+          features: ["Neural Networks", "PyTorch", "Computer Vision", "NLP"]
         }
       ]
     },
     {
-      title: "Statistical Analysis",
-      description: "Develop strong statistical foundations for research and data analysis.",
-      icon: <AcademicCapIcon className="h-12 w-12 text-easi-primary" />,
+      title: "Web Development",
+      description: "Develop strong skills for building modern web applications.",
+      icon: <CodeBracketIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
-          title: "Statistical Methods",
-          description: "Comprehensive introduction to statistical methods and their applications.",
+          title: "Introduction to Programming with JavaScript",
+          description: "Comprehensive introduction to JavaScript for web development.",
           duration: "6 weeks",
           level: "Beginner",
           price: "$249",
           external: false,
-          features: ["Descriptive Statistics", "Inferential Statistics", "Hypothesis Testing", "Regression Analysis"]
+          features: ["JavaScript Fundamentals", "DOM Manipulation", "ES6+", "Asynchronous JavaScript"]
         },
         {
-          title: "Research Methodology",
-          description: "Learn research design, data collection, and analysis methodologies.",
+          title: "Introduction to Frontend Development with HTML/CSS/JavaScript",
+          description: "Learn to build beautiful and responsive user interfaces.",
           duration: "8 weeks",
           level: "Intermediate",
           price: "$349",
           external: false,
-          features: ["Research Design", "Survey Methods", "Qualitative Analysis", "Report Writing"]
+          features: ["HTML5 & CSS3", "Responsive Design", "JavaScript Frameworks (React)", "APIs"]
+        },
+        {
+            title: "Introduction to backend development with Python + Django",
+            description: "Learn to build robust backends and APIs with Django.",
+            duration: "8 weeks",
+            level: "Intermediate",
+            price: "$349",
+            external: false,
+            features: ["Django Fundamentals", "REST APIs", "Databases", "Authentication"]
         }
       ]
     },
     {
-      title: "Professional Development",
+      title: "Project Management",
       description: "Enhance your professional skills in monitoring, evaluation, and project management.",
       icon: <UserGroupIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
-          title: "Monitoring & Evaluation",
-          description: "Master M&E frameworks and tools for effective program management.",
-          duration: "6 weeks",
-          level: "Intermediate",
-          price: "$399",
-          external: false,
-          features: ["M&E Frameworks", "Data Collection", "Impact Assessment", "Reporting"]
-        },
-        {
-          title: "Project Management",
+          title: "Project Management Fundamentals",
           description: "Learn project management methodologies and tools for successful project delivery.",
           duration: "8 weeks",
           level: "Beginner to Intermediate",

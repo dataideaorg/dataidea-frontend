@@ -95,7 +95,7 @@ const Navbar = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-2 rounded-md text-sm font-medium text-dataidea-dark hover:text-dataidea-primary hover:bg-teal-50 transition-colors duration-200"
+                  className="font-bold px-3 py-2 rounded-md text-sm font-medium text-dataidea-dark hover:text-dataidea-primary hover:bg-teal-50 transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -103,7 +103,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  className={`font-bold px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     isActive(item.href)
                       ? 'text-dataidea-primary bg-teal-50'
                       : 'text-dataidea-dark hover:text-dataidea-primary hover:bg-teal-50'

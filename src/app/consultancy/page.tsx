@@ -31,29 +31,9 @@ const staggerContainer = {
 export default function Consultancy() {
   const services = [
     {
-      title: "Statistical Analysis & Modeling",
-      description: "Expert analysis of complex data sets using advanced statistical techniques to extract meaningful insights and support decision-making.",
+      title: "Web and AI Software Development",
+      description: "We develop web-based software and systems for individuals and organizations, from simple websites to complex AI applications.",
       icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />
-    },
-    {
-      title: "Research Design & Methodology",
-      description: "Development of robust research designs and methodologies tailored to your specific research questions and objectives.",
-      icon: <BeakerIcon className="h-12 w-12 text-easi-primary" />
-    },
-    {
-      title: "Survey Design & Implementation",
-      description: "End-to-end survey solutions, from questionnaire design to sampling strategies, data collection, and analysis.",
-      icon: <DocumentTextIcon className="h-12 w-12 text-easi-primary" />
-    },
-    {
-      title: "Data Visualization & Reporting",
-      description: "Creation of compelling data visualizations and comprehensive reports that effectively communicate findings to diverse audiences.",
-      icon: <PresentationChartLineIcon className="h-12 w-12 text-easi-primary" />
-    },
-    {
-      title: "Capacity Building & Technical Support",
-      description: "Customized training and ongoing technical support to enhance your team's statistical and analytical capabilities.",
-      icon: <UserGroupIcon className="h-12 w-12 text-easi-primary" />
     }
   ];
 
@@ -105,13 +85,13 @@ export default function Consultancy() {
               className="text-4xl lg:text-5xl font-bold mb-8"
               variants={fadeInUp}
             >
-              Consultancy <span className="text-white">Services</span>
+              Software Development <span className="text-white">Services</span>
             </motion.h1>
             <motion.p 
               className="text-xl text-white/90 mb-10"
               variants={fadeInUp}
             >
-              DATAIDEA provides expert statistical consultancy services to government agencies, 
+              DATAIDEA provides expert software development services to individuals, 
               research institutions, and private organizations across East Africa.
             </motion.p>
             <motion.div
@@ -141,7 +121,7 @@ export default function Consultancy() {
           >
             <h2 className="text-3xl font-bold mb-4">Our Consultancy Services</h2>
             <p className="text-center text-gray-600 mb-0 max-w-2xl mx-auto">
-              We offer a comprehensive range of statistical consultancy services to meet your organization&apos;s needs
+              We offer a comprehensive range of software development services to meet your organization&apos;s needs
             </p>
           </motion.div>
           

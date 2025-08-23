@@ -32,77 +32,71 @@ const staggerContainer = {
 export default function Training() {
   const trainingCategories = [
     {
-      title: "R Programming for Statistical Analysis",
-      description: "Comprehensive training in R programming language for statistical analysis, data visualization, and reporting.",
-      icon: <CodeBracketIcon className="h-12 w-12 text-easi-primary" />,
-      courses: [
-        {
-          title: "Introduction to R for Statisticians",
-          duration: "3 days",
-          level: "Beginner",
-          description: "Learn the fundamentals of R programming for statistical analysis, including data manipulation, visualization, and basic statistical tests."
-        },
-        {
-          title: "Advanced Statistical Modeling with R",
-          duration: "5 days",
-          level: "Advanced",
-          description: "Master advanced statistical techniques using R, including regression analysis, time series forecasting, and multivariate analysis."
-        },
-        {
-          title: "Data Visualization with R",
-          duration: "2 days",
-          level: "Intermediate",
-          description: "Create compelling visualizations using ggplot2 and other R packages to effectively communicate statistical findings."
-        }
-      ]
-    },
-    {
-      title: "Python for Data Science",
+      title: "Programming for Data Science",
       description: "Hands-on training in Python programming for data analysis, machine learning, and statistical applications.",
       icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
-          title: "Python Fundamentals for Data Analysis",
+          title: "Introduction to Programming with Python",
           duration: "4 days",
           level: "Beginner",
           description: "Learn Python basics, data manipulation with pandas, and visualization with matplotlib and seaborn."
         },
         {
-          title: "Machine Learning with Python",
+          title: "Data Analysis with Python",
           duration: "5 days",
           level: "Intermediate",
           description: "Implement machine learning algorithms using scikit-learn and understand their statistical foundations."
         },
         {
-          title: "Statistical Analysis with Python",
-          duration: "3 days",
+          title: "Machine Learning with Python + SK learn",
+          duration: "5 days",
           level: "Intermediate",
           description: "Perform statistical analysis using Python's statsmodels and scipy packages for hypothesis testing and modeling."
+        },
+        {
+          title: "Deep Learning with Python + PyTorch",
+          duration: "5 days",
+          level: "Advanced",
+          description: "Explore deep learning concepts and build neural networks using PyTorch."
         }
       ]
     },
     {
-      title: "Monitoring and Evaluation",
+      title: "Web Development",
       description: "Comprehensive training in designing, implementing, and managing effective M&E systems for programs and projects.",
       icon: <ClipboardDocumentCheckIcon className="h-12 w-12 text-easi-primary" />,
       courses: [
         {
-          title: "M&E Fundamentals",
+          title: "Introduction to Programming with JavaScript",
           duration: "3 days",
           level: "Beginner",
           description: "Learn the core concepts, frameworks, and tools for effective monitoring and evaluation of development programs."
         },
         {
-          title: "Results-Based M&E Systems",
+          title: "Introduction to Frontend Development with HTML/CSS/JavaScript",
           duration: "4 days",
           level: "Intermediate",
           description: "Design and implement results-based M&E systems that track outcomes and impact, not just activities and outputs."
         },
         {
-          title: "Data Collection and Analysis for M&E",
+          title: "Introduction to backend development with Python + Django",
           duration: "3 days",
           level: "Intermediate",
           description: "Master various data collection methods and analytical techniques specifically for monitoring and evaluation purposes."
+        }
+      ]
+    },
+    {
+      title: "Project Management",
+      description: "Comprehensive training in designing, implementing, and managing effective M&E systems for programs and projects.",
+      icon: <ClipboardDocumentCheckIcon className="h-12 w-12 text-easi-primary" />,
+      courses: [
+        {
+          title: "Project Management Fundamentals",
+          duration: "3 days",
+          level: "Beginner",
+          description: "Learn the core concepts of project management, including planning, execution, and delivery."
         }
       ]
     }
@@ -302,15 +296,15 @@ export default function Training() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div className="flex flex-col">
                     <span className="font-semibold text-lg text-easi-primary">Mobile Number:</span>
-                    <span className="font-mono text-lg text-gray-900">+256 749747472</span>
+                    <span className="font-mono text-lg text-gray-900">+256 774128257</span>
                     <span className="font-semibold text-lg text-easi-primary">Name:</span>
-                    <span className="font-mono text-lg text-gray-900">Ronald Wesonga</span>
+                    <span className="font-mono text-lg text-gray-900">Juma Kibekityo</span>
                   </div>
                   <div className="flex flex-col">
                     <span className="font-semibold text-lg text-easi-primary">Mobile Number:</span>
-                    <span className="font-mono text-lg text-gray-900">+256 791429565</span>
+                    <span className="font-mono text-lg text-gray-900">+256 701520768</span>
                     <span className="font-semibold text-lg text-easi-primary">Name:</span>
-                    <span className="font-mono text-lg text-gray-900">Ronald Wesonga</span>
+                    <span className="font-mono text-lg text-gray-900">Juma Kibekityo</span>
                   </div>
                 </div>
                 <p className="mb-2 text-gray-700">

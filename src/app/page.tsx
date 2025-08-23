@@ -87,13 +87,14 @@ export default function Home() {
                 className="text-4xl lg:text-5xl font-bold mb-8"
                 variants={fadeInUp}
               >
-                Learn Programming <span className="text-white">For Data Science</span>
+                Learn <span className="text-white">Programming for Data Science. </span>
               </motion.h1>
               <motion.p 
                 className="text-xl mb-10 text-white/90"
                 variants={fadeInUp}
               >
-                DATAIDEA provides comprehensive research in statistical methodology and high-quality training to enhance the quality of national statistics.
+                We provide comprehensive educational resources for Data Science and Web Development, 
+                alongside powerful software solutions for individuals and organizations.
               </motion.p>
               <motion.div 
                 className="flex flex-wrap gap-6"
@@ -202,32 +203,26 @@ export default function Home() {
               Empowering East Africa through statistical excellence and innovative research solutions
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Statistical Research",
-                description: "Research in appropriate statistical and computational methodology to facilitate quality national statistics",
+                title: "Programming for Data Science",
+                description: "Master Python and its libraries for data analysis, machine learning, and deep learning.",
                 icon: <ChartBarIcon className="h-12 w-12 text-easi-primary" />,
-                link: "/about"
+                link: "/training"
               },
               {
-                title: "Training Programs",
-                description: "Practical, high-quality training programs delivered by experienced professionals in statistics and data analysis",
+                title: "Web Development",
+                description: "Learn to build modern websites and web applications with JavaScript, Python, and Django.",
                 icon: <AcademicCapIcon className="h-12 w-12 text-easi-primary" />,
                 link: "/training"
               },
               {
-                title: "Consultancy & Research",
-                description: "Premier management development and excellence in statistical methodologies, systems and software applications",
+                title: "Project Management",
+                description: "Gain essential skills in managing projects, from planning to execution and delivery.",
                 icon: <BeakerIcon className="h-12 w-12 text-easi-primary" />,
-                link: "/consultancy"
-              },
-              {
-                title: "Tailored Training",
-                description: "Customized training solutions delivered at your premises, focusing on your organization's specific requirements",
-                icon: <UserGroupIcon className="h-12 w-12 text-easi-primary" />,
                 link: "/training"
-              }
+              },
             ].map((service, index) => (
               <motion.div
                 key={index}
