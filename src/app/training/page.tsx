@@ -210,9 +210,9 @@ export default function Training() {
                       <CalendarIcon className="h-8 w-8 text-easi-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold">Data Management with R Language</h4>
+                      <h4 className="font-semibold">Data Management with Python</h4>
                       <div className="text-sm text-gray-600 flex flex-wrap gap-x-4">
-                        <span>Tuesday, July 29, to Wednesday, July 30, 2025</span>
+                        <span>Friday, July 29, to Saturday, July 30, 2025</span>
                         <span>Kampala, Uganda</span>
                         <a href="https://meet.google.com/ypg-wxdc-dwr" target="_blank" rel="noopener noreferrer" className="text-easi-primary">Join event</a>
                       </div>
@@ -243,8 +243,8 @@ export default function Training() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Data Management with R Language',
-                date: 'Tuesday, July 29, to Wednesday, July 30, 2025',
+                title: 'Data Management with Python',
+                date: 'Friday, July 29, to Saturday, July 30, 2025',
                 location: 'Online',
                 description: 'Master the art of data management using R Language. Ideal for analysts and researchers.'
               },
