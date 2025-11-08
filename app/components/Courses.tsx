@@ -23,6 +23,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   <motion.div
     whileHover={{ y: -8 }}
     transition={{ duration: 0.3 }}
+    className="h-full"
   >
     <Card className="h-full flex flex-col justify-between">
       <div>
@@ -171,7 +172,7 @@ export const Courses: React.FC = () => {
           viewport={{ once: true, margin: '-100px' }}
         >
           {courses.map((course, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index} variants={itemVariants} className="h-full">
               <CourseCard {...course} />
             </motion.div>
           ))}
