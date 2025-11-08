@@ -8,28 +8,28 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#333] z-50 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-teal-700 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent">
               DATAIDEA
             </div>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="#about" className="text-gray-700 hover:text-teal-600 transition font-medium">
+            <Link href="#about" className="text-[#bbb] hover:text-white transition font-medium">
               About
             </Link>
-            <Link href="#courses" className="text-gray-700 hover:text-teal-600 transition font-medium">
+            <Link href="#courses" className="text-[#bbb] hover:text-white transition font-medium">
               Courses
             </Link>
-            <Link href="#testimonials" className="text-gray-700 hover:text-teal-600 transition font-medium">
+            <Link href="#testimonials" className="text-[#bbb] hover:text-white transition font-medium">
               Testimonials
             </Link>
-            <Link href="#contact" className="text-gray-700 hover:text-teal-600 transition font-medium">
+            <Link href="#contact" className="text-[#bbb] hover:text-white transition font-medium">
               Contact
             </Link>
           </div>
@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6 text-[#bbb]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -66,28 +66,28 @@ export const Navbar: React.FC = () => {
           >
             <Link
               href="#about"
-              className="block text-gray-700 hover:text-teal-600 py-2"
+              className="block text-[#bbb] hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="#courses"
-              className="block text-gray-700 hover:text-teal-600 py-2"
+              className="block text-[#bbb] hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Courses
             </Link>
             <Link
               href="#testimonials"
-              className="block text-gray-700 hover:text-teal-600 py-2"
+              className="block text-[#bbb] hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Testimonials
             </Link>
             <Link
               href="#contact"
-              className="block text-gray-700 hover:text-teal-600 py-2"
+              className="block text-[#bbb] hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact

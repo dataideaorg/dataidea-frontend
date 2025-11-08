@@ -31,13 +31,13 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
         ))}
       </div>
 
-      <p className="text-gray-700 mb-6 leading-relaxed italic text-lg">
+      <p className="text-[#bbb] mb-6 leading-relaxed italic text-lg">
         "{quote}"
       </p>
 
-      <div className="border-t border-gray-200 pt-4">
-        <p className="font-bold text-gray-900">{author}</p>
-        <p className="text-sm text-gray-600">
+      <div className="border-t border-[#333] pt-4">
+        <p className="font-bold text-white">{author}</p>
+        <p className="text-sm text-[#999]">
           {role}
           {company && ` at ${company}`}
         </p>
@@ -106,7 +106,7 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="w-full py-20 md:py-32 bg-gradient-to-br from-gray-50 to-teal-50">
+    <section id="testimonials" className="w-full py-20 md:py-32 bg-gradient-to-br from-[#1a1a1a] to-[#222]">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <motion.div
           className="text-center mb-16"
@@ -117,21 +117,21 @@ export const Testimonials: React.FC = () => {
         >
           <motion.span
             variants={itemVariants}
-            className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold mb-4"
           >
             Success Stories
           </motion.span>
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
             Learn From Our Alumni
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-[#bbb] max-w-2xl mx-auto"
           >
             Hear from graduates who've transformed their careers and achieved their data science dreams.
           </motion.p>

@@ -57,7 +57,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="w-full py-20 md:py-32 bg-gray-50">
+    <section id="about" className="w-full py-20 md:py-32 bg-[#0f0f0f]">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <motion.div
           className="text-center mb-16"
@@ -68,21 +68,21 @@ export const About: React.FC = () => {
         >
           <motion.span
             variants={itemVariants}
-            className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold mb-4"
           >
             About DATAIDEA
           </motion.span>
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
             Why Choose DATAIDEA?
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-[#bbb] max-w-2xl mx-auto"
           >
             DATAIDEA is dedicated to empowering Africans with world-class data science and AI education. We believe talent is universal, but opportunity isn't. That's why we're here.
           </motion.p>
@@ -99,11 +99,11 @@ export const About: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#222] border border-[#333] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+              <p className="text-[#bbb] leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -1,13 +1,11 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardTitle, CardDescription, CardFooter } from './Card';
 import Button from './Button';
 
 interface CourseCardProps {
-  icon: string;
   title: string;
   description: string;
   skills: string[];
@@ -16,7 +14,6 @@ interface CourseCardProps {
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
-  icon,
   title,
   description,
   skills,
@@ -29,27 +26,17 @@ const CourseCard: React.FC<CourseCardProps> = ({
   >
     <Card className="h-full flex flex-col justify-between">
       <div>
-        <div className="w-24 h-24 mb-4 relative">
-          <Image
-            src={icon}
-            alt={title}
-            width={96}
-            height={96}
-            className="w-full h-full"
-            priority={false}
-          />
-        </div>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
 
         <div className="space-y-3 my-6">
           <div>
-            <p className="text-sm font-semibold text-gray-700 mb-2">Key Skills:</p>
+            <p className="text-sm font-semibold text-[#bbb] mb-2">Key Skills:</p>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 bg-teal-100 text-teal-700 text-xs rounded-full font-medium"
+                  className="px-3 py-1 bg-[#333] text-[#e5e5e5] text-xs rounded-full font-medium"
                 >
                   {skill}
                 </span>
@@ -57,14 +44,14 @@ const CourseCard: React.FC<CourseCardProps> = ({
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
+          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#333]">
             <div>
-              <p className="text-xs text-gray-500">Duration</p>
-              <p className="font-semibold text-gray-900">{duration}</p>
+              <p className="text-xs text-[#999]">Duration</p>
+              <p className="font-semibold text-white">{duration}</p>
             </div>
             <div>
-              <p className="text-xs text-gray-500">Level</p>
-              <p className="font-semibold text-gray-900">{level}</p>
+              <p className="text-xs text-[#999]">Level</p>
+              <p className="font-semibold text-white">{level}</p>
             </div>
           </div>
         </div>
@@ -82,52 +69,46 @@ const CourseCard: React.FC<CourseCardProps> = ({
 export const Courses: React.FC = () => {
   const courses: CourseCardProps[] = [
     {
-      icon: '/python-icon.svg',
       title: 'Python Fundamentals',
       description: 'Master Python from scratch. Learn syntax, data structures, and build real projects.',
       skills: ['Variables', 'Functions', 'OOP', 'File Handling'],
-      duration: '8 weeks',
+      duration: '4 weeks',
       level: 'Beginner',
     },
     {
-      icon: '/data-analysis-icon.svg',
       title: 'Data Analysis & Visualization',
       description: 'Transform raw data into insights. Use pandas, NumPy, and Matplotlib for powerful analysis.',
       skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
-      duration: '10 weeks',
+      duration: '8 weeks',
       level: 'Intermediate',
     },
     {
-      icon: '/ml-icon.svg',
       title: 'Machine Learning',
       description: 'Build predictive models. Learn supervised & unsupervised learning techniques.',
       skills: ['Scikit-learn', 'Regression', 'Classification', 'Clustering'],
+      duration: '8 weeks',
+      level: 'Intermediate',
+    },
+    {
+      title: 'Deep Learning & AI',
+      description: 'Dive into neural networks and AI. Build cutting-edge deep learning models.',
+      skills: ['PyTorch', 'Neural Networks', 'CNN', 'NLP'],
+      duration: '8 weeks',
+      level: 'Advanced',
+    },
+    {
+      title: 'Web Development',
+      description: 'Build full-stack web applications. Master Django backend and React/NextJS frontend.',
+      skills: ['Django', 'React', 'NextJS', 'REST APIs'],
       duration: '12 weeks',
       level: 'Intermediate',
     },
     {
-      icon: '/ai-icon.svg',
-      title: 'Deep Learning & AI',
-      description: 'Dive into neural networks and AI. Build cutting-edge deep learning models.',
-      skills: ['TensorFlow', 'Neural Networks', 'CNN', 'NLP'],
-      duration: '14 weeks',
-      level: 'Advanced',
-    },
-    {
-      icon: '/bigdata-icon.svg',
-      title: 'Big Data & SQL',
-      description: 'Handle large datasets. Master SQL and big data technologies.',
-      skills: ['SQL', 'PostgreSQL', 'Spark', 'Databases'],
-      duration: '10 weeks',
-      level: 'Intermediate',
-    },
-    {
-      icon: '/analytics-icon.svg',
-      title: 'Business Analytics',
-      description: 'Apply data skills to business. Learn metrics, dashboards, and decision-making.',
-      skills: ['Dashboard Tools', 'KPIs', 'A/B Testing', 'Storytelling'],
-      duration: '8 weeks',
-      level: 'Intermediate',
+      title: 'Project Management',
+      description: 'Lead data science projects effectively. Learn agile methodologies and team collaboration.',
+      skills: ['Agile', 'Scrum', 'Team Leadership', 'Planning'],
+      duration: '6 weeks',
+      level: 'All Levels',
     },
   ];
 
@@ -151,7 +132,7 @@ export const Courses: React.FC = () => {
   };
 
   return (
-    <section id="courses" className="w-full py-20 md:py-32 bg-white">
+    <section id="courses" className="w-full py-20 md:py-32 bg-[#1a1a1a]">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <motion.div
           className="text-center mb-16"
@@ -162,21 +143,21 @@ export const Courses: React.FC = () => {
         >
           <motion.span
             variants={itemVariants}
-            className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold mb-4"
           >
             Our Programs
           </motion.span>
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
             Choose Your Learning Path
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-[#bbb] max-w-2xl mx-auto"
           >
             From beginner to advanced, we have the perfect course to match your skill level and career goals.
           </motion.p>

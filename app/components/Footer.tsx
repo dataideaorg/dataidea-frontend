@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full bg-gray-900 text-gray-100">
+    <footer className="w-full bg-[#111] text-[#f5f5f5]">
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-16">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12"
@@ -38,10 +38,10 @@ export const Footer: React.FC = () => {
         >
           {/* Brand */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-[#ddd] to-white bg-clip-text text-transparent mb-4">
               DATAIDEA
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-[#999] text-sm leading-relaxed">
               Empowering Africans with world-class data science and AI education.
             </p>
             <div className="flex gap-4 mt-6">
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
                 href="https://twitter.com/dataidea"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-teal-400 transition"
+                className="text-[#999] hover:text-white transition"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
                 href="https://linkedin.com/company/dataidea"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-teal-400 transition"
+                className="text-[#999] hover:text-white transition"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com/dataidea"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-teal-400 transition"
+                className="text-[#999] hover:text-white transition"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
                 href="https://youtube.com/@dataidea"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-teal-400 transition"
+                className="text-[#999] hover:text-white transition"
                 aria-label="YouTube"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -98,24 +98,24 @@ export const Footer: React.FC = () => {
           {/* Programs */}
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-white mb-4">Programs</h4>
-            <ul className="space-y-3 text-gray-400">
+            <ul className="space-y-3 text-[#999]">
               <li>
-                <Link href="#courses" className="hover:text-teal-400 transition">
+                <Link href="#courses" className="hover:text-white transition">
                   Python Fundamentals
                 </Link>
               </li>
               <li>
-                <Link href="#courses" className="hover:text-teal-400 transition">
+                <Link href="#courses" className="hover:text-white transition">
                   Data Analysis
                 </Link>
               </li>
               <li>
-                <Link href="#courses" className="hover:text-teal-400 transition">
+                <Link href="#courses" className="hover:text-white transition">
                   Machine Learning
                 </Link>
               </li>
               <li>
-                <Link href="#courses" className="hover:text-teal-400 transition">
+                <Link href="#courses" className="hover:text-white transition">
                   Deep Learning & AI
                 </Link>
               </li>
@@ -125,24 +125,24 @@ export const Footer: React.FC = () => {
           {/* Resources */}
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-white mb-4">Resources</h4>
-            <ul className="space-y-3 text-gray-400">
+            <ul className="space-y-3 text-[#999]">
               <li>
-                <a href="#" className="hover:text-teal-400 transition">
+                <a href="#" className="hover:text-white transition">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition">
+                <a href="#" className="hover:text-white transition">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition">
+                <a href="#" className="hover:text-white transition">
                   Community Forum
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition">
+                <a href="#" className="hover:text-white transition">
                   FAQ
                 </a>
               </li>
@@ -152,24 +152,24 @@ export const Footer: React.FC = () => {
           {/* Company */}
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
-            <ul className="space-y-3 text-gray-400">
+            <ul className="space-y-3 text-[#999]">
               <li>
-                <Link href="#about" className="hover:text-teal-400 transition">
+                <Link href="#about" className="hover:text-white transition">
                   About Us
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition">
+                <a href="#" className="hover:text-white transition">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition">
+                <a href="#" className="hover:text-white transition">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@dataidea.io" className="hover:text-teal-400 transition">
+                <a href="mailto:hello@dataidea.io" className="hover:text-white transition">
                   Contact
                 </a>
               </li>
@@ -178,8 +178,8 @@ export const Footer: React.FC = () => {
         </motion.div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+        <div className="border-t border-[#333] py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-[#999] text-sm">
             <p>© {currentYear} DATAIDEA. All rights reserved.</p>
             <p className="mt-4 md:mt-0">Made with ❤️ in Uganda for Africa</p>
           </div>

@@ -38,7 +38,7 @@ export const CTA: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="w-full py-20 md:py-32 bg-gradient-to-r from-teal-600 to-cyan-600 relative overflow-hidden">
+    <section id="contact" className="w-full py-20 md:py-32 bg-gradient-to-r from-[#111] to-[#333] relative overflow-hidden">
       {/* Animated Background */}
       <motion.div
         animate={{ float: [0, 20, 0] }}
@@ -83,7 +83,7 @@ export const CTA: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white/30 placeholder-gray-600"
+            className="flex-1 px-4 py-3 rounded-full bg-white text-[#111] focus:outline-none focus:ring-2 focus:ring-white/30 placeholder-[#777]"
           />
           <Button
             type="submit"

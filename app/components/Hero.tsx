@@ -26,18 +26,18 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-white via-teal-50 to-white pt-20 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-gradient-to-br from-[#111] via-[#222] to-[#333] pt-20 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          animate={{ float: [0, 30, 0] }}
-          transition={{ duration: 6, repeat: Infinity }}
-          className="absolute top-20 right-10 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          animate={{ float: [0, 20, 0] }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48"
         />
         <motion.div
-          animate={{ float: [0, -30, 0] }}
-          transition={{ duration: 8, repeat: Infinity, delay: 2 }}
-          className="absolute bottom-20 left-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          animate={{ float: [0, -20, 0] }}
+          transition={{ duration: 10, repeat: Infinity, delay: 2 }}
+          className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-48 -mb-48"
         />
       </div>
 
@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
       >
         {/* Badge */}
         <motion.div variants={itemVariants} className="mb-6">
-          <span className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold">
+          <span className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold">
             Learn Data Science in Uganda
           </span>
         </motion.div>
@@ -57,10 +57,10 @@ export const Hero: React.FC = () => {
         {/* Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
         >
           Learn,{' '}
-          <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent">
             Programming for Data Science
           </span>
         </motion.h1>
@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
         {/* Subheading */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8 leading-relaxed"
+          className="text-lg md:text-xl text-[#bbb] max-w-2xl mb-8 leading-relaxed"
         >
           Learn Python, Data Analysis, Machine Learning, and AI from industry experts. Join a thriving community of learners transforming careers across Africa.
         </motion.p>
@@ -103,8 +103,8 @@ export const Hero: React.FC = () => {
             { number: '100%', label: 'Hands-on' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-teal-600">{stat.number}</p>
-              <p className="text-gray-600 text-sm md:text-base">{stat.label}</p>
+              <p className="text-2xl md:text-3xl font-bold text-white">{stat.number}</p>
+              <p className="text-[#bbb] text-sm md:text-base">{stat.label}</p>
             </div>
           ))}
         </motion.div>

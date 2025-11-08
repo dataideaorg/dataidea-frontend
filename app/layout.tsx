@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
 import "./globals.css";
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "DATAIDEA - Data Science Education for Africa",
@@ -37,10 +30,10 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="canonical" href="https://dataidea.io" />
-        <meta name="theme-color" content="#14b8a6" />
+        <meta name="theme-color" content="#111111" />
       </head>
       <body
-        className={`${dmSans.variable} font-sans antialiased bg-white text-gray-900`}
+        className="font-sans antialiased bg-[#1a1a1a] text-[#e5e5e5]"
       >
         {children}
       </body>
