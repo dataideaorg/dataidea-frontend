@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circle background -->
+  <circle cx="100" cy="100" r="95" fill="url(#aiGradient)" opacity="0.1"/>
+
+  <!-- Brain-like shape -->
+  <circle cx="70" cy="80" r="12" fill="#f59e0b"/>
+  <circle cx="90" cy="70" r="12" fill="#ef4444"/>
+  <circle cx="110" cy="70" r="12" fill="#f59e0b"/>
+  <circle cx="130" cy="80" r="12" fill="#ef4444"/>
+
+  <circle cx="75" cy="105" r="10" fill="#ef4444"/>
+  <circle cx="100" cy="115" r="12" fill="#f59e0b"/>
+  <circle cx="125" cy="105" r="10" fill="#ef4444"/>
+
+  <!-- Connections -->
+  <line x1="80" y1="88" x2="92" y2="76" stroke="#f59e0b" stroke-width="2" opacity="0.6"/>
+  <line x1="100" y1="82" x2="100" y2="103" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
+  <line x1="120" y1="88" x2="108" y2="76" stroke="#f59e0b" stroke-width="2" opacity="0.6"/>
+
+  <!-- Text -->
+  <text x="100" y="160" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#f59e0b">AI & DEEP</text>
+  <text x="100" y="178" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#f59e0b">LEARNING</text>
+</svg>
