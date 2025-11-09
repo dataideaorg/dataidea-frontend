@@ -116,8 +116,8 @@ export const Hero: React.FC = () => {
         >
           {[
             { number: '500+', label: 'Students Trained' },
-            { number: '95%', label: 'Success Rate' },
-            { number: '8+', label: 'Programs' },
+            { number: '78%', label: 'Success Rate' },
+            { number: '6+', label: 'Programs' },
             { number: '100%', label: 'Hands-on' },
           ].map((stat, i) => (
             <div key={i} className="text-center">

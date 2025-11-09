@@ -164,7 +164,7 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@dataidea.io" className="hover:text-white transition">
+                <a href="mailto:dataideaorg@gmail.com" className="hover:text-white transition">
                   Contact
                 </a>
               </li>
