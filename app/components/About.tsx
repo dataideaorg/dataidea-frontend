@@ -75,7 +75,7 @@ export const About: React.FC = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
           >
             Why Choose DATAIDEA?
           </motion.h2>

@@ -39,6 +39,27 @@ export const Hero: React.FC = () => {
           transition={{ duration: 10, repeat: Infinity, delay: 2 }}
           className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-48 -mb-48"
         />
+
+        {/* Animated Jigsaw Pattern */}
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+            opacity: [0.03, 0.05, 0.03]
+          }}
+          transition={{
+            duration: 40,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]"
+          style={{
+            backgroundImage: 'url(/jigsaw.svg)',
+            backgroundSize: '192px 192px',
+            backgroundRepeat: 'repeat',
+            filter: 'invert(1)',
+          }}
+        />
       </div>
 
       <motion.div
@@ -57,12 +78,9 @@ export const Hero: React.FC = () => {
         {/* Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-serif bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent"
         >
-          Learn,{' '}
-          <span className="bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent">
-            Programming for Data Science
-          </span>
+          Programming for Data Science
         </motion.h1>
 
         {/* Subheading */}
@@ -78,7 +96,7 @@ export const Hero: React.FC = () => {
           <Button
             size="lg"
             variant="primary"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.open('https://forms.gle/usTT5nm6HaZT1V2cA', '_blank')}
           >
             Join Our Next Cohort
           </Button>

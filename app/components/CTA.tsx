@@ -60,7 +60,7 @@ export const CTA: React.FC = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-white mb-6"
+          className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
         >
           Ready to Transform Your Career?
         </motion.h2>

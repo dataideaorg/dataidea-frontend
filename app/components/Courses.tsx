@@ -58,9 +58,21 @@ const CourseCard: React.FC<CourseCardProps> = ({
         </div>
       </div>
 
-      <CardFooter>
-        <Button variant="primary" size="md" className="w-full">
-          Learn More
+      <CardFooter className="flex flex-col gap-3">
+        <Button
+          variant="primary"
+          size="md"
+          className="w-full"
+          onClick={() => window.open('https://forms.gle/usTT5nm6HaZT1V2cA', '_blank')}
+        >
+          Enroll Now
+        </Button>
+        <Button
+          variant="outline"
+          size="md"
+          className="w-full"
+        >
+          Free Resources
         </Button>
       </CardFooter>
     </Card>
@@ -151,7 +163,7 @@ export const Courses: React.FC = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
           >
             Choose Your Learning Path
           </motion.h2>
