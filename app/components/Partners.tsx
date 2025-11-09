@@ -12,12 +12,12 @@ const PartnerLogo: React.FC<PartnerProps> = ({ name, logo }) => (
   <motion.div
     whileHover={{ scale: 1.05 }}
     transition={{ duration: 0.3 }}
-    className="flex items-center justify-center p-8 bg-white rounded-lg h-32 border border-[#444]"
+    className="flex items-center justify-center p-12 bg-white rounded-xl h-48 min-w-[280px] border border-[#444] flex-shrink-0"
   >
     <img
       src={logo}
       alt={name}
-      className="max-h-20 max-w-full w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+      className="max-h-32 max-w-full w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
     />
   </motion.div>
 );
@@ -46,16 +46,6 @@ export const Partners: React.FC = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -65,12 +55,14 @@ export const Partners: React.FC = () => {
     },
   };
 
+  // Duplicate partners array for infinite scroll effect
+  const duplicatedPartners = [...partners, ...partners, ...partners];
+
   return (
-    <section id="partners" className="w-full py-20 md:py-32 bg-gradient-to-br from-[#1a1a1a] to-[#222]">
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
+    <section id="partners" className="w-full py-20 md:py-32 bg-gradient-to-br from-[#1a1a1a] to-[#222] overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 mb-16">
         <motion.div
-          className="text-center mb-16"
-          variants={containerVariants}
+          className="text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
@@ -96,18 +88,25 @@ export const Partners: React.FC = () => {
             Our graduates and partners have gone on to work with leading organizations across East Africa and beyond.
           </motion.p>
         </motion.div>
+      </div>
 
+      <div className="relative">
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          className="flex gap-8"
+          animate={{
+            x: [0, -1 * (280 + 32) * partners.length],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 30,
+              ease: "linear",
+            },
+          }}
         >
-          {partners.map((partner, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <PartnerLogo {...partner} />
-            </motion.div>
+          {duplicatedPartners.map((partner, index) => (
+            <PartnerLogo key={index} {...partner} />
           ))}
         </motion.div>
       </div>
