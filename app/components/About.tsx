@@ -101,7 +101,7 @@ export const About: React.FC = () => {
               variants={itemVariants}
               className="bg-[#222] border border-[#333] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
+              <div className="text-4xl mb-4 grayscale opacity-70">{feature.icon}</div>
               <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
               <p className="text-[#bbb] leading-relaxed">{feature.description}</p>
             </motion.div>

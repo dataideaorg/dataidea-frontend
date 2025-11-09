@@ -11,6 +11,7 @@ interface CourseCardProps {
   skills: string[];
   duration: string;
   level: string;
+  free_resources_link: string;
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
@@ -19,6 +20,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   skills,
   duration,
   level,
+  free_resources_link,
 }) => (
   <motion.div
     whileHover={{ y: -8 }}
@@ -71,6 +73,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
           variant="outline"
           size="md"
           className="w-full"
+          onClick={() => window.open(free_resources_link, '_blank')}
         >
           Free Resources
         </Button>
@@ -87,6 +90,7 @@ export const Courses: React.FC = () => {
       skills: ['Variables', 'Functions', 'OOP', 'File Handling'],
       duration: '4 weeks',
       level: 'Beginner',
+      free_resources_link: 'https://science.dataidea.org/Python/11_python_tutorial/'
     },
     {
       title: 'Data Analysis & Visualization',
@@ -94,6 +98,7 @@ export const Courses: React.FC = () => {
       skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
       duration: '8 weeks',
       level: 'Intermediate',
+        free_resources_link: 'https://science.dataidea.org/Python/Libraries/12_numpy/'
     },
     {
       title: 'Machine Learning',
@@ -101,6 +106,7 @@ export const Courses: React.FC = () => {
       skills: ['Scikit-learn', 'Regression', 'Classification', 'Clustering'],
       duration: '8 weeks',
       level: 'Intermediate',
+        free_resources_link: 'https://science.dataidea.org/Machine%20Learning/41_overview_of_machine_learning/'
     },
     {
       title: 'Deep Learning & AI',
@@ -108,6 +114,7 @@ export const Courses: React.FC = () => {
       skills: ['PyTorch', 'Neural Networks', 'CNN', 'NLP'],
       duration: '8 weeks',
       level: 'Advanced',
+        free_resources_link: 'https://science.dataidea.org/Deep%20Learning/outline/'
     },
     {
       title: 'Web Development',
@@ -115,6 +122,7 @@ export const Courses: React.FC = () => {
       skills: ['Django', 'React', 'NextJS', 'REST APIs'],
       duration: '12 weeks',
       level: 'Intermediate',
+        free_resources_link: 'https://web.dataidea.org/'
     },
     {
       title: 'Project Management',
@@ -122,6 +130,7 @@ export const Courses: React.FC = () => {
       skills: ['Agile', 'Scrum', 'Team Leadership', 'Planning'],
       duration: '6 weeks',
       level: 'All Levels',
+        free_resources_link: '/upcoming'
     },
   ];
 

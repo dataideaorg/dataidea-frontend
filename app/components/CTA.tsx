@@ -102,7 +102,7 @@ export const CTA: React.FC = () => {
             exit={{ opacity: 0 }}
             className="text-white font-semibold text-center"
           >
-            ✓ Welcome! Check your email for exclusive updates.
+            <span className="grayscale opacity-70">✓</span> Welcome! Check your email for exclusive updates.
           </motion.p>
         )}
 
@@ -111,17 +111,17 @@ export const CTA: React.FC = () => {
           className="flex flex-col md:flex-row gap-8 justify-center items-center mt-12 pt-8 border-t border-white/20"
         >
           <div className="text-center md:text-left">
-            <p className="text-white/80 text-sm">📧 Email</p>
+            <p className="text-white/80 text-sm"><span className="grayscale opacity-70">📧</span> Email</p>
             <a href="mailto:dataideaorg@gmail.com" className="text-white font-semibold hover:underline">
               dataideaorg@gmail.com
             </a>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-white/80 text-sm">📍 Location</p>
+            <p className="text-white/80 text-sm"><span className="grayscale opacity-70">📍</span> Location</p>
             <p className="text-white font-semibold">Kampala, Uganda</p>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-white/80 text-sm">🌐 Website</p>
+            <p className="text-white/80 text-sm"><span className="grayscale opacity-70">🌐</span> Website</p>
             <a href="https://dataidea.org" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline">
               dataidea.org
             </a>

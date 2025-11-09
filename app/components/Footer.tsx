@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://twitter.com/dataidea"
+                href="https://twitter.com/dataideaorg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#999] hover:text-white transition"
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/company/dataidea"
+                href="https://linkedin.com/company/dataideaorg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#999] hover:text-white transition"
@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://instagram.com/dataidea"
+                href="https://instagram.com/dataideaorg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#999] hover:text-white transition"
@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://youtube.com/@dataidea"
+                href="https://youtube.com/@dataideaorg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#999] hover:text-white transition"
@@ -127,23 +127,18 @@ export const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Resources</h4>
             <ul className="space-y-3 text-[#999]">
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="https://blog.dataidea.org/" className="hover:text-white transition">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="https://docs.dataidea.org/" className="hover:text-white transition">
                   Documentation
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition">
                   Community Forum
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition">
-                  FAQ
                 </a>
               </li>
             </ul>
@@ -181,7 +176,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-[#333] py-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-[#999] text-sm">
             <p>© {currentYear} DATAIDEA. All rights reserved.</p>
-            <p className="mt-4 md:mt-0">Made with ❤️ in Uganda for Africa</p>
+            <p className="mt-4 md:mt-0">Made with ❤️ in Uganda</p>
           </div>
         </div>
       </div>
