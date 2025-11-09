@@ -112,8 +112,8 @@ export const CTA: React.FC = () => {
         >
           <div className="text-center md:text-left">
             <p className="text-white/80 text-sm">📧 Email</p>
-            <a href="mailto:hello@dataidea.io" className="text-white font-semibold hover:underline">
-              hello@dataidea.io
+            <a href="mailto:dataideaorg@gmail.com" className="text-white font-semibold hover:underline">
+              dataideaorg@gmail.com
             </a>
           </div>
           <div className="text-center md:text-left">
@@ -122,8 +122,8 @@ export const CTA: React.FC = () => {
           </div>
           <div className="text-center md:text-left">
             <p className="text-white/80 text-sm">🌐 Website</p>
-            <a href="https://dataidea.io" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline">
-              dataidea.io
+            <a href="https://dataidea.org" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline">
+              dataidea.org
             </a>
           </div>
         </motion.div>
