@@ -1,21 +1,23 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Button from './Button';
 
 export const CTA: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  useEffect(() => {
+    // Load Beehiiv embed script
+    const script = document.createElement('script');
+    script.src = 'https://subscribe-forms.beehiiv.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail('');
-      setTimeout(() => setSubmitted(false), 3000);
-    }
-  };
+    return () => {
+      // Cleanup script on unmount
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,39 +74,27 @@ export const CTA: React.FC = () => {
           Join hundreds of learners who've unlocked their potential in data science and AI. Get insights about our latest cohorts, exclusive offers, and career tips.
         </motion.p>
 
-        <motion.form
+        <motion.div
           variants={itemVariants}
-          onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8"
+          className="flex justify-center items-center mb-8"
         >
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="flex-1 px-4 py-3 rounded-full bg-white text-[#111] focus:outline-none focus:ring-2 focus:ring-white/30 placeholder-[#777]"
+          <iframe
+            src="https://subscribe-forms.beehiiv.com/1183471d-1aea-40d3-aa5e-81264543bdac"
+            className="beehiiv-embed"
+            data-test-id="beehiiv-embed"
+            frameBorder="0"
+            scrolling="no"
+            style={{
+              width: '400px',
+              height: '45px',
+              margin: 0,
+              borderRadius: '0px 0px 0px 0px',
+              backgroundColor: 'transparent',
+              boxShadow: '0 0 #0000',
+              maxWidth: '100%'
+            }}
           />
-          <Button
-            type="submit"
-            variant="secondary"
-            size="md"
-            className="font-bold"
-          >
-            Subscribe
-          </Button>
-        </motion.form>
-
-        {submitted && (
-          <motion.p
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="text-white font-semibold text-center"
-          >
-            <span className="grayscale opacity-70">✓</span> Welcome! Check your email for exclusive updates.
-          </motion.p>
-        )}
+        </motion.div>
 
         <motion.div
           variants={itemVariants}
