@@ -55,31 +55,33 @@ export const Navbar: React.FC = () => {
               </button>
 
               {resourcesDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="absolute top-full left-0 mt-2 w-56 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
-                >
-                  {resources.map((resource, index) => (
-                    <Link
-                      key={index}
-                      href={resource.href}
-                      target={resource.external ? '_blank' : undefined}
-                      rel={resource.external ? 'noopener noreferrer' : undefined}
-                      className="block px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium border-b border-[#333] last:border-b-0"
-                    >
-                      <div className="flex items-center justify-between">
-                        {resource.name}
-                        {resource.external && (
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        )}
-                      </div>
-                    </Link>
-                  ))}
-                </motion.div>
+                <div className="absolute top-full left-0 pt-2">
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="w-56 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
+                  >
+                    {resources.map((resource, index) => (
+                      <Link
+                        key={index}
+                        href={resource.href}
+                        target={resource.external ? '_blank' : undefined}
+                        rel={resource.external ? 'noopener noreferrer' : undefined}
+                        className="block px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium border-b border-[#333] last:border-b-0"
+                      >
+                        <div className="flex items-center justify-between">
+                          {resource.name}
+                          {resource.external && (
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          )}
+                        </div>
+                      </Link>
+                    ))}
+                  </motion.div>
+                </div>
               )}
             </div>
 
