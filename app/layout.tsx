@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: "Master Python, Data Analysis, Machine Learning, and AI with DATAIDEA. Learn from industry experts and join a thriving community of learners transforming careers across Africa.",
   keywords: ["data science", "machine learning", "Python", "AI", "education", "Uganda", "Africa"],
   authors: [{ name: "DATAIDEA" }],
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -13,11 +18,13 @@ export const metadata: Metadata = {
     title: "DATAIDEA - Data Science Education for Africa",
     description: "Master Python, Data Analysis, Machine Learning, and AI with DATAIDEA.",
     siteName: "DATAIDEA",
+    images: ['/logo.png'],
   },
   twitter: {
     card: "summary_large_image",
     title: "DATAIDEA - Data Science Education for Africa",
     description: "Master Python, Data Analysis, Machine Learning, and AI with DATAIDEA.",
+    images: ['/logo.png'],
   },
 };
 
