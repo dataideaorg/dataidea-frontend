@@ -26,13 +26,13 @@ export const About: React.FC = () => {
   const features = [
     {
       icon: '🎯',
-      title: 'Career-Focused',
+      title: 'Career-Focused Education',
       description: 'Programs designed with industry demand in mind. Get practical skills employers are looking for.',
     },
     {
       icon: '👨‍🏫',
-      title: 'Expert Instructors',
-      description: 'Learn from professionals working at leading tech companies with real-world experience.',
+      title: 'Expert Team',
+      description: 'Learn from and work with professionals at leading tech companies with real-world experience.',
     },
     {
       icon: '🤝',
@@ -41,18 +41,18 @@ export const About: React.FC = () => {
     },
     {
       icon: '💼',
-      title: 'Job Placement',
-      description: 'Get access to exclusive job opportunities and internships with our partner companies.',
+      title: 'End-to-End Development',
+      description: 'From concept to deployment, we build custom websites and AI solutions tailored to your needs.',
     },
     {
       icon: '⏱️',
-      title: 'Flexible Learning',
-      description: 'Study at your own pace with recorded sessions, live classes, and personalized support.',
+      title: 'Flexible & Scalable',
+      description: 'Flexible learning options and scalable development solutions that grow with your needs.',
     },
     {
       icon: '🏆',
-      title: 'Certification',
-      description: 'Earn recognized certifications that boost your resume and professional credibility.',
+      title: 'Quality Guaranteed',
+      description: 'Earn recognized certifications and get professional-grade development with ongoing support.',
     },
   ];
 
@@ -84,7 +84,7 @@ export const About: React.FC = () => {
             variants={itemVariants}
             className="text-lg text-[#bbb] max-w-2xl mx-auto"
           >
-            DATAIDEA is dedicated to empowering Africans with world-class data science and AI education. We believe talent is universal, but opportunity isn't. That's why we're here.
+            DATAIDEA empowers people through hands-on data science education and professional development services. We build AI solutions and train the next generation of data professionals.
           </motion.p>
         </motion.div>
 

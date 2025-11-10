@@ -88,7 +88,7 @@ export const Hero: React.FC = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-[#bbb] max-w-2xl mb-8 leading-relaxed"
         >
-          Learn Python, Data Analysis, Machine Learning, and AI from industry experts. Join a thriving community of learners transforming careers across Africa.
+          We offer hands on data science training and build custom websites and AI tools for individuals and organizations.
         </motion.p>
 
         {/* CTA Buttons */}

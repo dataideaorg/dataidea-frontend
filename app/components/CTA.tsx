@@ -71,7 +71,7 @@ export const CTA: React.FC = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"
         >
-          Join hundreds of learners who've unlocked their potential in data science and AI. Get insights about our latest cohorts, exclusive offers, and career tips.
+          Join hundreds of people who've unlocked their potential in data science and AI. Get insights about our latest cohorts, exclusive offers, and career tips.
         </motion.p>
 
         <motion.div
@@ -104,6 +104,12 @@ export const CTA: React.FC = () => {
             <p className="text-white/80 text-sm"><span className="grayscale opacity-70">📧</span> Email</p>
             <a href="mailto:dataideaorg@gmail.com" className="text-white font-semibold hover:underline">
               dataideaorg@gmail.com
+            </a>
+          </div>
+          <div className="text-center md:text-left">
+            <p className="text-white/80 text-sm"><span className="grayscale opacity-70">📞</span> Phone</p>
+            <a href="tel:+256701520768" className="text-white font-semibold hover:underline">
+              +256 701 520768
             </a>
           </div>
           <div className="text-center md:text-left">
