@@ -52,8 +52,8 @@ export const Services: React.FC = () => {
         'Ongoing Support & Maintenance',
       ],
       icon: '💻',
-      cta: 'Get a Quote',
-      ctaAction: () => window.open('https://forms.gle/usTT5nm6HaZT1V2cA', '_blank'),
+      cta: 'Contact Us',
+      ctaAction: () => window.open('https://forms.gle/9CYpgT8HY1xusFU3A', '_blank'),
     },
   ];
 
