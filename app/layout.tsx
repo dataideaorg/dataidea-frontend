@@ -41,7 +41,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
         <link rel="canonical" href="https://dataidea.org" />
         <meta name="theme-color" content="#111111" />
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - Analytics & Ads */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD84FCME05"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -50,6 +50,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-ZD84FCME05');
+              gtag('config', 'AW-17721193814');
             `,
           }}
         />
