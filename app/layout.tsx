@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dataidea.io",
+    url: "https://dataidea.org",
     title: "DATAIDEA - Data Science Education for Africa",
     description: "Master Python, Data Analysis, Machine Learning, and AI with DATAIDEA.",
     siteName: "DATAIDEA",
@@ -39,7 +39,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
-        <link rel="canonical" href="https://dataidea.io" />
+        <link rel="canonical" href="https://dataidea.org" />
         <meta name="theme-color" content="#111111" />
           {/*Google tag (gtag.js)*/}
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD84FCME05"></script>

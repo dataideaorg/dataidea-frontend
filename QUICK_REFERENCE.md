@@ -303,8 +303,8 @@ public/
 
 Create `.env.local`:
 ```env
-NEXT_PUBLIC_SITE_URL=https://dataidea.io
-NEXT_PUBLIC_API_URL=https://api.dataidea.io
+NEXT_PUBLIC_SITE_URL=https://dataidea.org
+NEXT_PUBLIC_API_URL=https://api.dataidea.org
 
 # Secrets (not exposed to client)
 DATABASE_URL=postgresql://...

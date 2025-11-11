@@ -229,7 +229,7 @@ Features:
 **Customize Contact Info**:
 ```tsx
 // Line 98-113
-<a href="mailto:hello@dataidea.io">hello@dataidea.io</a>
+<a href="mailto:dataideaorg@gmail.com">dataideaorg@gmail.com</a>
 // Update email, location, website
 ```
 
