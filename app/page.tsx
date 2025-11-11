@@ -14,10 +14,10 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <About />
       <Services />
       <Courses />
       <Partners />
+      <About />
       <CTA />
       <Footer />
     </main>
