@@ -41,6 +41,15 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
         <link rel="canonical" href="https://dataidea.io" />
         <meta name="theme-color" content="#111111" />
+          {/*Google tag (gtag.js)*/}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD84FCME05"></script>
+          <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-ZD84FCME05');
+          </script>
       </head>
       <body
         className="font-sans antialiased bg-[#1a1a1a] text-[#e5e5e5]"
