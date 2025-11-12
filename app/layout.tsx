@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DATAIDEA - Data Science Education for Africa",
+  title: "DATAIDEA - Programming for Data Science",
   description: "Master Python, Data Analysis, Machine Learning, and AI with DATAIDEA. Learn from industry experts and join a thriving community of learners transforming careers across Africa.",
   keywords: ["data science", "machine learning", "Python", "AI", "education", "Uganda", "Africa"],
-  authors: [{ name: "DATAIDEA" }],
+  authors: [{ name: "DATAIDEA" }, {name: "Juma Shafara"}],
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://dataidea.org",
-    title: "DATAIDEA - Data Science Education for Africa",
+    title: "DATAIDEA - Programming for Data Science",
     description: "Master Python, Data Analysis, Machine Learning, and AI with DATAIDEA.",
     siteName: "DATAIDEA",
     images: ['/logo.png'],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DATAIDEA - Data Science Education for Africa",
+    title: "DATAIDEA - Programming for Data Science",
     description: "Master Python, Data Analysis, Machine Learning, and AI with DATAIDEA.",
     images: ['/logo.png'],
   },
