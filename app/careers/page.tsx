@@ -32,18 +32,18 @@ const opportunities = [
       'Certificate upon completion'
     ]
   },
-  {
-    title: 'Contractor',
-    description: 'We are looking for experienced professionals to join our team on a contract basis. Help us deliver exceptional data solutions to our clients.',
-    type: 'Contract',
-    location: 'Remote',
-    highlights: [
-      'Flexible working hours',
-      'Project-based engagement',
-      'Competitive rates',
-      'Opportunity for long-term collaboration'
-    ]
-  }
+  // {
+  //   title: 'Contractor',
+  //   description: 'We are looking for experienced professionals to join our team on a contract basis. Help us deliver exceptional data solutions to our clients.',
+  //   type: 'Contract',
+  //   location: 'Remote',
+  //   highlights: [
+  //     'Flexible working hours',
+  //     'Project-based engagement',
+  //     'Competitive rates',
+  //     'Opportunity for long-term collaboration'
+  //   ]
+  // }
 ];
 
 export default function Careers() {
