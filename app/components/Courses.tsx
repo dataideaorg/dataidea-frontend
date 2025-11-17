@@ -96,7 +96,7 @@ export const Courses: React.FC = () => {
       title: 'Data Analysis & Visualization',
       description: 'Transform raw data into insights. Use pandas, NumPy, and Matplotlib for powerful analysis.',
       skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
-      duration: '8 weeks',
+      duration: '4 weeks',
       level: 'Intermediate',
         free_resources_link: 'https://science.dataidea.org/Python/Libraries/12_numpy/'
     },
@@ -104,7 +104,7 @@ export const Courses: React.FC = () => {
       title: 'Machine Learning',
       description: 'Build predictive models. Learn supervised & unsupervised learning techniques.',
       skills: ['Scikit-learn', 'Regression', 'Classification', 'Clustering'],
-      duration: '8 weeks',
+      duration: '4 weeks',
       level: 'Intermediate',
         free_resources_link: 'https://science.dataidea.org/Machine%20Learning/41_overview_of_machine_learning/'
     },
@@ -112,7 +112,7 @@ export const Courses: React.FC = () => {
       title: 'Deep Learning & AI',
       description: 'Dive into neural networks and AI. Build cutting-edge deep learning models.',
       skills: ['PyTorch', 'Neural Networks', 'CNN', 'NLP'],
-      duration: '8 weeks',
+      duration: '4 weeks',
       level: 'Advanced',
         free_resources_link: 'https://science.dataidea.org/Deep%20Learning/outline/'
     },
@@ -120,7 +120,7 @@ export const Courses: React.FC = () => {
       title: 'Web Development',
       description: 'Build full-stack web applications. Master Django backend and React/NextJS frontend.',
       skills: ['Django', 'React', 'NextJS', 'REST APIs'],
-      duration: '12 weeks',
+      duration: '8 weeks',
       level: 'Intermediate',
         free_resources_link: 'https://web.dataidea.org/'
     },
