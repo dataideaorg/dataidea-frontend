@@ -3,11 +3,15 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useAuth } from '../context/AuthContext';
+import { GoogleSignInButton } from './GoogleSignIn';
 
 export const Navbar: React.FC = () => {
+  const { user, loading, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   const resources = [
     { name: 'Blog & Articles', href: 'https://blog.dataidea.org', external: true },
@@ -94,6 +98,57 @@ export const Navbar: React.FC = () => {
             <Link href="#contact" className="text-[#bbb] hover:text-white transition font-medium">
               Contact
             </Link>
+
+            {/* Auth Section */}
+            {!loading && (
+              <>
+                {user ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setUserDropdownOpen(true)}
+                    onMouseLeave={() => setUserDropdownOpen(false)}
+                  >
+                    <button className="flex items-center gap-2">
+                      {user.picture ? (
+                        <img
+                          src={user.picture}
+                          alt={user.name}
+                          className="w-8 h-8 rounded-full border-2 border-[#444]"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 rounded-full bg-[#333] flex items-center justify-center text-white font-medium">
+                          {user.name?.charAt(0) || user.email?.charAt(0)}
+                        </div>
+                      )}
+                    </button>
+
+                    {userDropdownOpen && (
+                      <div className="absolute top-full right-0 pt-2">
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="w-48 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
+                        >
+                          <div className="px-4 py-3 border-b border-[#333]">
+                            <p className="text-white font-medium text-sm">{user.name}</p>
+                            <p className="text-[#999] text-xs">{user.email}</p>
+                          </div>
+                          <button
+                            onClick={logout}
+                            className="w-full text-left px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium"
+                          >
+                            Sign Out
+                          </button>
+                        </motion.div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <GoogleSignInButton className="!px-4 !py-2 text-sm" />
+                )}
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -203,6 +258,44 @@ export const Navbar: React.FC = () => {
             >
               Contact
             </Link>
+
+            {/* Mobile Auth Section */}
+            {!loading && (
+              <div className="pt-3 border-t border-[#333] mt-3">
+                {user ? (
+                  <>
+                    <div className="flex items-center gap-3 py-2">
+                      {user.picture ? (
+                        <img
+                          src={user.picture}
+                          alt={user.name}
+                          className="w-10 h-10 rounded-full border-2 border-[#444]"
+                        />
+                      ) : (
+                        <div className="w-10 h-10 rounded-full bg-[#333] flex items-center justify-center text-white font-medium">
+                          {user.name?.charAt(0) || user.email?.charAt(0)}
+                        </div>
+                      )}
+                      <div>
+                        <p className="text-white font-medium text-sm">{user.name}</p>
+                        <p className="text-[#999] text-xs">{user.email}</p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => {
+                        logout();
+                        setMobileMenuOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-3 mt-2 bg-[#222] text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium rounded-lg"
+                    >
+                      Sign Out
+                    </button>
+                  </>
+                ) : (
+                  <GoogleSignInButton className="w-full !justify-center" />
+                )}
+              </div>
+            )}
           </motion.div>
         )}
       </div>
