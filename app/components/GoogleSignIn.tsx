@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { initiateGoogleLogin } from '../lib/auth';
 
 interface GoogleSignInButtonProps {
   className?: string;
@@ -8,8 +9,7 @@ interface GoogleSignInButtonProps {
 
 export const GoogleSignInButton: React.FC<GoogleSignInButtonProps> = ({ className = '' }) => {
   const handleGoogleSignIn = () => {
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://api.dataidea.org';
-    window.location.href = `${backendUrl}/auth/google/`;
+    initiateGoogleLogin();
   };
 
   return (

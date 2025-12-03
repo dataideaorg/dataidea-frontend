@@ -6,7 +6,7 @@ import { User, checkAuthStatus, logout as logoutUser } from '../lib/auth';
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  logout: () => Promise<void>;
+  logout: () => void;
   refreshAuth: () => Promise<void>;
 }
 
@@ -43,11 +43,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     return () => window.removeEventListener('focus', handleFocus);
   }, []);
 
-  const logout = async () => {
-    const success = await logoutUser();
-    if (success) {
-      setUser(null);
-    }
+  const logout = () => {
+    logoutUser();
+    setUser(null);
   };
 
   return (

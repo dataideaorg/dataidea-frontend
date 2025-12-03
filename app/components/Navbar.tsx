@@ -112,12 +112,12 @@ export const Navbar: React.FC = () => {
                       {user.picture ? (
                         <img
                           src={user.picture}
-                          alt={user.name}
+                          alt={user.email}
                           className="w-8 h-8 rounded-full border-2 border-[#444]"
                         />
                       ) : (
                         <div className="w-8 h-8 rounded-full bg-[#333] flex items-center justify-center text-white font-medium">
-                          {user.name?.charAt(0) || user.email?.charAt(0)}
+                          {user.email?.charAt(0).toUpperCase()}
                         </div>
                       )}
                     </button>
