@@ -20,6 +20,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setLoading(true);
     try {
       const userData = await checkAuthStatus();
+      console.log('Auth status checked:', userData);
       setUser(userData);
     } catch (error) {
       console.error('Failed to refresh auth:', error);
@@ -31,6 +32,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   useEffect(() => {
     refreshAuth();
+
+    // Refresh auth when window regains focus (after OAuth redirect)
+    const handleFocus = () => {
+      console.log('Window focused, refreshing auth...');
+      refreshAuth();
+    };
+
+    window.addEventListener('focus', handleFocus);
+    return () => window.removeEventListener('focus', handleFocus);
   }, []);
 
   const logout = async () => {
