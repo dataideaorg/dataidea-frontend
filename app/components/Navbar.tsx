@@ -131,7 +131,7 @@ export const Navbar: React.FC = () => {
                           className="w-48 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
                         >
                           <div className="px-4 py-3 border-b border-[#333]">
-                            <p className="text-white font-medium text-sm">{user.name}</p>
+                            <p className="text-white font-medium text-sm">{user.username || user.email.split('@')[0]}</p>
                             <p className="text-[#999] text-xs">{user.email}</p>
                           </div>
                           <button
@@ -268,16 +268,16 @@ export const Navbar: React.FC = () => {
                       {user.picture ? (
                         <img
                           src={user.picture}
-                          alt={user.name}
+                          alt={user.email}
                           className="w-10 h-10 rounded-full border-2 border-[#444]"
                         />
                       ) : (
                         <div className="w-10 h-10 rounded-full bg-[#333] flex items-center justify-center text-white font-medium">
-                          {user.name?.charAt(0) || user.email?.charAt(0)}
+                          {user.email?.charAt(0).toUpperCase()}
                         </div>
                       )}
                       <div>
-                        <p className="text-white font-medium text-sm">{user.name}</p>
+                        <p className="text-white font-medium text-sm">{user.username || user.email.split('@')[0]}</p>
                         <p className="text-[#999] text-xs">{user.email}</p>
                       </div>
                     </div>
