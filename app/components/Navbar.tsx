@@ -17,7 +17,7 @@ export const Navbar: React.FC = () => {
     { name: 'Blog & Articles', href: 'https://blog.dataidea.org', external: true },
     { name: 'YouTube Channel', href: 'https://youtube.com/@dataideaorg', external: true },
     { name: 'Free Course Resources', href: '#courses' },
-      {name: 'Community', href: 'https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi?mode=wwt', external: true },
+    {name: 'Community', href: 'https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi?mode=wwt', external: true },
   ];
 
   return (
