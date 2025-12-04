@@ -70,10 +70,76 @@ export default function VerifyCertificate() {
     return (
       <div className="min-h-screen bg-[#1a1a1a] text-[#e5e5e5]">
         <Navbar />
-        <div className="flex items-center justify-center h-[calc(100vh-80px)]">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#bbb] mx-auto mb-4"></div>
-            <p className="text-[#bbb]">Verifying certificate...</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+          {/* Verification Badge Skeleton */}
+          <div className="flex justify-center mb-8">
+            <div className="h-14 w-48 bg-[#222] rounded-full animate-pulse"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Sidebar Skeleton */}
+            <div className="lg:col-span-3">
+              <div className="bg-[#111] border border-[#333] rounded-lg p-6 animate-pulse">
+                <div className="h-6 bg-[#222] rounded w-3/4 mb-4"></div>
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <div className="h-3 bg-[#222] rounded w-1/2 mb-2"></div>
+                    <div className="h-4 bg-[#222] rounded w-full"></div>
+                  </div>
+                  <div>
+                    <div className="h-3 bg-[#222] rounded w-1/2 mb-2"></div>
+                    <div className="h-16 bg-[#222] rounded w-full"></div>
+                  </div>
+                  <div>
+                    <div className="h-3 bg-[#222] rounded w-1/2 mb-2"></div>
+                    <div className="h-6 bg-[#222] rounded-full w-20"></div>
+                  </div>
+                  <div>
+                    <div className="h-3 bg-[#222] rounded w-1/2 mb-2"></div>
+                    <div className="h-4 bg-[#222] rounded w-2/3"></div>
+                  </div>
+                </div>
+                <div className="border-t border-[#333] pt-6">
+                  <div className="h-24 bg-[#222] rounded mb-4"></div>
+                  <div className="h-12 bg-[#222] rounded"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Certificate Skeleton */}
+            <div className="lg:col-span-9">
+              <div className="bg-[#111] border-2 border-[#333] rounded-lg overflow-hidden animate-pulse">
+                <div className="bg-[#222] p-8 border-b border-[#333]">
+                  <div className="h-10 bg-[#333] rounded w-1/2 mx-auto mb-2"></div>
+                  <div className="h-6 bg-[#333] rounded w-1/3 mx-auto"></div>
+                </div>
+                <div className="p-12 space-y-8">
+                  <div className="text-center space-y-4">
+                    <div className="h-4 bg-[#222] rounded w-1/4 mx-auto"></div>
+                    <div className="h-8 bg-[#222] rounded w-1/2 mx-auto"></div>
+                    <div className="h-4 bg-[#222] rounded w-1/3 mx-auto"></div>
+                    <div className="h-7 bg-[#222] rounded w-2/3 mx-auto"></div>
+                  </div>
+                  <div className="border-t border-b border-[#333] py-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div key={i}>
+                          <div className="h-3 bg-[#222] rounded w-1/2 mb-2"></div>
+                          <div className="h-5 bg-[#222] rounded w-3/4"></div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-4 bg-[#222] rounded w-full mx-auto"></div>
+                    <div className="h-4 bg-[#222] rounded w-2/3 mx-auto"></div>
+                  </div>
+                </div>
+                <div className="bg-[#222] p-4 border-t border-[#333]">
+                  <div className="h-4 bg-[#333] rounded w-1/2 mx-auto"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -86,7 +152,7 @@ export default function VerifyCertificate() {
         <Navbar />
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 print:pt-0 print:px-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 print:max-w-4xl print:pt-0 print:px-0">
         {error || !verification?.valid ? (
           // Invalid Certificate
           <div className="bg-[#111] border-2 border-[#333] rounded-lg p-12 text-center">
@@ -139,6 +205,90 @@ export default function VerifyCertificate() {
               </div>
             </div>
 
+            {/* Two Column Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Left Sidebar - Course Info Card */}
+              <div className="lg:col-span-3 print:hidden">
+                <div className="bg-[#111] border border-[#333] rounded-lg p-6 sticky top-24">
+                  <div className="flex items-center gap-2 mb-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <h3 className="text-lg font-bold text-white font-serif">Course Information</h3>
+                  </div>
+
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <p className="text-sm text-[#999] mb-1">Course Title</p>
+                      <p className="text-white font-semibold">{verification.certificate?.course_title}</p>
+                    </div>
+
+                    {verification.certificate?.course?.description && (
+                      <div>
+                        <p className="text-sm text-[#999] mb-1">Description</p>
+                        <p className="text-sm text-[#e5e5e5] line-clamp-3">{verification.certificate.course.description}</p>
+                      </div>
+                    )}
+
+                    {verification.certificate?.course?.level && (
+                      <div>
+                        <p className="text-sm text-[#999] mb-1">Level</p>
+                        <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium border ${
+                          verification.certificate.course.level === 'beginner' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
+                          verification.certificate.course.level === 'intermediate' ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' :
+                          verification.certificate.course.level === 'advanced' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
+                          'bg-blue-500/10 text-blue-400 border-blue-500/20'
+                        }`}>
+                          {verification.certificate.course.level.toUpperCase()}
+                        </span>
+                      </div>
+                    )}
+
+                    {verification.certificate?.course?.duration && (
+                      <div>
+                        <p className="text-sm text-[#999] mb-1">Duration</p>
+                        <p className="text-[#e5e5e5]">{verification.certificate.course.duration}</p>
+                      </div>
+                    )}
+
+                    {verification.certificate?.course?.skills && verification.certificate.course.skills.length > 0 && (
+                      <div>
+                        <p className="text-sm text-[#999] mb-2">Skills Covered</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {verification.certificate.course.skills.map((skill, index) => (
+                            <span
+                              key={index}
+                              className="px-2 py-0.5 bg-[#222] border border-[#444] rounded text-xs text-[#bbb]"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="border-t border-[#333] pt-6">
+                    <div className="bg-[#222] rounded-lg p-4 mb-4">
+                      <h4 className="text-sm font-semibold text-white mb-2">Interested in this course?</h4>
+                      <p className="text-xs text-[#bbb]">
+                        Join our training program and earn your own certificate
+                      </p>
+                    </div>
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdMPQZWEBZhOrJHPpYdD3KH_h9oBV_9wIqGb6cY6-wnCXxNLg/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full px-4 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors text-center"
+                    >
+                      Enroll Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Certificate Display */}
+              <div className="lg:col-span-9">
             {/* Certificate Display */}
             <div className="bg-[#111] border-2 border-[#333] rounded-lg overflow-hidden shadow-2xl print:shadow-none print:border-0">
               {/* Decorative Header */}
@@ -290,6 +440,8 @@ export default function VerifyCertificate() {
                     this certificate at any time by visiting this page or using the verification code.
                   </p>
                 </div>
+              </div>
+            </div>
               </div>
             </div>
           </div>

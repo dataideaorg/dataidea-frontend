@@ -1,9 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardTitle, CardDescription, CardFooter } from './Card';
 import Button from './Button';
+import { getBackendUrl } from '../lib/auth';
+import { Course } from '../lib/types';
 
 interface CourseCardProps {
   title: string;
@@ -83,56 +85,38 @@ const CourseCard: React.FC<CourseCardProps> = ({
 );
 
 export const Courses: React.FC = () => {
-  const courses: CourseCardProps[] = [
-    {
-      title: 'Python Fundamentals',
-      description: 'Master Python from scratch. Learn syntax, data structures, and build real projects.',
-      skills: ['Variables', 'Functions', 'OOP', 'File Handling'],
-      duration: '4 weeks',
-      level: 'Beginner',
-      free_resources_link: 'https://science.dataidea.org/Python/11_python_tutorial/'
-    },
-    {
-      title: 'Data Analysis & Visualization',
-      description: 'Transform raw data into insights. Use pandas, NumPy, and Matplotlib for powerful analysis.',
-      skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
-      duration: '4 weeks',
-      level: 'Intermediate',
-        free_resources_link: 'https://science.dataidea.org/Python/Libraries/12_numpy/'
-    },
-    {
-      title: 'Machine Learning',
-      description: 'Build predictive models. Learn supervised & unsupervised learning techniques.',
-      skills: ['Scikit-learn', 'Regression', 'Classification', 'Clustering'],
-      duration: '4 weeks',
-      level: 'Intermediate',
-        free_resources_link: 'https://science.dataidea.org/Machine%20Learning/41_overview_of_machine_learning/'
-    },
-    {
-      title: 'Deep Learning & AI',
-      description: 'Dive into neural networks and AI. Build cutting-edge deep learning models.',
-      skills: ['PyTorch', 'Neural Networks', 'CNN', 'NLP'],
-      duration: '4 weeks',
-      level: 'Advanced',
-        free_resources_link: 'https://science.dataidea.org/Deep%20Learning/outline/'
-    },
-    {
-      title: 'Web Development',
-      description: 'Build full-stack web applications. Master Django backend and React/NextJS frontend.',
-      skills: ['Django', 'React', 'NextJS', 'REST APIs'],
-      duration: '8 weeks',
-      level: 'Intermediate',
-        free_resources_link: 'https://web.dataidea.org/'
-    },
-    {
-      title: 'Project Management',
-      description: 'Lead data science projects effectively. Learn agile methodologies and team collaboration.',
-      skills: ['Agile', 'Scrum', 'Team Leadership', 'Planning'],
-      duration: '6 weeks',
-      level: 'All Levels',
-        free_resources_link: '/upcoming'
-    },
-  ];
+  const [courses, setCourses] = useState<CourseCardProps[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch(`${getBackendUrl()}/school/courses/`);
+        const data: Course[] = await response.json();
+
+        // Filter only active courses, sort by created_at (newest first), and transform to CourseCardProps
+        const activeCourses = data
+          .filter(course => course.is_active)
+          .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+          .map(course => ({
+            title: course.title,
+            description: course.description,
+            skills: course.skills,
+            duration: course.duration,
+            level: course.level.charAt(0).toUpperCase() + course.level.slice(1),
+            free_resources_link: course.free_resources_link || '#',
+          }));
+
+        setCourses(activeCourses);
+      } catch (error) {
+        console.error('Failed to fetch courses:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -185,19 +169,53 @@ export const Courses: React.FC = () => {
           </motion.p>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-        >
-          {courses.map((course, index) => (
-            <motion.div key={index} variants={itemVariants} className="h-full">
-              <CourseCard {...course} />
-            </motion.div>
-          ))}
-        </motion.div>
+        {loading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="bg-[#111] border border-[#333] rounded-lg p-6 animate-pulse">
+                <div className="h-6 bg-[#222] rounded w-3/4 mb-4"></div>
+                <div className="space-y-2 mb-6">
+                  <div className="h-4 bg-[#222] rounded w-full"></div>
+                  <div className="h-4 bg-[#222] rounded w-5/6"></div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-4 bg-[#222] rounded w-1/3 mb-2"></div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="h-6 bg-[#222] rounded-full w-16"></div>
+                    <div className="h-6 bg-[#222] rounded-full w-20"></div>
+                    <div className="h-6 bg-[#222] rounded-full w-16"></div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#333]">
+                    <div className="h-8 bg-[#222] rounded"></div>
+                    <div className="h-8 bg-[#222] rounded"></div>
+                  </div>
+                  <div className="space-y-2 pt-4">
+                    <div className="h-10 bg-[#222] rounded"></div>
+                    <div className="h-10 bg-[#222] rounded"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : courses.length === 0 ? (
+          <div className="text-center py-16">
+            <p className="text-[#bbb] text-lg">No courses available at the moment.</p>
+          </div>
+        ) : (
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            {courses.map((course, index) => (
+              <motion.div key={index} variants={itemVariants} className="h-full">
+                <CourseCard {...course} />
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   );

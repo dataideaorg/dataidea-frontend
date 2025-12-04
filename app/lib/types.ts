@@ -51,6 +51,7 @@ export interface CertificateVerification {
     course_title: string;
     issued_date: string;
     verification_code: string;
+    course: Course;
   };
   detail?: string;
 }
