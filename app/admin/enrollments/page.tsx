@@ -68,7 +68,7 @@ export default function EnrollmentsManagement() {
         alert(`Error: ${error.detail || 'Failed to mark as completed'}`);
       }
     } catch (error) {
-      console.error('Failed to mark as completed:', error);
+      console.error('Failed to mark as completed:', error)
       alert('Failed to mark as completed');
     }
   };

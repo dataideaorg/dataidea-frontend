@@ -53,9 +53,11 @@ export default function VerifyCertificate() {
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-[#e5e5e5]">
-      <Navbar />
+      <div className="print:hidden">
+        <Navbar />
+      </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 print:pt-0 print:px-0">
         {error || !verification?.valid ? (
           // Invalid Certificate
           <div className="bg-[#111] border-2 border-[#333] rounded-lg p-12 text-center">
@@ -89,7 +91,7 @@ export default function VerifyCertificate() {
           // Valid Certificate
           <div>
             {/* Verification Status Badge */}
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-8 print:hidden">
               <div className="inline-flex items-center space-x-2 px-6 py-3 bg-[#222] border border-[#333] rounded-full">
                 <svg
                   className="w-6 h-6 text-white"
@@ -109,7 +111,7 @@ export default function VerifyCertificate() {
             </div>
 
             {/* Certificate Display */}
-            <div className="bg-[#111] border-2 border-[#333] rounded-lg overflow-hidden shadow-2xl">
+            <div className="bg-[#111] border-2 border-[#333] rounded-lg overflow-hidden shadow-2xl print:shadow-none print:border-0">
               {/* Decorative Header */}
               <div className="bg-gradient-to-r from-[#222] via-[#1a1a1a] to-[#222] p-8 border-b border-[#333]">
                 <div className="text-center">
@@ -191,7 +193,7 @@ export default function VerifyCertificate() {
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-8 flex justify-center space-x-4">
+            <div className="mt-8 flex justify-center space-x-4 print:hidden">
               <button
                 onClick={() => window.print()}
                 className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors flex items-center space-x-2"
@@ -236,7 +238,7 @@ export default function VerifyCertificate() {
             </div>
 
             {/* Info Box */}
-            <div className="mt-8 bg-[#222] border border-[#333] rounded-lg p-6">
+            <div className="mt-8 bg-[#222] border border-[#333] rounded-lg p-6 print:hidden">
               <div className="flex items-start space-x-3">
                 <svg
                   className="w-6 h-6 text-[#bbb] mt-0.5 flex-shrink-0"
