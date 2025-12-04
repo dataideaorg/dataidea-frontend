@@ -19,6 +19,35 @@ export default function VerifyCertificate() {
     }
   }, [code]);
 
+  // Add print styles
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @media print {
+        @page {
+          margin: 0;
+          size: A4 portrait;
+        }
+
+        body {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          color-adjust: exact !important;
+        }
+
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          color-adjust: exact !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   const verifyCertificate = async (verificationCode: string) => {
     try {
       const response = await fetch(`${getBackendUrl()}/school/verify/${verificationCode}/`);
