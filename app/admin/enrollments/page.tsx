@@ -187,7 +187,7 @@ export default function EnrollmentsManagement() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-yellow-400"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#bbb]"></div>
       </div>
     );
   }
@@ -196,12 +196,12 @@ export default function EnrollmentsManagement() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-yellow-400 mb-2">Enrollments Management</h1>
-          <p className="text-gray-400">Manage student enrollments and track progress</p>
+          <h1 className="text-3xl font-bold text-white mb-2 font-serif">Enrollments Management</h1>
+          <p className="text-[#bbb]">Manage student enrollments and track progress</p>
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors"
+          className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
         >
           + Create Enrollment
         </button>
@@ -213,8 +213,8 @@ export default function EnrollmentsManagement() {
           onClick={() => setFilter('all')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'all'
-              ? 'bg-yellow-400 text-black'
-              : 'bg-[#111111] border border-[#333333] hover:border-yellow-400'
+              ? 'bg-white text-[#1a1a1a]'
+              : 'bg-[#111111] border border-[#333333] hover:border-[#555]'
           }`}
         >
           All ({enrollments.length})
@@ -223,8 +223,8 @@ export default function EnrollmentsManagement() {
           onClick={() => setFilter('enrolled')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'enrolled'
-              ? 'bg-yellow-400 text-black'
-              : 'bg-[#111111] border border-[#333333] hover:border-yellow-400'
+              ? 'bg-white text-[#1a1a1a]'
+              : 'bg-[#111111] border border-[#333333] hover:border-[#555]'
           }`}
         >
           Enrolled ({enrollments.filter((e) => e.status === 'enrolled').length})
@@ -233,8 +233,8 @@ export default function EnrollmentsManagement() {
           onClick={() => setFilter('in_progress')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'in_progress'
-              ? 'bg-yellow-400 text-black'
-              : 'bg-[#111111] border border-[#333333] hover:border-yellow-400'
+              ? 'bg-white text-[#1a1a1a]'
+              : 'bg-[#111111] border border-[#333333] hover:border-[#555]'
           }`}
         >
           In Progress ({enrollments.filter((e) => e.status === 'in_progress').length})
@@ -243,8 +243,8 @@ export default function EnrollmentsManagement() {
           onClick={() => setFilter('completed')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'completed'
-              ? 'bg-yellow-400 text-black'
-              : 'bg-[#111111] border border-[#333333] hover:border-yellow-400'
+              ? 'bg-white text-[#1a1a1a]'
+              : 'bg-[#111111] border border-[#333333] hover:border-[#555]'
           }`}
         >
           Completed ({enrollments.filter((e) => e.status === 'completed').length})
@@ -337,7 +337,7 @@ export default function EnrollmentsManagement() {
       {showCreateModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-[#111111] border border-[#333333] rounded-lg p-8 max-w-md w-full mx-4">
-            <h2 className="text-2xl font-bold text-yellow-400 mb-6">Create Enrollment</h2>
+            <h2 className="text-2xl font-bold text-white mb-6 font-serif">Create Enrollment</h2>
             <form onSubmit={handleCreateEnrollment}>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">Student Email</label>
@@ -345,7 +345,7 @@ export default function EnrollmentsManagement() {
                   type="email"
                   value={userEmail}
                   onChange={(e) => setUserEmail(e.target.value)}
-                  className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-yellow-400"
+                  className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
                   placeholder="student@example.com"
                   required
                 />
@@ -356,7 +356,7 @@ export default function EnrollmentsManagement() {
                 <select
                   value={selectedCourseId || ''}
                   onChange={(e) => setSelectedCourseId(Number(e.target.value))}
-                  className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-yellow-400"
+                  className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
                   required
                 >
                   <option value="">Select a course</option>
@@ -376,14 +376,14 @@ export default function EnrollmentsManagement() {
                     setUserEmail('');
                     setSelectedCourseId(null);
                   }}
-                  className="flex-1 px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg hover:border-yellow-400 transition-colors"
+                  className="flex-1 px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg hover:border-[#555] transition-colors"
                   disabled={submitting}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors disabled:opacity-50"
+                  className="flex-1 px-4 py-2 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors disabled:opacity-50"
                   disabled={submitting}
                 >
                   {submitting ? 'Creating...' : 'Create'}

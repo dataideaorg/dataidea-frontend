@@ -43,8 +43,8 @@ export default function VerifyCertificate() {
         <Navbar />
         <div className="flex items-center justify-center h-[calc(100vh-80px)]">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-yellow-400 mx-auto mb-4"></div>
-            <p className="text-gray-400">Verifying certificate...</p>
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#bbb] mx-auto mb-4"></div>
+            <p className="text-[#bbb]">Verifying certificate...</p>
           </div>
         </div>
       </div>
@@ -58,10 +58,10 @@ export default function VerifyCertificate() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         {error || !verification?.valid ? (
           // Invalid Certificate
-          <div className="bg-[#111111] border-2 border-red-500/20 rounded-lg p-12 text-center">
-            <div className="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-[#111] border-2 border-[#333] rounded-lg p-12 text-center">
+            <div className="w-16 h-16 bg-[#222] rounded-full flex items-center justify-center mx-auto mb-4">
               <svg
-                className="w-8 h-8 text-red-400"
+                className="w-8 h-8 text-[#999]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -74,13 +74,13 @@ export default function VerifyCertificate() {
                 />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-red-400 mb-2">Certificate Not Valid</h1>
-            <p className="text-gray-400 mb-6">
+            <h1 className="text-2xl font-bold text-white mb-2 font-serif">Certificate Not Valid</h1>
+            <p className="text-[#bbb] mb-6">
               {error || verification?.detail || 'This certificate could not be verified.'}
             </p>
             <button
               onClick={() => window.location.href = '/'}
-              className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors"
+              className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
             >
               Return to Home
             </button>
@@ -90,9 +90,9 @@ export default function VerifyCertificate() {
           <div>
             {/* Verification Status Badge */}
             <div className="flex justify-center mb-8">
-              <div className="inline-flex items-center space-x-2 px-6 py-3 bg-green-500/10 border border-green-500/20 rounded-full">
+              <div className="inline-flex items-center space-x-2 px-6 py-3 bg-[#222] border border-[#333] rounded-full">
                 <svg
-                  className="w-6 h-6 text-green-400"
+                  className="w-6 h-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -104,45 +104,45 @@ export default function VerifyCertificate() {
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span className="text-green-400 font-semibold">Verified Certificate</span>
+                <span className="text-white font-semibold">Verified Certificate</span>
               </div>
             </div>
 
             {/* Certificate Display */}
-            <div className="bg-[#111111] border-2 border-yellow-400/20 rounded-lg overflow-hidden shadow-2xl">
+            <div className="bg-[#111] border-2 border-[#333] rounded-lg overflow-hidden shadow-2xl">
               {/* Decorative Header */}
-              <div className="bg-gradient-to-r from-yellow-400/20 via-yellow-600/20 to-yellow-400/20 p-8 border-b border-[#333333]">
+              <div className="bg-gradient-to-r from-[#222] via-[#1a1a1a] to-[#222] p-8 border-b border-[#333]">
                 <div className="text-center">
-                  <h1 className="text-4xl font-bold text-yellow-400 mb-2">DATAIDEA</h1>
-                  <p className="text-gray-300 text-lg">Certificate of Completion</p>
+                  <h1 className="text-4xl font-bold text-white mb-2 font-serif">DATAIDEA</h1>
+                  <p className="text-[#bbb] text-lg">Certificate of Completion</p>
                 </div>
               </div>
 
               {/* Certificate Content */}
               <div className="p-12 space-y-8">
                 <div className="text-center">
-                  <p className="text-gray-400 mb-2">This is to certify that</p>
-                  <h2 className="text-3xl font-bold text-white mb-6">
+                  <p className="text-[#999] mb-2">This is to certify that</p>
+                  <h2 className="text-3xl font-bold text-white mb-6 font-serif">
                     {verification.certificate?.student_name}
                   </h2>
-                  <p className="text-gray-400 mb-2">has successfully completed the course</p>
-                  <h3 className="text-2xl font-semibold text-yellow-400 mb-8">
+                  <p className="text-[#999] mb-2">has successfully completed the course</p>
+                  <h3 className="text-2xl font-semibold text-white mb-8">
                     {verification.certificate?.course_title}
                   </h3>
                 </div>
 
                 {/* Certificate Details */}
-                <div className="border-t border-b border-[#333333] py-6">
+                <div className="border-t border-b border-[#333] py-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Certificate Number</p>
-                      <p className="font-mono text-yellow-400 font-semibold">
+                      <p className="text-sm text-[#999] mb-1">Certificate Number</p>
+                      <p className="font-mono text-[#bbb] font-semibold">
                         {verification.certificate?.certificate_number}
                       </p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Issue Date</p>
-                      <p className="font-semibold">
+                      <p className="text-sm text-[#999] mb-1">Issue Date</p>
+                      <p className="font-semibold text-[#e5e5e5]">
                         {verification.certificate?.issued_date &&
                           new Date(verification.certificate.issued_date).toLocaleDateString(
                             'en-US',
@@ -155,23 +155,23 @@ export default function VerifyCertificate() {
                       </p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Verification Code</p>
-                      <p className="font-mono text-xs text-gray-300 break-all">
+                      <p className="text-sm text-[#999] mb-1">Verification Code</p>
+                      <p className="font-mono text-xs text-[#bbb] break-all">
                         {verification.certificate?.verification_code}
                       </p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Status</p>
+                      <p className="text-sm text-[#999] mb-1">Status</p>
                       <div className="flex items-center space-x-2">
-                        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                        <span className="text-green-400 font-semibold">Valid & Verified</span>
+                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                        <span className="text-white font-semibold">Valid & Verified</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Footer Note */}
-                <div className="text-center text-sm text-gray-400">
+                <div className="text-center text-sm text-[#999]">
                   <p className="mb-2">
                     This certificate is issued by DATAIDEA and can be verified at any time using the
                     verification code above.
@@ -181,8 +181,8 @@ export default function VerifyCertificate() {
               </div>
 
               {/* Decorative Footer */}
-              <div className="bg-gradient-to-r from-yellow-400/10 via-yellow-600/10 to-yellow-400/10 p-4 border-t border-[#333333]">
-                <div className="flex items-center justify-center space-x-4 text-xs text-gray-500">
+              <div className="bg-gradient-to-r from-[#222] via-[#1a1a1a] to-[#222] p-4 border-t border-[#333]">
+                <div className="flex items-center justify-center space-x-4 text-xs text-[#999]">
                   <span>Verified on {new Date().toLocaleDateString()}</span>
                   <span>•</span>
                   <span>Powered by DATAIDEA</span>
@@ -194,7 +194,7 @@ export default function VerifyCertificate() {
             <div className="mt-8 flex justify-center space-x-4">
               <button
                 onClick={() => window.print()}
-                className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors flex items-center space-x-2"
+                className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors flex items-center space-x-2"
               >
                 <svg
                   className="w-5 h-5"
@@ -216,7 +216,7 @@ export default function VerifyCertificate() {
                   navigator.clipboard.writeText(window.location.href);
                   alert('Verification link copied to clipboard!');
                 }}
-                className="px-6 py-3 bg-[#111111] border border-[#333333] hover:border-yellow-400 rounded-lg transition-colors flex items-center space-x-2"
+                className="px-6 py-3 bg-[#222] border border-[#333] hover:border-[#555] rounded-lg transition-colors flex items-center space-x-2"
               >
                 <svg
                   className="w-5 h-5"
@@ -236,10 +236,10 @@ export default function VerifyCertificate() {
             </div>
 
             {/* Info Box */}
-            <div className="mt-8 bg-blue-500/10 border border-blue-500/20 rounded-lg p-6">
+            <div className="mt-8 bg-[#222] border border-[#333] rounded-lg p-6">
               <div className="flex items-start space-x-3">
                 <svg
-                  className="w-6 h-6 text-blue-400 mt-0.5 flex-shrink-0"
+                  className="w-6 h-6 text-[#bbb] mt-0.5 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -252,8 +252,8 @@ export default function VerifyCertificate() {
                   />
                 </svg>
                 <div>
-                  <p className="font-semibold text-blue-400 mb-2">About This Certificate</p>
-                  <p className="text-sm text-gray-300">
+                  <p className="font-semibold text-white mb-2">About This Certificate</p>
+                  <p className="text-sm text-[#bbb]">
                     This is an official certificate issued by DATAIDEA. The certificate details above
                     have been cryptographically verified against our secure database. You can verify
                     this certificate at any time by visiting this page or using the verification code.

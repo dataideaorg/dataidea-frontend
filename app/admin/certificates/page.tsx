@@ -50,7 +50,7 @@ export default function CertificatesManagement() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-yellow-400"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#bbb]"></div>
       </div>
     );
   }
@@ -58,8 +58,8 @@ export default function CertificatesManagement() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-yellow-400 mb-2">Certificates Management</h1>
-        <p className="text-gray-400">View and manage issued certificates</p>
+        <h1 className="text-3xl font-bold text-white mb-2 font-serif">Certificates Management</h1>
+        <p className="text-[#bbb]">View and manage issued certificates</p>
       </div>
 
       {/* Search Bar */}
@@ -70,7 +70,7 @@ export default function CertificatesManagement() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search by student name, email, course, or certificate number..."
-            className="w-full px-4 py-3 pl-12 bg-[#111111] border border-[#333333] rounded-lg focus:outline-none focus:border-yellow-400"
+            className="w-full px-4 py-3 pl-12 bg-[#111111] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
           />
           <svg
             className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -142,7 +142,7 @@ export default function CertificatesManagement() {
                 <tr key={certificate.id} className="hover:bg-[#1a1a1a] transition-colors">
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-2">
-                      <span className="font-mono text-sm font-medium text-yellow-400">
+                      <span className="font-mono text-sm font-medium text-[#bbb]">
                         {certificate.certificate_number}
                       </span>
                     </div>
@@ -176,7 +176,7 @@ export default function CertificatesManagement() {
                     <div className="flex space-x-2">
                       <button
                         onClick={() => handleCopyVerificationLink(certificate.verification_code)}
-                        className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm transition-colors flex items-center space-x-1"
+                        className="px-3 py-1.5 bg-white text-[#1a1a1a] hover:bg-[#e5e5e5] rounded-lg text-sm font-semibold transition-colors flex items-center space-x-1"
                         title="Copy verification link"
                       >
                         <svg
@@ -198,7 +198,7 @@ export default function CertificatesManagement() {
                         href={`/verify/${certificate.verification_code}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-1.5 bg-[#1a1a1a] border border-[#333333] hover:border-yellow-400 rounded-lg text-sm transition-colors flex items-center space-x-1"
+                        className="px-3 py-1.5 bg-[#1a1a1a] border border-[#333333] hover:border-[#555] rounded-lg text-sm transition-colors flex items-center space-x-1"
                         title="View certificate"
                       >
                         <svg
@@ -238,10 +238,10 @@ export default function CertificatesManagement() {
       </div>
 
       {/* Info Box */}
-      <div className="mt-6 bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+      <div className="mt-6 bg-[#222] border border-[#333] rounded-lg p-4">
         <div className="flex items-start space-x-3">
           <svg
-            className="w-5 h-5 text-blue-400 mt-0.5"
+            className="w-5 h-5 text-[#bbb] mt-0.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -254,8 +254,8 @@ export default function CertificatesManagement() {
             />
           </svg>
           <div>
-            <p className="font-semibold text-blue-400 mb-1">About Certificate Verification</p>
-            <p className="text-sm text-gray-300">
+            <p className="font-semibold text-white mb-1">About Certificate Verification</p>
+            <p className="text-sm text-[#bbb]">
               Certificates are automatically generated when an enrollment is marked as completed.
               Each certificate has a unique verification code and can be publicly verified using the
               verification link.

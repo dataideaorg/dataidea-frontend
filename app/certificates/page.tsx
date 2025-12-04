@@ -64,14 +64,14 @@ export default function MyCertificates() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-yellow-400 mb-2">My Certificates</h1>
-          <p className="text-gray-400">View and share your earned certificates</p>
+          <h1 className="text-4xl font-bold text-white mb-2 font-serif">My Certificates</h1>
+          <p className="text-[#bbb]">View and share your earned certificates</p>
         </div>
 
         {certificates.length === 0 ? (
-          <div className="bg-[#111111] border border-[#333333] rounded-lg p-12 text-center">
+          <div className="bg-[#111] border border-[#333] rounded-lg p-12 text-center">
             <svg
-              className="w-16 h-16 text-gray-600 mx-auto mb-4"
+              className="w-16 h-16 text-[#555] mx-auto mb-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -83,13 +83,13 @@ export default function MyCertificates() {
                 d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
               />
             </svg>
-            <h3 className="text-xl font-semibold text-gray-300 mb-2">No certificates yet</h3>
-            <p className="text-gray-400 mb-6">
+            <h3 className="text-xl font-semibold text-white mb-2">No certificates yet</h3>
+            <p className="text-[#bbb] mb-6">
               Complete a course to earn your first certificate!
             </p>
             <button
               onClick={() => router.push('/')}
-              className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors"
+              className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
             >
               Browse Courses
             </button>
@@ -99,19 +99,19 @@ export default function MyCertificates() {
             {certificates.map((certificate) => (
               <div
                 key={certificate.id}
-                className="bg-[#111111] border border-[#333333] rounded-lg overflow-hidden hover:border-yellow-400 transition-colors"
+                className="bg-[#111] border border-[#333] rounded-lg overflow-hidden hover:border-[#555] transition-colors"
               >
                 {/* Certificate Header with decorative background */}
-                <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 border-b border-[#333333] p-6">
+                <div className="bg-gradient-to-r from-[#222] to-[#1a1a1a] border-b border-[#333] p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Certificate of Completion</p>
-                      <h3 className="text-xl font-bold text-yellow-400">
+                      <p className="text-sm text-[#999] mb-1">Certificate of Completion</p>
+                      <h3 className="text-xl font-bold text-white">
                         {certificate.course.title}
                       </h3>
                     </div>
                     <svg
-                      className="w-12 h-12 text-yellow-400"
+                      className="w-12 h-12 text-[#bbb]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -124,9 +124,9 @@ export default function MyCertificates() {
                       />
                     </svg>
                   </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-400">
+                  <div className="flex items-center space-x-2 text-sm text-[#999]">
                     <span>Certificate #</span>
-                    <span className="font-mono text-yellow-400 font-medium">
+                    <span className="font-mono text-[#bbb] font-medium">
                       {certificate.certificate_number}
                     </span>
                   </div>
@@ -136,13 +136,13 @@ export default function MyCertificates() {
                 <div className="p-6">
                   <div className="space-y-4 mb-6">
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Awarded to</p>
-                      <p className="text-lg font-semibold">{user.name}</p>
+                      <p className="text-sm text-[#999] mb-1">Awarded to</p>
+                      <p className="text-lg font-semibold text-white">{user.name}</p>
                     </div>
 
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Issued on</p>
-                      <p className="font-medium">
+                      <p className="text-sm text-[#999] mb-1">Issued on</p>
+                      <p className="font-medium text-[#e5e5e5]">
                         {new Date(certificate.issued_date).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'long',
@@ -153,18 +153,18 @@ export default function MyCertificates() {
 
                     {certificate.issued_by_name && (
                       <div>
-                        <p className="text-sm text-gray-400 mb-1">Issued by</p>
-                        <p className="font-medium">{certificate.issued_by_name}</p>
+                        <p className="text-sm text-[#999] mb-1">Issued by</p>
+                        <p className="font-medium text-[#e5e5e5]">{certificate.issued_by_name}</p>
                       </div>
                     )}
 
                     <div>
-                      <p className="text-sm text-gray-400 mb-2">Skills earned</p>
+                      <p className="text-sm text-[#999] mb-2">Skills earned</p>
                       <div className="flex flex-wrap gap-2">
                         {certificate.course.skills.map((skill, index) => (
                           <span
                             key={index}
-                            className="px-3 py-1 bg-[#1a1a1a] border border-[#333333] rounded-full text-xs"
+                            className="px-3 py-1 bg-[#222] border border-[#333] rounded-full text-xs text-[#e5e5e5]"
                           >
                             {skill}
                           </span>
@@ -177,7 +177,7 @@ export default function MyCertificates() {
                   <div className="flex space-x-3">
                     <button
                       onClick={() => window.open(`/verify/${certificate.verification_code}`, '_blank')}
-                      className="flex-1 px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors flex items-center justify-center space-x-2"
+                      className="flex-1 px-4 py-2 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors flex items-center justify-center space-x-2"
                     >
                       <svg
                         className="w-4 h-4"
@@ -202,7 +202,7 @@ export default function MyCertificates() {
                     </button>
                     <button
                       onClick={() => handleCopyVerificationLink(certificate.verification_code)}
-                      className="px-4 py-2 bg-[#1a1a1a] border border-[#333333] hover:border-yellow-400 rounded-lg transition-colors flex items-center justify-center"
+                      className="px-4 py-2 bg-[#222] border border-[#333] hover:border-[#555] rounded-lg transition-colors flex items-center justify-center"
                       title="Copy verification link"
                     >
                       <svg
