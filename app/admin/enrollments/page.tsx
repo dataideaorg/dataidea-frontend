@@ -73,6 +73,35 @@ export default function EnrollmentsManagement() {
     }
   };
 
+  const handleIssueCertificate = async (enrollmentId: number) => {
+    if (!confirm('Issue certificate for this completed enrollment?')) return;
+
+    try {
+      const accessToken = localStorage.getItem('access_token');
+      const response = await fetch(
+        `${getBackendUrl()}/school/enrollments/${enrollmentId}/issue_certificate/`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      if (response.ok) {
+        alert('Certificate issued successfully!');
+        fetchData();
+      } else {
+        const error = await response.json();
+        alert(`Error: ${error.detail || 'Failed to issue certificate'}`);
+      }
+    } catch (error) {
+      console.error('Failed to issue certificate:', error);
+      alert('Failed to issue certificate');
+    }
+  };
+
   const handleCreateEnrollment = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCourseId || !userEmail) {
@@ -270,17 +299,26 @@ export default function EnrollmentsManagement() {
                     {new Date(enrollment.enrolled_date).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4">
-                    {enrollment.status !== 'completed' && (
-                      <button
-                        onClick={() => handleMarkCompleted(enrollment.id)}
-                        className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-sm transition-colors"
-                      >
-                        Mark Completed
-                      </button>
-                    )}
-                    {enrollment.status === 'completed' && (
-                      <span className="text-sm text-green-400">✓ Completed</span>
-                    )}
+                    <div className="flex space-x-2">
+                      {enrollment.status !== 'completed' ? (
+                        <button
+                          onClick={() => handleMarkCompleted(enrollment.id)}
+                          className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-sm transition-colors"
+                        >
+                          Mark Completed
+                        </button>
+                      ) : (
+                        <>
+                          <span className="text-sm text-green-400 flex items-center">✓ Completed</span>
+                          <button
+                            onClick={() => handleIssueCertificate(enrollment.id)}
+                            className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 rounded-lg text-sm transition-colors"
+                          >
+                            Issue Certificate
+                          </button>
+                        </>
+                      )}
+                    </div>
                   </td>
                 </tr>
               ))}

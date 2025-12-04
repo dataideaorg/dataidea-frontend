@@ -55,7 +55,7 @@ export default function VerifyCertificate() {
     <div className="min-h-screen bg-[#1a1a1a] text-[#e5e5e5]">
       <Navbar />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         {error || !verification?.valid ? (
           // Invalid Certificate
           <div className="bg-[#111111] border-2 border-red-500/20 rounded-lg p-12 text-center">

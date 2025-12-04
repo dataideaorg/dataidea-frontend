@@ -62,7 +62,7 @@ export default function MyCertificates() {
     <div className="min-h-screen bg-[#1a1a1a] text-[#e5e5e5]">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-yellow-400 mb-2">My Certificates</h1>
           <p className="text-gray-400">View and share your earned certificates</p>
