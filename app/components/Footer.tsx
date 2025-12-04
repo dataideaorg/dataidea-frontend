@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi?mode=wwt" className="hover:text-white transition">
                   Community Forum
                 </a>
               </li>

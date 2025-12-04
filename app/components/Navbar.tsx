@@ -131,9 +131,15 @@ export const Navbar: React.FC = () => {
                           className="w-48 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
                         >
                           <div className="px-4 py-3 border-b border-[#333]">
-                            <p className="text-white font-medium text-sm">{user.username || user.email.split('@')[0]}</p>
+                            <p className="text-white font-medium text-sm">{user.name || user.email.split('@')[0]}</p>
                             <p className="text-[#999] text-xs">{user.email}</p>
                           </div>
+                          <Link
+                            href="/certificates"
+                            className="block px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium border-b border-[#333]"
+                          >
+                            My Certificates
+                          </Link>
                           <button
                             onClick={logout}
                             className="w-full text-left px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium"
@@ -277,10 +283,17 @@ export const Navbar: React.FC = () => {
                         </div>
                       )}
                       <div>
-                        <p className="text-white font-medium text-sm">{user.username || user.email.split('@')[0]}</p>
+                        <p className="text-white font-medium text-sm">{user.name || user.email.split('@')[0]}</p>
                         <p className="text-[#999] text-xs">{user.email}</p>
                       </div>
                     </div>
+                    <Link
+                      href="/certificates"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-4 py-3 mt-2 bg-[#222] text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium rounded-lg"
+                    >
+                      My Certificates
+                    </Link>
                     <button
                       onClick={() => {
                         logout();
