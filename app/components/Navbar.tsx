@@ -135,10 +135,10 @@ export const Navbar: React.FC = () => {
                             <p className="text-[#999] text-xs">{user.email}</p>
                           </div>
                           <Link
-                            href="/certificates"
+                            href="/dashboard"
                             className="block px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium border-b border-[#333]"
                           >
-                            My Certificates
+                            Dashboard
                           </Link>
                           <button
                             onClick={logout}
@@ -288,11 +288,11 @@ export const Navbar: React.FC = () => {
                       </div>
                     </div>
                     <Link
-                      href="/certificates"
+                      href="/dashboard"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block px-4 py-3 mt-2 bg-[#222] text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium rounded-lg"
                     >
-                      My Certificates
+                      Dashboard
                     </Link>
                     <button
                       onClick={() => {
