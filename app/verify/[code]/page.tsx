@@ -317,9 +317,33 @@ export default function VerifyCertificate() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <p className="text-sm text-[#999] mb-1">Certificate Number</p>
-                      <p className="font-mono text-[#bbb] font-semibold">
-                        {verification.certificate?.certificate_number}
-                      </p>
+                      <div className="flex items-center gap-2">
+                        <p className="font-mono text-[#bbb] font-semibold">
+                          {verification.certificate?.certificate_number}
+                        </p>
+                        <button
+                          onClick={() => {
+                            navigator.clipboard.writeText(verification.certificate?.certificate_number || '');
+                            alert('Certificate ID copied to clipboard!');
+                          }}
+                          className="p-1 hover:bg-[#222] rounded transition-colors print:hidden"
+                          title="Copy Certificate ID"
+                        >
+                          <svg
+                            className="w-4 h-4 text-[#bbb] hover:text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                     <div>
                       <p className="text-sm text-[#999] mb-1">Issue Date</p>
