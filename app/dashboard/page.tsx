@@ -203,7 +203,7 @@ export default function StudentDashboard() {
               <div className="text-center py-8">
                 <p className="text-[#999] mb-4">No enrollments yet</p>
                 <button
-                  onClick={() => router.push('/')}
+                  onClick={() => router.push('/#courses')}
                   className="px-4 py-2 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
                 >
                   Browse Courses
