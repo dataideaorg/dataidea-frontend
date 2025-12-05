@@ -28,11 +28,8 @@ export default function MyCertificates() {
 
   const fetchCertificates = async () => {
     try {
-      const accessToken = localStorage.getItem('access_token');
-      if (!accessToken) return;
-
       const response = await fetch(`${getBackendUrl()}/school/certificates/my_certificates/`, {
-        headers: { Authorization: `Bearer ${accessToken}` },
+        credentials: 'include', // Include authentication cookies
       });
 
       const data = await response.json();

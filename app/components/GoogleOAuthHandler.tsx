@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { getBackendUrl } from '../lib/auth';
+import { getBackendUrl, setStoredUser } from '../lib/auth';
 
 export const GoogleOAuthHandler = () => {
   const router = useRouter();
@@ -24,15 +24,15 @@ export const GoogleOAuthHandler = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ code }),
+        credentials: 'include', // Include cookies - tokens will be set as HTTP-only cookies by backend
       });
 
       if (response.ok) {
         const data = await response.json();
 
-        // Store tokens in localStorage
-        localStorage.setItem('access_token', data.access_token);
-        localStorage.setItem('refresh_token', data.refresh_token);
-        localStorage.setItem('user', JSON.stringify(data.user));
+        // Store user data in non-HTTP-only cookie for client-side access
+        // (tokens are already set as HTTP-only cookies by the backend)
+        setStoredUser(data.user);
 
         // Redirect to home and force a reload to update auth state
         window.location.href = '/';

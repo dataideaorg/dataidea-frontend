@@ -29,18 +29,13 @@ export default function StudentDashboard() {
 
   const fetchData = async () => {
     try {
-      const accessToken = localStorage.getItem('access_token');
-      if (!accessToken) {
-        setLoading(false);
-        return;
-      }
-
+      // No need to manually get access token - it's sent automatically as HTTP-only cookie
       const [enrollmentsRes, certificatesRes] = await Promise.all([
         fetch(`${getBackendUrl()}/school/enrollments/my_enrollments/`, {
-          headers: { Authorization: `Bearer ${accessToken}` },
+          credentials: 'include', // Include authentication cookies
         }),
         fetch(`${getBackendUrl()}/school/certificates/my_certificates/`, {
-          headers: { Authorization: `Bearer ${accessToken}` },
+          credentials: 'include', // Include authentication cookies
         }),
       ]);
 
