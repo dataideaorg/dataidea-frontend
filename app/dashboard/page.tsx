@@ -30,7 +30,10 @@ export default function StudentDashboard() {
   const fetchData = async () => {
     try {
       const accessToken = localStorage.getItem('access_token');
-      if (!accessToken) return;
+      if (!accessToken) {
+        setLoading(false);
+        return;
+      }
 
       const [enrollmentsRes, certificatesRes] = await Promise.all([
         fetch(`${getBackendUrl()}/school/enrollments/my_enrollments/`, {
@@ -41,13 +44,25 @@ export default function StudentDashboard() {
         }),
       ]);
 
-      const enrollmentsData = await enrollmentsRes.json();
-      const certificatesData = await certificatesRes.json();
+      if (enrollmentsRes.ok) {
+        const enrollmentsData = await enrollmentsRes.json();
+        setEnrollments(Array.isArray(enrollmentsData) ? enrollmentsData : []);
+      } else {
+        console.error('Failed to fetch enrollments:', enrollmentsRes.status);
+        setEnrollments([]);
+      }
 
-      setEnrollments(enrollmentsData);
-      setCertificates(certificatesData);
+      if (certificatesRes.ok) {
+        const certificatesData = await certificatesRes.json();
+        setCertificates(Array.isArray(certificatesData) ? certificatesData : []);
+      } else {
+        console.error('Failed to fetch certificates:', certificatesRes.status);
+        setCertificates([]);
+      }
     } catch (error) {
       console.error('Failed to fetch data:', error);
+      setEnrollments([]);
+      setCertificates([]);
     } finally {
       setLoading(false);
     }
