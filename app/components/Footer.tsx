@@ -154,14 +154,14 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <Link href="/privacy" className="hover:text-white transition">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <Link href="/terms" className="hover:text-white transition">
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="mailto:dataideaorg@gmail.com" className="hover:text-white transition">

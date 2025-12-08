@@ -14,9 +14,10 @@ export const Navbar: React.FC = () => {
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   const resources = [
+      { name: 'Course Resources', href: 'https://science.dataidea.org', external: true  },
+      { name: 'Open Datasets', href: 'https://datasets.dataidea.org', external: true  },
     { name: 'Blog & Articles', href: 'https://blog.dataidea.org', external: true },
     { name: 'YouTube Channel', href: 'https://youtube.com/@dataideaorg', external: true },
-    { name: 'Free Course Resources', href: 'https://science.dataidea.org', external: true  },
     {name: 'Community', href: 'https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi?mode=wwt', external: true },
   ];
 
