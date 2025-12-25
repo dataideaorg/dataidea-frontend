@@ -294,20 +294,94 @@ export const ChristmasGame: React.FC = () => {
               totalQuestions={questions.length}
             />
 
-            {showResult && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-6 text-center"
-              >
-                <button
-                  onClick={handleNextQuestion}
-                  className="px-6 py-3 bg-yellow-500 text-white font-bold rounded-lg hover:bg-yellow-400 transition-colors"
-                >
-                  {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'See Results'}
-                </button>
-              </motion.div>
-            )}
+            {/* Explanation and Next Button Modal */}
+            <AnimatePresence>
+              {showResult && (
+                <>
+                  {/* Backdrop */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={handleNextQuestion}
+                    className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                  />
+                  
+                  {/* Modal - Mobile: slides up from bottom, Desktop: centered */}
+                  <motion.div
+                    initial={{ opacity: 0, y: '100%' }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: '100%' }}
+                    transition={{ 
+                      type: 'spring', 
+                      damping: 30, 
+                      stiffness: 300 
+                    }}
+                    className="fixed left-0 right-0 bottom-0 md:left-auto md:right-auto md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-50 md:max-w-lg md:mx-auto md:rounded-xl md:left-1/2 md:-translate-x-1/2"
+                  >
+                    <div className="bg-[#222] rounded-t-2xl md:rounded-xl p-4 sm:p-6 md:p-8 border-t-2 md:border-2 border-[#444] shadow-2xl max-h-[85vh] overflow-y-auto">
+                      {/* Result Icon */}
+                      <div className="text-center mb-3 sm:mb-4">
+                        {selectedAnswers[currentQuestionIndex] === currentQuestion.correctAnswer ? (
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: 'spring', delay: 0.2 }}
+                            className="text-5xl sm:text-6xl mb-2"
+                          >
+                            ✅
+                          </motion.div>
+                        ) : (
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: 'spring', delay: 0.2 }}
+                            className="text-5xl sm:text-6xl mb-2"
+                          >
+                            ❌
+                          </motion.div>
+                        )}
+                        <h3 className="text-lg sm:text-xl font-bold text-white">
+                          {selectedAnswers[currentQuestionIndex] === currentQuestion.correctAnswer
+                            ? 'Correct!'
+                            : 'Incorrect'}
+                        </h3>
+                      </div>
+
+                      {/* Explanation */}
+                      {currentQuestion.explanation && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.3 }}
+                          className="mb-4 sm:mb-6 p-3 sm:p-4 bg-[#2a2a2a] rounded-lg border border-[#444]"
+                        >
+                          <p className="text-[#bbb] text-xs sm:text-sm md:text-base leading-relaxed">
+                            <span className="font-semibold text-white">Explanation: </span>
+                            {currentQuestion.explanation}
+                          </p>
+                        </motion.div>
+                      )}
+
+                      {/* Next Button */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="text-center pb-2 sm:pb-0"
+                      >
+                        <button
+                          onClick={handleNextQuestion}
+                          className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-white font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-300 transition-all shadow-lg text-base sm:text-lg active:scale-95 touch-manipulation"
+                        >
+                          {currentQuestionIndex < questions.length - 1 ? 'Next Question →' : 'See Results →'}
+                        </button>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
 

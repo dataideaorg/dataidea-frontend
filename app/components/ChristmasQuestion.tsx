@@ -109,20 +109,6 @@ export const ChristmasQuestion: React.FC<ChristmasQuestionProps> = ({
             );
           })}
         </div>
-
-        {/* Explanation */}
-        {showResult && question.explanation && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            className="mt-6 p-4 bg-[#2a2a2a] rounded-lg border border-[#444]"
-          >
-            <p className="text-[#bbb] text-sm">
-              <span className="font-semibold text-white">Explanation: </span>
-              {question.explanation}
-            </p>
-          </motion.div>
-        )}
       </motion.div>
     </div>
   );
