@@ -106,11 +106,38 @@ export const ChristmasGame: React.FC = () => {
   const [anonymousName, setAnonymousName] = useState('');
   const [showNameInput, setShowNameInput] = useState(false);
 
-  // Shuffle questions and select 10 random ones
+  // Fetch questions from backend or use fallback
   useEffect(() => {
-    const shuffled = [...CHRISTMAS_QUESTIONS].sort(() => Math.random() - 0.5);
-    setQuestions(shuffled.slice(0, 10));
-    setSelectedAnswers(new Array(10).fill(null));
+    const fetchQuestions = async () => {
+      try {
+        const response = await fetch(
+          `${getBackendUrl()}/games/christmas/questions/?count=10`,
+          {
+            ...createAuthFetchOptions('GET'),
+            credentials: 'include',
+          }
+        );
+
+        if (response.ok) {
+          const backendQuestions = await response.json();
+          if (backendQuestions && backendQuestions.length > 0) {
+            // Use questions from backend
+            setQuestions(backendQuestions);
+            setSelectedAnswers(new Array(backendQuestions.length).fill(null));
+            return;
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching questions from backend:', error);
+      }
+
+      // Fallback to hardcoded questions
+      const shuffled = [...CHRISTMAS_QUESTIONS].sort(() => Math.random() - 0.5);
+      setQuestions(shuffled.slice(0, 10));
+      setSelectedAnswers(new Array(10).fill(null));
+    };
+
+    fetchQuestions();
   }, []);
 
   const handleStartGame = () => {
@@ -179,8 +206,34 @@ export const ChristmasGame: React.FC = () => {
     setGameState('results');
   };
 
-  const handlePlayAgain = () => {
-    // Reshuffle questions
+  const handlePlayAgain = async () => {
+    // Fetch fresh questions
+    try {
+      const response = await fetch(
+        `${getBackendUrl()}/games/christmas/questions/?count=10`,
+        {
+          ...createAuthFetchOptions('GET'),
+          credentials: 'include',
+        }
+      );
+
+      if (response.ok) {
+        const backendQuestions = await response.json();
+        if (backendQuestions && backendQuestions.length > 0) {
+          setQuestions(backendQuestions);
+          setSelectedAnswers(new Array(backendQuestions.length).fill(null));
+          setCurrentQuestionIndex(0);
+          setScore(0);
+          setShowResult(false);
+          setGameState('playing');
+          return;
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching questions:', error);
+    }
+
+    // Fallback to hardcoded questions
     const shuffled = [...CHRISTMAS_QUESTIONS].sort(() => Math.random() - 0.5);
     setQuestions(shuffled.slice(0, 10));
     setSelectedAnswers(new Array(10).fill(null));

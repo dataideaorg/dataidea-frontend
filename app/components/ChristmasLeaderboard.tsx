@@ -44,19 +44,32 @@ export const ChristmasLeaderboard: React.FC = () => {
       url.searchParams.append('limit', '10');
 
       const response = await fetch(url.toString(), {
-        ...createAuthFetchOptions('GET'),
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         credentials: 'include',
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch leaderboard');
+        const errorText = await response.text();
+        console.error('Leaderboard response error:', response.status, errorText);
+        throw new Error(`Failed to fetch leaderboard: ${response.status}`);
       }
 
       const data: LeaderboardData = await response.json();
-      setLeaderboard(data);
+      console.log('Leaderboard data:', data);
+      
+      // Ensure leaderboard is always an array
+      if (data && (!data.leaderboard || !Array.isArray(data.leaderboard))) {
+        setLeaderboard({ leaderboard: [], userScore: data.userScore, userRank: data.userRank });
+      } else {
+        setLeaderboard(data);
+      }
     } catch (err) {
       console.error('Error fetching leaderboard:', err);
       setError('Failed to load leaderboard. Please try again later.');
+      setLeaderboard({ leaderboard: [] });
     } finally {
       setLoading(false);
     }
