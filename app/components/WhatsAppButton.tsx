@@ -3,7 +3,7 @@
 import React from 'react';
 
 export const WhatsAppButton: React.FC = () => {
-  const phoneNumber = '256701520768';
+  const phoneNumber = '256774128257';
   const message = 'Hello! I would like to know more about DATAIDEA.';
 
   const handleClick = () => {
