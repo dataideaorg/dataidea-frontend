@@ -60,7 +60,7 @@ export default function Careers() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e5e5e5] mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e5e5e5] mb-4 font-serif">
               Join Our Team
             </h1>
             <p className="text-lg md:text-xl text-[#bbb] max-w-3xl mx-auto">
@@ -137,26 +137,26 @@ export default function Careers() {
             variants={itemVariants}
             className="bg-[#222] border border-[#333] rounded-lg p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#e5e5e5] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#e5e5e5] mb-6 font-serif">
               Why Join DATAIDEA?
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <div className="text-4xl mb-3">🚀</div>
+                <div className="text-4xl mb-3 grayscale opacity-80">🚀</div>
                 <h3 className="text-xl font-semibold text-[#e5e5e5] mb-2">Growth</h3>
                 <p className="text-[#bbb]">
                   Continuous learning and professional development opportunities
                 </p>
               </div>
               <div>
-                <div className="text-4xl mb-3">🤝</div>
+                <div className="text-4xl mb-3 grayscale opacity-80">🤝</div>
                 <h3 className="text-xl font-semibold text-[#e5e5e5] mb-2">Collaboration</h3>
                 <p className="text-[#bbb]">
                   Work with a passionate team of data enthusiasts
                 </p>
               </div>
               <div>
-                <div className="text-4xl mb-3">💡</div>
+                <div className="text-4xl mb-3 grayscale opacity-80">💡</div>
                 <h3 className="text-xl font-semibold text-[#e5e5e5] mb-2">Impact</h3>
                 <p className="text-[#bbb]">
                   Make a real difference in how businesses use data

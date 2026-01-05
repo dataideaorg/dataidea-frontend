@@ -176,7 +176,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-[#333] py-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-[#999] text-sm">
             <p>© {currentYear} DATAIDEA. All rights reserved.</p>
-            <p className="mt-4 md:mt-0">Made with ❤️ in Uganda</p>
+            <p className="mt-4 md:mt-0">Made with ❤️ by Juma Shafara</p>
           </div>
         </div>
       </div>
