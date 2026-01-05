@@ -11,11 +11,17 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
+  const courses = [
+    { name: 'Data Science', href: 'https://science.dataidea.org', external: true },
+    { name: 'Web Development', href: 'https://web.dataidea.org', external: true },
+  ];
+
   const resources = [
-      { name: 'Course Resources', href: 'https://science.dataidea.org', external: true  },
-      { name: 'Open Datasets', href: 'https://datasets.dataidea.org', external: true  },
+    { name: 'Open Datasets', href: 'https://datasets.dataidea.org', external: true  },
     { name: 'Blog & Articles', href: 'https://blog.dataidea.org', external: true },
     { name: 'YouTube Channel', href: 'https://youtube.com/@dataideaorg', external: true },
     {name: 'Community', href: 'https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi?mode=wwt', external: true },
@@ -37,9 +43,55 @@ export const Navbar: React.FC = () => {
             <Link href="#about" className="text-[#bbb] hover:text-white transition font-medium">
               About
             </Link>
-            <Link href="#courses" className="text-[#bbb] hover:text-white transition font-medium">
-              Courses
-            </Link>
+
+            {/* Courses Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setCoursesDropdownOpen(true)}
+              onMouseLeave={() => setCoursesDropdownOpen(false)}
+            >
+              <button className="text-[#bbb] hover:text-white transition font-medium flex items-center gap-1">
+                Courses
+                <svg
+                  className={`w-4 h-4 transition-transform ${coursesDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {coursesDropdownOpen && (
+                <div className="absolute top-full left-0 pt-2">
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="w-56 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
+                  >
+                    {courses.map((course, index) => (
+                      <Link
+                        key={index}
+                        href={course.href}
+                        target={course.external ? '_blank' : undefined}
+                        rel={course.external ? 'noopener noreferrer' : undefined}
+                        className="block px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium border-b border-[#333] last:border-b-0"
+                      >
+                        <div className="flex items-center justify-between">
+                          {course.name}
+                          {course.external && (
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          )}
+                        </div>
+                      </Link>
+                    ))}
+                  </motion.div>
+                </div>
+              )}
+            </div>
 
             {/* Resources Dropdown */}
             <div
@@ -195,13 +247,47 @@ export const Navbar: React.FC = () => {
             >
               About
             </Link>
-            <Link
-              href="#courses"
-              className="block text-[#bbb] hover:text-white py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Courses
-            </Link>
+
+            {/* Mobile Courses Dropdown */}
+            <div>
+              <button
+                className="flex items-center justify-between w-full text-[#bbb] hover:text-white py-2"
+                onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
+              >
+                Courses
+                <svg
+                  className={`w-4 h-4 transition-transform ${mobileCoursesOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {mobileCoursesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="pl-4 space-y-2 mt-2"
+                >
+                  {courses.map((course, index) => (
+                    <Link
+                      key={index}
+                      href={course.href}
+                      target={course.external ? '_blank' : undefined}
+                      rel={course.external ? 'noopener noreferrer' : undefined}
+                      className="block text-[#999] hover:text-white py-2 text-sm"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {course.name}
+                      {course.external && ' ↗'}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </div>
 
             {/* Mobile Resources Dropdown */}
             <div>
