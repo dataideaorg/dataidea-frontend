@@ -97,7 +97,7 @@ export default function CohortPage() {
               ))}
             </ul>
             <p className="text-[#999] mt-6 text-sm">
-              Deep Learning and Time Series stay as later add-ons. This cohort is the full beginner-to-capstone pathway.
+              SQL and statistics are no longer in this cohort. Deep Learning and Time Series stay as later add-ons.
             </p>
           </div>
           <div>

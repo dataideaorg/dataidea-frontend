@@ -21,17 +21,16 @@ export const FLAGSHIP_COHORT = {
   },
   includes: [
     'Weekly live sessions plus community support',
-    'Guided pathway: Python, Git, SQL, analysis, stats, intro ML',
+    'Guided pathway: Python, Git, analysis, AI-assisted projects, intro ML',
     'Capstone project with feedback',
     'Verified DATAIDEA certificate',
     'Free study materials on science.dataidea.org',
   ],
   modules: [
-    { title: 'Python Programming Fundamentals', weeks: 'Weeks 1–2' },
-    { title: 'Version Control with Git & GitHub', weeks: 'Week 3' },
-    { title: 'SQL for Data Analysis', weeks: 'Weeks 4–5' },
-    { title: 'Data Analysis & Visualization with Python', weeks: 'Weeks 6–8' },
-    { title: 'Mathematics & Statistics for Data Science', weeks: 'Weeks 9–10' },
+    { title: 'Python Programming Fundamentals', weeks: 'Weeks 1–3' },
+    { title: 'Version Control with Git & GitHub', weeks: 'Week 4' },
+    { title: 'Data Analysis & Visualization with Python', weeks: 'Weeks 5–7' },
+    { title: 'Using AI to Build Data Science Projects', weeks: 'Weeks 8–10' },
     { title: 'Machine Learning with Python + capstone', weeks: 'Weeks 11–12' },
   ],
 } as const;
