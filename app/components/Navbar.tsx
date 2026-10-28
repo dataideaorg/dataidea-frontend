@@ -145,9 +145,6 @@ export const Navbar: React.FC = () => {
               )}
             </div>
 
-            <Link href="/#testimonials" className="text-[#bbb] hover:text-white transition font-medium">
-              Testimonials
-            </Link>
             <Link href="/careers" className="text-[#bbb] hover:text-white transition font-medium">
               Careers
             </Link>
@@ -340,13 +337,6 @@ export const Navbar: React.FC = () => {
               )}
             </div>
 
-            <Link
-              href="/#testimonials"
-              className="block text-[#bbb] hover:text-white py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Testimonials
-            </Link>
             <Link
               href="/careers"
               className="block text-[#bbb] hover:text-white py-2"
