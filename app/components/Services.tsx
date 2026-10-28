@@ -37,8 +37,10 @@ export const Services: React.FC = () => {
         'Free Learning Materials',
       ],
       icon: '📚',
-      cta: 'Explore Courses',
-      ctaAction: () => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' }),
+      cta: 'View January Cohort',
+      ctaAction: () => {
+        window.location.href = '/cohort';
+      },
     },
     {
       title: 'Web & AI Development',

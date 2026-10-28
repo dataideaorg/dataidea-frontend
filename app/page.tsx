@@ -2,9 +2,9 @@
 
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { FlagshipOffer } from './components/FlagshipOffer';
 import { About } from './components/About';
 import { Services } from './components/Services';
-import { FlagshipOffer } from './components/FlagshipOffer';
 import { Courses } from './components/Courses';
 import { Partners } from './components/Partners';
 import { CTA } from './components/CTA';

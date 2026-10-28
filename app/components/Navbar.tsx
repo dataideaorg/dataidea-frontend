@@ -39,9 +39,12 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="#about" className="text-[#bbb] hover:text-white transition font-medium">
+          <div className="hidden md:flex items-center gap-5 lg:gap-7 whitespace-nowrap">
+            <Link href="/#about" className="text-[#bbb] hover:text-white transition font-medium">
               About
+            </Link>
+            <Link href="/cohort" className="text-[#bbb] hover:text-white transition font-medium">
+              January Cohort
             </Link>
 
             {/* Courses Dropdown */}
@@ -142,13 +145,13 @@ export const Navbar: React.FC = () => {
               )}
             </div>
 
-            <Link href="#testimonials" className="text-[#bbb] hover:text-white transition font-medium">
+            <Link href="/#testimonials" className="text-[#bbb] hover:text-white transition font-medium">
               Testimonials
             </Link>
             <Link href="/careers" className="text-[#bbb] hover:text-white transition font-medium">
               Careers
             </Link>
-            <Link href="#contact" className="text-[#bbb] hover:text-white transition font-medium">
+            <Link href="/#contact" className="text-[#bbb] hover:text-white transition font-medium">
               Contact
             </Link>
 
@@ -241,11 +244,18 @@ export const Navbar: React.FC = () => {
             className="md:hidden pb-4 space-y-3"
           >
             <Link
-              href="#about"
+              href="/#about"
               className="block text-[#bbb] hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
+            </Link>
+            <Link
+              href="/cohort"
+              className="block text-[#bbb] hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              January Cohort
             </Link>
 
             {/* Mobile Courses Dropdown */}
@@ -331,7 +341,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             <Link
-              href="#testimonials"
+              href="/#testimonials"
               className="block text-[#bbb] hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -345,7 +355,7 @@ export const Navbar: React.FC = () => {
               Careers
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="block text-[#bbb] hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >

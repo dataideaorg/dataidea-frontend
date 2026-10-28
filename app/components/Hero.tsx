@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './Button';
-import { FLAGSHIP, formatUgx, isEarlyBirdOpen } from '../lib/flagship';
+import { FLAGSHIP_COHORT } from '../lib/cohort';
 
 export const Hero: React.FC = () => {
   const containerVariants = {
@@ -72,10 +72,7 @@ export const Hero: React.FC = () => {
         {/* Badge */}
         <motion.div variants={itemVariants} className="mb-6">
           <span className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold">
-            Next cohort · {FLAGSHIP.startLabel} · from{' '}
-            {formatUgx(
-              isEarlyBirdOpen() ? FLAGSHIP.pricing.earlyBird : FLAGSHIP.pricing.regular
-            )}
+            Next cohort · {FLAGSHIP_COHORT.startDateShort} · Kampala / live
           </span>
         </motion.div>
 
@@ -84,7 +81,7 @@ export const Hero: React.FC = () => {
           variants={itemVariants}
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-serif bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent"
         >
-          {FLAGSHIP.shortName}
+          Programming for Data Science
         </motion.h1>
 
         {/* Subheading */}
@@ -92,25 +89,20 @@ export const Hero: React.FC = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-[#bbb] max-w-2xl mb-8 leading-relaxed"
         >
-          {FLAGSHIP.duration} live training in Uganda — projects, mentor support, and a verified
-          certificate. Free docs on science.dataidea.org; join the paid cohort to go further.
+          A 12-week live cohort from beginner Python to a capstone and verified certificate. Free materials stay open; the paid seat is the guided class.
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-4 mb-12">
-          <Button
-            size="lg"
-            variant="primary"
-            onClick={() => window.open(FLAGSHIP.enrollUrl, '_blank')}
-          >
-            Apply for January 2027
+          <Button size="lg" variant="primary" href="/cohort">
+            Join the January 2027 Cohort
           </Button>
           <Button
             size="lg"
             variant="outline"
-            onClick={() => document.getElementById('flagship')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            See pricing &amp; details
+            Explore Free Modules
           </Button>
         </motion.div>
 
@@ -120,9 +112,9 @@ export const Hero: React.FC = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-3xl"
         >
           {[
+            { number: '12', label: 'Week Cohort' },
+            { number: '25', label: 'Seats' },
             { number: '500+', label: 'Students Trained' },
-            { number: '78%', label: 'Success Rate' },
-            { number: '6+', label: 'Programs' },
             { number: '100%', label: 'Hands-on' },
           ].map((stat, i) => (
             <div key={i} className="text-center">

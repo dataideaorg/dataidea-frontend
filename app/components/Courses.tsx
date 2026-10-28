@@ -6,7 +6,6 @@ import { Card, CardTitle, CardDescription, CardFooter } from './Card';
 import Button from './Button';
 import { getBackendUrl } from '../lib/auth';
 import { Course } from '../lib/types';
-import { FLAGSHIP } from '../lib/flagship';
 
 interface CourseCardProps {
   title: string;
@@ -64,13 +63,8 @@ const CourseCard: React.FC<CourseCardProps> = ({
       </div>
 
       <CardFooter className="flex flex-col gap-3">
-        <Button
-          variant="primary"
-          size="md"
-          className="w-full"
-          onClick={() => window.open(FLAGSHIP.enrollUrl, '_blank')}
-        >
-          Join January Cohort
+        <Button variant="primary" size="md" className="w-full" href="/cohort">
+          Join the Live Cohort
         </Button>
         <Button
           variant="outline"
@@ -159,14 +153,14 @@ export const Courses: React.FC = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
           >
-            Choose Your Learning Path
+            Modules inside the flagship
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
             className="text-lg text-[#bbb] max-w-2xl mx-auto"
           >
-            From beginner to advanced, we have the perfect course to match your skill level and career goals.
+            Study any module free. The January live cohort wraps them into one 12-week path with feedback and a certificate.
           </motion.p>
         </motion.div>
 

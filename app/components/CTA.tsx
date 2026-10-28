@@ -2,6 +2,8 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Button from './Button';
+import { FLAGSHIP_COHORT } from '../lib/cohort';
 
 export const CTA: React.FC = () => {
   useEffect(() => {
@@ -71,8 +73,14 @@ export const CTA: React.FC = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"
         >
-          Next live cohort starts 12 January 2027. Get updates on early-bird pricing, seat availability, and career tips.
+          The January 2027 live cohort starts {FLAGSHIP_COHORT.startDateShort}. Apply for a seat, or subscribe for updates.
         </motion.p>
+
+        <motion.div variants={itemVariants} className="flex justify-center mb-8">
+          <Button size="lg" variant="primary" href="/cohort">
+            Join the January 2027 Cohort
+          </Button>
+        </motion.div>
 
         <motion.div
           variants={itemVariants}

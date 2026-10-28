@@ -5,6 +5,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dataidea.org";
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
+    "/cohort",
     "/careers",
     "/privacy",
     "/terms",

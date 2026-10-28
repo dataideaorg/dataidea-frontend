@@ -100,24 +100,24 @@ export const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Programs</h4>
             <ul className="space-y-3 text-[#999]">
               <li>
-                <Link href="#courses" className="hover:text-white transition">
-                  Python Fundamentals
+                <Link href="/cohort" className="hover:text-white transition">
+                  January 2027 Cohort
                 </Link>
               </li>
               <li>
-                <Link href="#courses" className="hover:text-white transition">
-                  Data Analysis
+                <Link href="/#courses" className="hover:text-white transition">
+                  Free modules
                 </Link>
               </li>
               <li>
-                <Link href="#courses" className="hover:text-white transition">
-                  Machine Learning
-                </Link>
+                <a href="https://science.dataidea.org" className="hover:text-white transition">
+                  Data Science docs
+                </a>
               </li>
               <li>
-                <Link href="#courses" className="hover:text-white transition">
-                  Deep Learning & AI
-                </Link>
+                <a href="https://web.dataidea.org" className="hover:text-white transition">
+                  Web Development
+                </a>
               </li>
             </ul>
           </motion.div>
@@ -149,7 +149,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-3 text-[#999]">
               <li>
-                <Link href="#about" className="hover:text-white transition">
+                <Link href="/#about" className="hover:text-white transition">
                   About Us
                 </Link>
               </li>
