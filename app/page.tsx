@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Services } from './components/Services';
+import { FlagshipOffer } from './components/FlagshipOffer';
 import { Courses } from './components/Courses';
 import { Partners } from './components/Partners';
 import { CTA } from './components/CTA';
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <FlagshipOffer />
       <Services />
       <Courses />
       <Partners />

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './Button';
+import { FLAGSHIP, formatUgx, isEarlyBirdOpen } from '../lib/flagship';
 
 export const Hero: React.FC = () => {
   const containerVariants = {
@@ -71,7 +72,10 @@ export const Hero: React.FC = () => {
         {/* Badge */}
         <motion.div variants={itemVariants} className="mb-6">
           <span className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold">
-            Learn Data Science in Uganda
+            Next cohort · {FLAGSHIP.startLabel} · from{' '}
+            {formatUgx(
+              isEarlyBirdOpen() ? FLAGSHIP.pricing.earlyBird : FLAGSHIP.pricing.regular
+            )}
           </span>
         </motion.div>
 
@@ -80,7 +84,7 @@ export const Hero: React.FC = () => {
           variants={itemVariants}
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-serif bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent"
         >
-          Programming for Data Science
+          {FLAGSHIP.shortName}
         </motion.h1>
 
         {/* Subheading */}
@@ -88,7 +92,8 @@ export const Hero: React.FC = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-[#bbb] max-w-2xl mb-8 leading-relaxed"
         >
-          We offer hands on data science training and build custom websites and AI tools for individuals and organizations.
+          {FLAGSHIP.duration} live training in Uganda — projects, mentor support, and a verified
+          certificate. Free docs on science.dataidea.org; join the paid cohort to go further.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -96,16 +101,16 @@ export const Hero: React.FC = () => {
           <Button
             size="lg"
             variant="primary"
-            onClick={() => window.open('https://forms.gle/usTT5nm6HaZT1V2cA', '_blank')}
+            onClick={() => window.open(FLAGSHIP.enrollUrl, '_blank')}
           >
-            Join Our Next Cohort
+            Apply for January 2027
           </Button>
           <Button
             size="lg"
             variant="outline"
-            onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('flagship')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Explore Courses
+            See pricing &amp; details
           </Button>
         </motion.div>
 

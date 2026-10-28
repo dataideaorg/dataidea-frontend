@@ -6,6 +6,7 @@ import { Card, CardTitle, CardDescription, CardFooter } from './Card';
 import Button from './Button';
 import { getBackendUrl } from '../lib/auth';
 import { Course } from '../lib/types';
+import { FLAGSHIP } from '../lib/flagship';
 
 interface CourseCardProps {
   title: string;
@@ -67,9 +68,9 @@ const CourseCard: React.FC<CourseCardProps> = ({
           variant="primary"
           size="md"
           className="w-full"
-          onClick={() => window.open('https://forms.gle/usTT5nm6HaZT1V2cA', '_blank')}
+          onClick={() => window.open(FLAGSHIP.enrollUrl, '_blank')}
         >
-          Enroll Now
+          Join January Cohort
         </Button>
         <Button
           variant="outline"

@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Button from '../components/Button';
+import { FLAGSHIP } from '../lib/flagship';
 
 export default function Upcoming() {
   return (
@@ -77,10 +78,10 @@ export default function Upcoming() {
             Want to be notified when this becomes available?
           </p>
           <button
-            onClick={() => window.open('https://forms.gle/usTT5nm6HaZT1V2cA', '_blank')}
+            onClick={() => window.open(FLAGSHIP.enrollUrl, '_blank')}
             className="mt-4 text-[#e5e5e5] hover:text-white transition-colors underline"
           >
-            Join our waiting list
+            Apply for the January 2027 cohort
           </button>
         </motion.div>
       </motion.div>

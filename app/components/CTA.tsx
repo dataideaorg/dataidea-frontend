@@ -71,7 +71,7 @@ export const CTA: React.FC = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"
         >
-          Join hundreds of people who've unlocked their potential in data science and AI. Get insights about our latest cohorts, exclusive offers, and career tips.
+          Next live cohort starts 12 January 2027. Get updates on early-bird pricing, seat availability, and career tips.
         </motion.p>
 
         <motion.div

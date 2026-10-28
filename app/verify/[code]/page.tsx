@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import { getBackendUrl } from '@/app/lib/auth';
 import { CertificateVerification } from '@/app/lib/types';
 import { Navbar } from '@/app/components/Navbar';
+import { FLAGSHIP } from '@/app/lib/flagship';
 
 export default function VerifyCertificate() {
   const params = useParams();
@@ -453,16 +454,16 @@ export default function VerifyCertificate() {
                     <div className="bg-[#222] rounded-lg p-4 mb-4">
                       <h4 className="text-sm font-semibold text-white mb-2">Interested in this course?</h4>
                       <p className="text-xs text-[#bbb]">
-                        Join our training program and earn your own certificate
+                        Join the January 2027 Programming for Data Science cohort and earn your own certificate
                       </p>
                     </div>
                     <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSdMPQZWEBZhOrJHPpYdD3KH_h9oBV_9wIqGb6cY6-wnCXxNLg/viewform"
+                      href={FLAGSHIP.enrollUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full px-4 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors text-center"
                     >
-                      Enroll Now
+                      Apply for January 2027
                     </a>
                   </div>
                 </div>
