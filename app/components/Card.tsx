@@ -3,22 +3,27 @@ import React from 'react';
 interface CardProps {
   children: React.ReactNode;
   className?: string;
+  featured?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({ children, className = '' }) => (
-  <div className={`bg-[#222] border border-[#333] rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 md:p-8 ${className}`}>
+export const Card: React.FC<CardProps> = ({ children, className = '', featured = false }) => (
+  <div
+    className={`bg-panel border rounded-xl p-6 md:p-8 ${
+      featured ? 'border-2 border-featured' : 'border-line'
+    } ${className}`}
+  >
     {children}
   </div>
 );
 
 export const CardTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+  <h3 className="text-xl md:text-2xl font-bold text-bright mb-3">
     {children}
   </h3>
 );
 
 export const CardDescription: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <p className="text-[#bbb] text-sm md:text-base leading-relaxed mb-4">
+  <p className="text-support text-sm md:text-base leading-relaxed mb-4">
     {children}
   </p>
 );

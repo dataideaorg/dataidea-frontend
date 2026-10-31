@@ -42,7 +42,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
         <link rel="canonical" href="https://dataidea.org" />
-        <meta name="theme-color" content="#111111" />
+        <meta name="theme-color" content="#0A0A0A" />
+        <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
         {/* Google tag (gtag.js) - Analytics & Ads */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD84FCME05"></script>
         <script
@@ -58,7 +60,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="font-sans antialiased bg-[#1a1a1a] text-[#e5e5e5]"
+        className="font-sans antialiased bg-ground text-type"
       >
         <AuthProvider>
           {children}

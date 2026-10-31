@@ -64,20 +64,20 @@ export default function MyEnrollments() {
 
   if (loading || !user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#1a1a1a]">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#bbb]"></div>
+      <div className="min-h-screen flex items-center justify-center bg-ground">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-mute"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-[#e5e5e5]">
+    <div className="min-h-screen bg-ground text-type">
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2 font-serif">My Enrollments</h1>
-          <p className="text-[#bbb]">Track your enrolled courses and learning progress</p>
+          <h1 className="text-4xl font-bold text-bright mb-2 font-serif">My Enrollments</h1>
+          <p className="text-support">Track your enrolled courses and learning progress</p>
         </div>
 
         {/* Filters */}
@@ -86,8 +86,8 @@ export default function MyEnrollments() {
             onClick={() => setFilter('all')}
             className={`px-4 py-2 rounded-lg transition-colors ${
               filter === 'all'
-                ? 'bg-white text-[#1a1a1a]'
-                : 'bg-[#111] border border-[#333] hover:border-[#555]'
+                ? 'bg-signal text-black'
+                : 'bg-ground border border-line hover:border-line'
             }`}
           >
             All ({enrollments.length})
@@ -96,8 +96,8 @@ export default function MyEnrollments() {
             onClick={() => setFilter('enrolled')}
             className={`px-4 py-2 rounded-lg transition-colors ${
               filter === 'enrolled'
-                ? 'bg-white text-[#1a1a1a]'
-                : 'bg-[#111] border border-[#333] hover:border-[#555]'
+                ? 'bg-signal text-black'
+                : 'bg-ground border border-line hover:border-line'
             }`}
           >
             Enrolled ({enrollments.filter((e) => e.status === 'enrolled').length})
@@ -106,8 +106,8 @@ export default function MyEnrollments() {
             onClick={() => setFilter('in_progress')}
             className={`px-4 py-2 rounded-lg transition-colors ${
               filter === 'in_progress'
-                ? 'bg-white text-[#1a1a1a]'
-                : 'bg-[#111] border border-[#333] hover:border-[#555]'
+                ? 'bg-signal text-black'
+                : 'bg-ground border border-line hover:border-line'
             }`}
           >
             In Progress ({enrollments.filter((e) => e.status === 'in_progress').length})
@@ -116,8 +116,8 @@ export default function MyEnrollments() {
             onClick={() => setFilter('completed')}
             className={`px-4 py-2 rounded-lg transition-colors ${
               filter === 'completed'
-                ? 'bg-white text-[#1a1a1a]'
-                : 'bg-[#111] border border-[#333] hover:border-[#555]'
+                ? 'bg-signal text-black'
+                : 'bg-ground border border-line hover:border-line'
             }`}
           >
             Completed ({enrollments.filter((e) => e.status === 'completed').length})
@@ -125,9 +125,9 @@ export default function MyEnrollments() {
         </div>
 
         {filteredEnrollments.length === 0 ? (
-          <div className="bg-[#111] border border-[#333] rounded-lg p-12 text-center">
+          <div className="bg-ground border border-line rounded-lg p-12 text-center">
             <svg
-              className="w-16 h-16 text-[#555] mx-auto mb-4"
+              className="w-16 h-16 text-mute mx-auto mb-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -139,10 +139,10 @@ export default function MyEnrollments() {
                 d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
               />
             </svg>
-            <h3 className="text-xl font-semibold text-white mb-2">
+            <h3 className="text-xl font-semibold text-bright mb-2">
               {filter === 'all' ? 'No enrollments yet' : `No ${filter.replace('_', ' ')} courses`}
             </h3>
-            <p className="text-[#bbb] mb-6">
+            <p className="text-support mb-6">
               {filter === 'all'
                 ? 'Start your learning journey by enrolling in a course!'
                 : 'Try changing the filter to see other courses'}
@@ -150,7 +150,7 @@ export default function MyEnrollments() {
             {filter === 'all' && (
               <button
                 onClick={() => router.push('/')}
-                className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
+                className="px-6 py-3 bg-signal text-black font-semibold rounded-lg hover:bg-signal-press transition-colors"
               >
                 Browse Courses
               </button>
@@ -161,11 +161,11 @@ export default function MyEnrollments() {
             {filteredEnrollments.map((enrollment) => (
               <div
                 key={enrollment.id}
-                className="bg-[#111] border border-[#333] rounded-lg overflow-hidden hover:border-[#555] transition-colors"
+                className="bg-ground border border-line rounded-lg overflow-hidden hover:border-line transition-colors"
               >
-                <div className="bg-gradient-to-r from-[#222] to-[#1a1a1a] border-b border-[#333] p-6">
+                <div className="bg-gradient-to-r from-panel to-ground border-b border-line p-6">
                   <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-bold text-white">{enrollment.course.title}</h3>
+                    <h3 className="text-xl font-bold text-bright">{enrollment.course.title}</h3>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(
                         enrollment.status
@@ -174,22 +174,22 @@ export default function MyEnrollments() {
                       {enrollment.status.replace('_', ' ').toUpperCase()}
                     </span>
                   </div>
-                  <p className="text-sm text-[#999]">{enrollment.course.duration}</p>
+                  <p className="text-sm text-mute">{enrollment.course.duration}</p>
                 </div>
 
                 <div className="p-6">
                   <div className="mb-6">
-                    <p className="text-sm text-[#999] mb-2">Course Description</p>
-                    <p className="text-sm text-[#e5e5e5]">{enrollment.course.description}</p>
+                    <p className="text-sm text-mute mb-2">Course Description</p>
+                    <p className="text-sm text-type">{enrollment.course.description}</p>
                   </div>
 
                   <div className="mb-6">
-                    <p className="text-sm text-[#999] mb-2">Skills you'll learn</p>
+                    <p className="text-sm text-mute mb-2">Skills you'll learn</p>
                     <div className="flex flex-wrap gap-2">
                       {enrollment.course.skills.map((skill, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-[#222] border border-[#333] rounded-full text-xs text-[#e5e5e5]"
+                          className="px-3 py-1 bg-panel border border-line rounded-full text-xs text-type"
                         >
                           {skill}
                         </span>
@@ -199,14 +199,14 @@ export default function MyEnrollments() {
 
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
-                      <span className="text-[#999]">Enrolled on</span>
-                      <span className="text-[#e5e5e5]">
+                      <span className="text-mute">Enrolled on</span>
+                      <span className="text-type">
                         {new Date(enrollment.enrolled_date).toLocaleDateString()}
                       </span>
                     </div>
                     {enrollment.completed_date && (
                       <div className="flex justify-between text-sm">
-                        <span className="text-[#999]">Completed on</span>
+                        <span className="text-mute">Completed on</span>
                         <span className="text-green-400">
                           {new Date(enrollment.completed_date).toLocaleDateString()}
                         </span>
@@ -220,7 +220,7 @@ export default function MyEnrollments() {
                         href={enrollment.course.free_resources_link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full px-4 py-2 bg-white text-[#1a1a1a] text-center font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
+                        className="block w-full px-4 py-2 bg-signal text-black text-center font-semibold rounded-lg hover:bg-signal-press transition-colors"
                       >
                         Access Course Resources →
                       </a>

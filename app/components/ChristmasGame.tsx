@@ -290,10 +290,10 @@ export const ChristmasGame: React.FC = () => {
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 via-green-500 to-yellow-400 bg-clip-text text-transparent">
                 🎄 Christmas Trivia 🎄
               </h1>
-              <p className="text-xl text-[#bbb] mb-8">
+              <p className="text-xl text-support mb-8">
                 Test your knowledge of Christmas traditions, history, and fun facts!
               </p>
-              <p className="text-lg text-[#999] mb-12">
+              <p className="text-lg text-mute mb-12">
                 {questions.length} questions • Good luck! 🎅
               </p>
 
@@ -308,7 +308,7 @@ export const ChristmasGame: React.FC = () => {
                     placeholder="Enter your name"
                     value={anonymousName}
                     onChange={(e) => setAnonymousName(e.target.value)}
-                    className="w-full max-w-md mx-auto px-4 py-3 bg-[#222] border border-[#444] rounded-lg text-white placeholder-[#666] focus:outline-none focus:border-yellow-400"
+                    className="w-full max-w-md mx-auto px-4 py-3 bg-panel border border-line rounded-lg text-bright placeholder-mute focus:outline-none focus:border-signal"
                     onKeyPress={(e) => {
                       if (e.key === 'Enter' && anonymousName.trim()) {
                         handleStartGame();
@@ -320,7 +320,7 @@ export const ChristmasGame: React.FC = () => {
 
               <motion.button
                 onClick={handleStartGame}
-                className="px-8 py-4 bg-gradient-to-r from-red-600 to-green-600 text-white font-bold text-lg rounded-lg hover:from-red-500 hover:to-green-500 transition-all shadow-lg"
+                className="px-8 py-4 bg-gradient-to-r from-red-600 to-green-600 text-bright font-bold text-lg rounded-lg hover:from-red-500 hover:to-green-500 transition-all shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -372,7 +372,7 @@ export const ChristmasGame: React.FC = () => {
                     }}
                     className="fixed left-0 right-0 bottom-0 md:left-auto md:right-auto md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-50 md:max-w-lg md:mx-auto md:rounded-xl md:left-1/2 md:-translate-x-1/2"
                   >
-                    <div className="bg-[#222] rounded-t-2xl md:rounded-xl p-4 sm:p-6 md:p-8 border-t-2 md:border-2 border-[#444] shadow-2xl max-h-[85vh] overflow-y-auto">
+                    <div className="bg-panel rounded-t-2xl md:rounded-xl p-4 sm:p-6 md:p-8 border-t-2 md:border-2 border-line shadow-2xl max-h-[85vh] overflow-y-auto">
                       {/* Result Icon */}
                       <div className="text-center mb-3 sm:mb-4">
                         {selectedAnswers[currentQuestionIndex] === currentQuestion.correctAnswer ? (
@@ -394,7 +394,7 @@ export const ChristmasGame: React.FC = () => {
                             ❌
                           </motion.div>
                         )}
-                        <h3 className="text-lg sm:text-xl font-bold text-white">
+                        <h3 className="text-lg sm:text-xl font-bold text-bright">
                           {selectedAnswers[currentQuestionIndex] === currentQuestion.correctAnswer
                             ? 'Correct!'
                             : 'Incorrect'}
@@ -407,10 +407,10 @@ export const ChristmasGame: React.FC = () => {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.3 }}
-                          className="mb-4 sm:mb-6 p-3 sm:p-4 bg-[#2a2a2a] rounded-lg border border-[#444]"
+                          className="mb-4 sm:mb-6 p-3 sm:p-4 bg-hover rounded-lg border border-line"
                         >
-                          <p className="text-[#bbb] text-xs sm:text-sm md:text-base leading-relaxed">
-                            <span className="font-semibold text-white">Explanation: </span>
+                          <p className="text-support text-xs sm:text-sm md:text-base leading-relaxed">
+                            <span className="font-semibold text-bright">Explanation: </span>
                             {currentQuestion.explanation}
                           </p>
                         </motion.div>
@@ -425,7 +425,7 @@ export const ChristmasGame: React.FC = () => {
                       >
                         <button
                           onClick={handleNextQuestion}
-                          className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-white font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-300 transition-all shadow-lg text-base sm:text-lg active:scale-95 touch-manipulation"
+                          className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-bright font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-300 transition-all shadow-lg text-base sm:text-lg active:scale-95 touch-manipulation"
                         >
                           {currentQuestionIndex < questions.length - 1 ? 'Next Question →' : 'See Results →'}
                         </button>
@@ -455,7 +455,7 @@ export const ChristmasGame: React.FC = () => {
               {finalPercentage >= 80 ? '🎉' : finalPercentage >= 60 ? '🎄' : '🎅'}
             </motion.div>
 
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-bright mb-4">
               {finalPercentage >= 80
                 ? 'Excellent!'
                 : finalPercentage >= 60
@@ -465,11 +465,11 @@ export const ChristmasGame: React.FC = () => {
                 : 'Keep Learning!'}
             </h2>
 
-            <div className="bg-[#222] rounded-lg p-8 mb-8 border border-[#333]">
+            <div className="bg-panel rounded-lg p-8 mb-8 border border-line">
               <div className="text-6xl font-bold mb-4 bg-gradient-to-r from-red-500 to-green-500 bg-clip-text text-transparent">
                 {score}/{questions.length}
               </div>
-              <div className="text-3xl font-semibold text-[#bbb] mb-2">
+              <div className="text-3xl font-semibold text-support mb-2">
                 {finalPercentage}% Correct
               </div>
             </div>
@@ -477,19 +477,19 @@ export const ChristmasGame: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handlePlayAgain}
-                className="px-6 py-3 bg-gradient-to-r from-red-600 to-green-600 text-white font-bold rounded-lg hover:from-red-500 hover:to-green-500 transition-all"
+                className="px-6 py-3 bg-gradient-to-r from-red-600 to-green-600 text-bright font-bold rounded-lg hover:from-red-500 hover:to-green-500 transition-all"
               >
                 Play Again
               </button>
               <button
                 onClick={handleShare}
-                className="px-6 py-3 bg-[#222] border border-[#444] text-white font-bold rounded-lg hover:bg-[#2a2a2a] transition-all"
+                className="px-6 py-3 bg-panel border border-line text-bright font-bold rounded-lg hover:bg-hover transition-all"
               >
                 Share Results
               </button>
               <button
                 onClick={() => setGameState('leaderboard')}
-                className="px-6 py-3 bg-[#222] border border-[#444] text-white font-bold rounded-lg hover:bg-[#2a2a2a] transition-all"
+                className="px-6 py-3 bg-panel border border-line text-bright font-bold rounded-lg hover:bg-hover transition-all"
               >
                 View Leaderboard
               </button>
@@ -506,10 +506,10 @@ export const ChristmasGame: React.FC = () => {
             className="max-w-4xl mx-auto"
           >
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold text-white mb-4">🏆 Leaderboard</h2>
+              <h2 className="text-4xl font-bold text-bright mb-4">🏆 Leaderboard</h2>
               <button
                 onClick={() => setGameState('start')}
-                className="text-[#bbb] hover:text-white transition-colors"
+                className="text-support hover:text-bright transition-colors"
               >
                 ← Back to Start
               </button>

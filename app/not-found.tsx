@@ -29,41 +29,21 @@ export default function NotFound() {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-ground">
       <Navbar />
-      <section className="relative w-full min-h-screen bg-gradient-to-br from-[#111] via-[#222] to-[#333] pt-20 overflow-hidden">
-        {/* Animated Background Elements */}
+      <section className="relative w-full min-h-screen bg-ground pt-20 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            animate={{ float: [0, 20, 0] }}
-            transition={{ duration: 8, repeat: Infinity }}
-            className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48"
-          />
-          <motion.div
-            animate={{ float: [0, -20, 0] }}
-            transition={{ duration: 10, repeat: Infinity, delay: 2 }}
-            className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-48 -mb-48"
-          />
-
-          {/* Animated Jigsaw Pattern */}
           <motion.div
             animate={{
               rotate: [0, 360],
               scale: [1, 1.1, 1],
-              opacity: [0.03, 0.05, 0.03]
             }}
             transition={{
               duration: 40,
               repeat: Infinity,
               ease: "linear"
             }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]"
-            style={{
-              backgroundImage: 'url(/jigsaw.svg)',
-              backgroundSize: '192px 192px',
-              backgroundRepeat: 'repeat',
-              filter: 'invert(1)',
-            }}
+            className="hero-jigsaw absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]"
           />
         </div>
 
@@ -75,7 +55,7 @@ export default function NotFound() {
         >
           {/* 404 Number */}
           <motion.div variants={itemVariants} className="mb-6">
-            <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-bold bg-gradient-to-r from-white via-[#bbb] to-white bg-clip-text text-transparent font-serif leading-none">
+            <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-normal text-bright font-serif leading-none">
               404
             </h1>
           </motion.div>
@@ -83,7 +63,7 @@ export default function NotFound() {
           {/* Error Message */}
           <motion.h2
             variants={itemVariants}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight font-serif bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent"
+            className="text-3xl md:text-4xl lg:text-5xl font-normal mb-6 leading-[1.15] font-serif text-bright"
           >
             Page Not Found
           </motion.h2>
@@ -91,7 +71,7 @@ export default function NotFound() {
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-[#bbb] max-w-2xl mb-8 leading-relaxed"
+            className="text-lg md:text-xl text-support max-w-2xl mb-8 leading-relaxed"
           >
             Oops! The page you're looking for seems to have wandered off into the data void. 
             Let's get you back on track.
@@ -121,7 +101,7 @@ export default function NotFound() {
             variants={itemVariants}
             className="w-full max-w-2xl"
           >
-            <p className="text-[#999] text-sm mb-4">Or explore our popular pages:</p>
+            <p className="text-mute text-sm mb-4">Or explore our popular pages:</p>
             <div className="flex flex-wrap justify-center gap-4">
               {[
                 { name: 'Courses', href: '#courses' },
@@ -132,7 +112,7 @@ export default function NotFound() {
                 <Link
                   key={i}
                   href={link.href}
-                  className="px-4 py-2 bg-[#333] text-[#bbb] hover:text-white hover:bg-[#444] rounded-full text-sm font-medium transition-all duration-300"
+                  className="px-4 py-2 bg-pill text-pill-fg hover:text-nav-hover hover:bg-hover rounded-full text-sm font-medium transition-all duration-300"
                 >
                   {link.name}
                 </Link>

@@ -7,7 +7,7 @@ import Button from '../components/Button';
 
 export default function Upcoming() {
   return (
-    <main className="min-h-screen bg-[#1a1a1a] flex items-center justify-center px-4">
+    <main className="min-h-screen bg-ground flex items-center justify-center px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -20,9 +20,9 @@ export default function Upcoming() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-8"
         >
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-[#333] flex items-center justify-center">
+          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-panel flex items-center justify-center">
             <svg
-              className="w-16 h-16 text-[#e5e5e5]"
+              className="w-16 h-16 text-type"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -36,15 +36,15 @@ export default function Upcoming() {
             </svg>
           </div>
 
-          <span className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold mb-6">
+          <span className="inline-block px-4 py-2 bg-panel text-type rounded-full text-sm font-semibold mb-6">
             Coming Soon
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif">
+          <h1 className="text-4xl md:text-6xl font-bold text-bright mb-6 font-serif">
             This Content is Upcoming
           </h1>
 
-          <p className="text-lg text-[#bbb] mb-8 max-w-xl mx-auto">
+          <p className="text-lg text-support mb-8 max-w-xl mx-auto">
             We're working hard to bring you this resource. Check back soon or explore our other available courses and materials in the meantime.
           </p>
         </motion.div>
@@ -71,14 +71,14 @@ export default function Upcoming() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-12 pt-8 border-t border-[#333]"
+          className="mt-12 pt-8 border-t border-line"
         >
-          <p className="text-sm text-[#999]">
+          <p className="text-sm text-mute">
             Want to be notified when this becomes available?
           </p>
           <button
             onClick={() => (window.location.href = '/cohort')}
-            className="mt-4 text-[#e5e5e5] hover:text-white transition-colors underline"
+            className="mt-4 text-type hover:text-bright transition-colors underline"
           >
             Join the January 2027 cohort
           </button>

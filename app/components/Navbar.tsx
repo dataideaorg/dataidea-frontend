@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { GoogleSignInButton } from './GoogleSignIn';
+import { Logo } from './Logo';
 
 export const Navbar: React.FC = () => {
   const { user, loading, logout } = useAuth();
@@ -28,22 +29,20 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#333] z-50 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 bg-ground/95 backdrop-blur-md border-b border-line z-50">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent">
-              DATAIDEA
-            </div>
+          <Link href="/" className="flex items-center" aria-label="DATAIDEA home">
+            <Logo />
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-5 lg:gap-7 whitespace-nowrap">
-            <Link href="/#about" className="text-[#bbb] hover:text-white transition font-medium">
+            <Link href="/#about" className="nav-link transition font-medium">
               About
             </Link>
-            <Link href="/cohort" className="text-[#bbb] hover:text-white transition font-medium">
+            <Link href="/cohort" className="nav-link transition font-medium">
               January Cohort
             </Link>
 
@@ -53,7 +52,7 @@ export const Navbar: React.FC = () => {
               onMouseEnter={() => setCoursesDropdownOpen(true)}
               onMouseLeave={() => setCoursesDropdownOpen(false)}
             >
-              <button className="text-[#bbb] hover:text-white transition font-medium flex items-center gap-1">
+              <button className="nav-link transition font-medium flex items-center gap-1">
                 Courses
                 <svg
                   className={`w-4 h-4 transition-transform ${coursesDropdownOpen ? 'rotate-180' : ''}`}
@@ -71,7 +70,7 @@ export const Navbar: React.FC = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="w-56 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
+                    className="w-56 bg-panel border border-line rounded-lg overflow-hidden"
                   >
                     {courses.map((course, index) => (
                       <Link
@@ -79,7 +78,7 @@ export const Navbar: React.FC = () => {
                         href={course.href}
                         target={course.external ? '_blank' : undefined}
                         rel={course.external ? 'noopener noreferrer' : undefined}
-                        className="block px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium border-b border-[#333] last:border-b-0"
+                        className="block px-4 py-3 nav-link hover:bg-hover transition font-medium border-b border-line last:border-b-0"
                       >
                         <div className="flex items-center justify-between">
                           {course.name}
@@ -102,7 +101,7 @@ export const Navbar: React.FC = () => {
               onMouseEnter={() => setResourcesDropdownOpen(true)}
               onMouseLeave={() => setResourcesDropdownOpen(false)}
             >
-              <button className="text-[#bbb] hover:text-white transition font-medium flex items-center gap-1">
+              <button className="nav-link transition font-medium flex items-center gap-1">
                 Free Resources
                 <svg
                   className={`w-4 h-4 transition-transform ${resourcesDropdownOpen ? 'rotate-180' : ''}`}
@@ -120,7 +119,7 @@ export const Navbar: React.FC = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="w-56 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
+                    className="w-56 bg-panel border border-line rounded-lg overflow-hidden"
                   >
                     {resources.map((resource, index) => (
                       <Link
@@ -128,7 +127,7 @@ export const Navbar: React.FC = () => {
                         href={resource.href}
                         target={resource.external ? '_blank' : undefined}
                         rel={resource.external ? 'noopener noreferrer' : undefined}
-                        className="block px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium border-b border-[#333] last:border-b-0"
+                        className="block px-4 py-3 nav-link hover:bg-hover transition font-medium border-b border-line last:border-b-0"
                       >
                         <div className="flex items-center justify-between">
                           {resource.name}
@@ -145,10 +144,10 @@ export const Navbar: React.FC = () => {
               )}
             </div>
 
-            <Link href="/careers" className="text-[#bbb] hover:text-white transition font-medium">
+            <Link href="/careers" className="nav-link transition font-medium">
               Careers
             </Link>
-            <Link href="/#contact" className="text-[#bbb] hover:text-white transition font-medium">
+            <Link href="/#contact" className="nav-link transition font-medium">
               Contact
             </Link>
 
@@ -166,10 +165,10 @@ export const Navbar: React.FC = () => {
                         <img
                           src={user.picture}
                           alt={user.email}
-                          className="w-8 h-8 rounded-full border-2 border-[#444]"
+                          className="w-8 h-8 rounded-full border-2 border-line"
                         />
                       ) : (
-                        <div className="w-8 h-8 rounded-full bg-[#333] flex items-center justify-center text-white font-medium">
+                        <div className="w-8 h-8 rounded-full bg-panel border border-line flex items-center justify-center text-bright font-medium">
                           {user.email?.charAt(0).toUpperCase()}
                         </div>
                       )}
@@ -181,21 +180,21 @@ export const Navbar: React.FC = () => {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          className="w-48 bg-[#222] border border-[#444] rounded-lg shadow-xl overflow-hidden"
+                          className="w-48 bg-panel border border-line rounded-lg overflow-hidden"
                         >
-                          <div className="px-4 py-3 border-b border-[#333]">
-                            <p className="text-white font-medium text-sm">{user.name || user.email.split('@')[0]}</p>
-                            <p className="text-[#999] text-xs">{user.email}</p>
+                          <div className="px-4 py-3 border-b border-line">
+                            <p className="text-bright font-medium text-sm">{user.name || user.email.split('@')[0]}</p>
+                            <p className="text-mute text-xs">{user.email}</p>
                           </div>
                           <Link
                             href="/dashboard"
-                            className="block px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium border-b border-[#333]"
+                            className="block px-4 py-3 nav-link hover:bg-hover transition font-medium border-b border-line"
                           >
                             Dashboard
                           </Link>
                           <button
                             onClick={logout}
-                            className="w-full text-left px-4 py-3 text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium"
+                            className="w-full text-left px-4 py-3 nav-link hover:bg-hover transition font-medium"
                           >
                             Sign Out
                           </button>
@@ -217,7 +216,7 @@ export const Navbar: React.FC = () => {
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6 text-[#bbb]"
+              className="w-6 h-6 text-nav"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -242,14 +241,14 @@ export const Navbar: React.FC = () => {
           >
             <Link
               href="/#about"
-              className="block text-[#bbb] hover:text-white py-2"
+              className="block nav-link py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/cohort"
-              className="block text-[#bbb] hover:text-white py-2"
+              className="block nav-link py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               January Cohort
@@ -258,7 +257,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Courses Dropdown */}
             <div>
               <button
-                className="flex items-center justify-between w-full text-[#bbb] hover:text-white py-2"
+                className="flex items-center justify-between w-full nav-link py-2"
                 onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
               >
                 Courses
@@ -285,7 +284,7 @@ export const Navbar: React.FC = () => {
                       href={course.href}
                       target={course.external ? '_blank' : undefined}
                       rel={course.external ? 'noopener noreferrer' : undefined}
-                      className="block text-[#999] hover:text-white py-2 text-sm"
+                      className="block text-mute hover:text-nav-hover py-2 text-sm"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {course.name}
@@ -299,7 +298,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Resources Dropdown */}
             <div>
               <button
-                className="flex items-center justify-between w-full text-[#bbb] hover:text-white py-2"
+                className="flex items-center justify-between w-full nav-link py-2"
                 onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
               >
                 Free Resources
@@ -326,7 +325,7 @@ export const Navbar: React.FC = () => {
                       href={resource.href}
                       target={resource.external ? '_blank' : undefined}
                       rel={resource.external ? 'noopener noreferrer' : undefined}
-                      className="block text-[#999] hover:text-white py-2 text-sm"
+                      className="block text-mute hover:text-nav-hover py-2 text-sm"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {resource.name}
@@ -339,14 +338,14 @@ export const Navbar: React.FC = () => {
 
             <Link
               href="/careers"
-              className="block text-[#bbb] hover:text-white py-2"
+              className="block nav-link py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Careers
             </Link>
             <Link
               href="/#contact"
-              className="block text-[#bbb] hover:text-white py-2"
+              className="block nav-link py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
@@ -354,7 +353,7 @@ export const Navbar: React.FC = () => {
 
             {/* Mobile Auth Section */}
             {!loading && (
-              <div className="pt-3 border-t border-[#333] mt-3">
+              <div className="pt-3 border-t border-line mt-3">
                 {user ? (
                   <>
                     <div className="flex items-center gap-3 py-2">
@@ -362,22 +361,22 @@ export const Navbar: React.FC = () => {
                         <img
                           src={user.picture}
                           alt={user.email}
-                          className="w-10 h-10 rounded-full border-2 border-[#444]"
+                          className="w-10 h-10 rounded-full border-2 border-line"
                         />
                       ) : (
-                        <div className="w-10 h-10 rounded-full bg-[#333] flex items-center justify-center text-white font-medium">
+                        <div className="w-10 h-10 rounded-full bg-panel border border-line flex items-center justify-center text-bright font-medium">
                           {user.email?.charAt(0).toUpperCase()}
                         </div>
                       )}
                       <div>
-                        <p className="text-white font-medium text-sm">{user.name || user.email.split('@')[0]}</p>
-                        <p className="text-[#999] text-xs">{user.email}</p>
+                        <p className="text-bright font-medium text-sm">{user.name || user.email.split('@')[0]}</p>
+                        <p className="text-mute text-xs">{user.email}</p>
                       </div>
                     </div>
                     <Link
                       href="/dashboard"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-4 py-3 mt-2 bg-[#222] text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium rounded-lg"
+                      className="block px-4 py-3 mt-2 bg-panel nav-link hover:bg-hover transition font-medium rounded-lg"
                     >
                       Dashboard
                     </Link>
@@ -386,7 +385,7 @@ export const Navbar: React.FC = () => {
                         logout();
                         setMobileMenuOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 mt-2 bg-[#222] text-[#bbb] hover:text-white hover:bg-[#2a2a2a] transition font-medium rounded-lg"
+                      className="w-full text-left px-4 py-3 mt-2 bg-panel nav-link hover:bg-hover transition font-medium rounded-lg"
                     >
                       Sign Out
                     </button>

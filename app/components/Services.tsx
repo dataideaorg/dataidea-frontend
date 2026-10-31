@@ -60,7 +60,7 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="w-full py-20 md:py-32 bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#0a0a0a]">
+    <section id="services" className="w-full py-20 md:py-32 bg-ground">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <motion.div
           className="text-center mb-16"
@@ -71,21 +71,21 @@ export const Services: React.FC = () => {
         >
           <motion.span
             variants={itemVariants}
-            className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold mb-4"
+            className="eyebrow mb-4"
           >
             Our Services
           </motion.span>
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
+            className="text-4xl md:text-5xl font-normal text-bright mb-6 font-serif leading-[1.15]"
           >
             What We Offer
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg text-[#bbb] max-w-2xl mx-auto"
+            className="text-lg text-support max-w-2xl mx-auto"
           >
             Whether you want to learn data science or need custom development solutions, we've got you covered.
           </motion.p>
@@ -102,26 +102,26 @@ export const Services: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gradient-to-br from-[#222] to-[#1a1a1a] border border-[#333] rounded-2xl p-8 md:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:border-[#444] group"
+              className="bg-panel border border-line rounded-xl p-8 md:p-10 transition-colors duration-300 hover:border-featured group"
             >
               <div className="text-6xl mb-6 grayscale opacity-70 group-hover:opacity-100 transition-opacity">
                 {service.icon}
               </div>
 
-              <h3 className="text-3xl font-bold text-white mb-4">{service.title}</h3>
+              <h3 className="text-3xl font-bold text-bright mb-4">{service.title}</h3>
 
-              <p className="text-[#bbb] mb-6 leading-relaxed">
+              <p className="text-support mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               <div className="mb-8">
-                <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+                <h4 className="text-bright font-semibold mb-4 text-sm uppercase tracking-[0.08em]">
                   What's Included:
                 </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-[#bbb] text-sm">
-                      <span className="text-white mt-1">✓</span>
+                    <li key={idx} className="flex items-start gap-2 text-support text-sm">
+                      <span className="text-bright mt-1">✓</span>
                       <span>{feature}</span>
                     </li>
                   ))}

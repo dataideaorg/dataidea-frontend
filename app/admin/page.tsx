@@ -72,11 +72,11 @@ export default function AdminDashboard() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        <div className="bg-[#111111] border border-[#333333] rounded-lg p-6">
+        <div className="bg-panel border border-line rounded-lg p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-400 text-sm mb-1">Total Courses</p>
-              <p className="text-3xl font-bold text-white">{stats?.total_courses || 0}</p>
+              <p className="text-3xl font-bold text-bright">{stats?.total_courses || 0}</p>
               <p className="text-sm text-green-400 mt-1">
                 {stats?.active_courses || 0} active
               </p>
@@ -89,11 +89,11 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="bg-[#111111] border border-[#333333] rounded-lg p-6">
+        <div className="bg-panel border border-line rounded-lg p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-400 text-sm mb-1">Total Enrollments</p>
-              <p className="text-3xl font-bold text-white">{stats?.total_enrollments || 0}</p>
+              <p className="text-3xl font-bold text-bright">{stats?.total_enrollments || 0}</p>
               <p className="text-sm text-green-400 mt-1">
                 {stats?.completed_enrollments || 0} completed
               </p>
@@ -106,11 +106,11 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="bg-[#111111] border border-[#333333] rounded-lg p-6">
+        <div className="bg-panel border border-line rounded-lg p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-400 text-sm mb-1">Certificates Issued</p>
-              <p className="text-3xl font-bold text-white">{stats?.total_certificates || 0}</p>
+              <p className="text-3xl font-bold text-bright">{stats?.total_certificates || 0}</p>
               <p className="text-sm text-gray-500 mt-1">All time</p>
             </div>
             <div className="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center">
@@ -123,12 +123,12 @@ export default function AdminDashboard() {
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-[#111111] border border-[#333333] rounded-lg p-6">
+      <div className="bg-panel border border-line rounded-lg p-6">
         <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <button
             onClick={() => window.location.href = '/admin/courses'}
-            className="p-4 border border-[#333333] rounded-lg hover:border-yellow-400 transition-colors text-left"
+            className="p-4 border border-line rounded-lg hover:border-signal transition-colors text-left"
           >
             <h3 className="font-semibold mb-1">Manage Courses</h3>
             <p className="text-sm text-gray-400">Add, edit, or remove courses</p>
@@ -136,7 +136,7 @@ export default function AdminDashboard() {
 
           <button
             onClick={() => window.location.href = '/admin/enrollments'}
-            className="p-4 border border-[#333333] rounded-lg hover:border-yellow-400 transition-colors text-left"
+            className="p-4 border border-line rounded-lg hover:border-signal transition-colors text-left"
           >
             <h3 className="font-semibold mb-1">View Enrollments</h3>
             <p className="text-sm text-gray-400">Track student progress</p>
@@ -144,7 +144,7 @@ export default function AdminDashboard() {
 
           <button
             onClick={() => window.location.href = '/admin/certificates'}
-            className="p-4 border border-[#333333] rounded-lg hover:border-yellow-400 transition-colors text-left"
+            className="p-4 border border-line rounded-lg hover:border-signal transition-colors text-left"
           >
             <h3 className="font-semibold mb-1">Issue Certificates</h3>
             <p className="text-sm text-gray-400">Generate and manage certificates</p>

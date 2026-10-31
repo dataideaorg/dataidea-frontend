@@ -48,7 +48,7 @@ const opportunities = [
 
 export default function Careers() {
   return (
-    <main className="min-h-screen bg-[#1a1a1a]">
+    <main className="min-h-screen bg-ground">
       <Navbar />
 
       <div className="pt-24 pb-16 px-4 md:px-8">
@@ -60,10 +60,10 @@ export default function Careers() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e5e5e5] mb-4 font-serif">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-type mb-4 font-serif">
               Join Our Team
             </h1>
-            <p className="text-lg md:text-xl text-[#bbb] max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-support max-w-3xl mx-auto">
               Be part of a dynamic team transforming data into actionable insights.
               We're always looking for talented individuals to grow with us.
             </p>
@@ -75,32 +75,32 @@ export default function Careers() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-[#222] border border-[#333] rounded-lg p-8 hover:border-[#444] transition-all duration-300"
+                className="bg-panel border border-line rounded-lg p-8 hover:border-line transition-all duration-300"
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-[#e5e5e5] mb-3">
+                <h2 className="text-2xl md:text-3xl font-bold text-type mb-3">
                   {opportunity.title}
                 </h2>
 
                 <div className="flex flex-wrap gap-3 mb-4">
-                  <span className="px-3 py-1 bg-[#333] text-[#bbb] rounded-full text-sm">
+                  <span className="px-3 py-1 bg-panel text-support rounded-full text-sm">
                     {opportunity.type}
                   </span>
-                  <span className="px-3 py-1 bg-[#333] text-[#bbb] rounded-full text-sm">
+                  <span className="px-3 py-1 bg-panel text-support rounded-full text-sm">
                     {opportunity.location}
                   </span>
                 </div>
 
-                <p className="text-[#bbb] mb-6 leading-relaxed">
+                <p className="text-support mb-6 leading-relaxed">
                   {opportunity.description}
                 </p>
 
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-[#e5e5e5] mb-3">Highlights</h3>
+                  <h3 className="text-lg font-semibold text-type mb-3">Highlights</h3>
                   <ul className="space-y-2">
                     {opportunity.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-[#bbb]">
+                      <li key={idx} className="flex items-start gap-2 text-support">
                         <svg
-                          className="w-5 h-5 text-white flex-shrink-0 mt-0.5"
+                          className="w-5 h-5 text-bright flex-shrink-0 mt-0.5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -135,30 +135,30 @@ export default function Careers() {
           {/* Why Join Us Section */}
           <motion.div
             variants={itemVariants}
-            className="bg-[#222] border border-[#333] rounded-lg p-8 md:p-12 text-center"
+            className="bg-panel border border-line rounded-lg p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#e5e5e5] mb-6 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-type mb-6 font-serif">
               Why Join DATAIDEA?
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
                 <div className="text-4xl mb-3 grayscale opacity-80">🚀</div>
-                <h3 className="text-xl font-semibold text-[#e5e5e5] mb-2">Growth</h3>
-                <p className="text-[#bbb]">
+                <h3 className="text-xl font-semibold text-type mb-2">Growth</h3>
+                <p className="text-support">
                   Continuous learning and professional development opportunities
                 </p>
               </div>
               <div>
                 <div className="text-4xl mb-3 grayscale opacity-80">🤝</div>
-                <h3 className="text-xl font-semibold text-[#e5e5e5] mb-2">Collaboration</h3>
-                <p className="text-[#bbb]">
+                <h3 className="text-xl font-semibold text-type mb-2">Collaboration</h3>
+                <p className="text-support">
                   Work with a passionate team of data enthusiasts
                 </p>
               </div>
               <div>
                 <div className="text-4xl mb-3 grayscale opacity-80">💡</div>
-                <h3 className="text-xl font-semibold text-[#e5e5e5] mb-2">Impact</h3>
-                <p className="text-[#bbb]">
+                <h3 className="text-xl font-semibold text-type mb-2">Impact</h3>
+                <p className="text-support">
                   Make a real difference in how businesses use data
                 </p>
               </div>

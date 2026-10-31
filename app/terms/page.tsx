@@ -9,7 +9,7 @@ export default function TermsOfService() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <main className="min-h-screen bg-[#1a1a1a]">
+    <main className="min-h-screen bg-ground">
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 md:px-8 py-24 pb-16">
         <motion.div
@@ -17,30 +17,30 @@ export default function TermsOfService() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-[#e5e5e5] mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-type mb-4">
             Terms of Service
           </h1>
-          <p className="text-[#bbb] mb-8">
+          <p className="text-support mb-8">
             Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
 
-          <div className="prose prose-lg max-w-none text-[#bbb]">
+          <div className="prose prose-lg max-w-none text-support">
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">1. Acceptance of Terms</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">1. Acceptance of Terms</h2>
               <p className="mb-4 leading-relaxed">
                 By accessing and using DATAIDEA's platform and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to these Terms of Service, please do not use our services.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">2. Description of Service</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">2. Description of Service</h2>
               <p className="mb-4 leading-relaxed">
                 DATAIDEA provides educational services including but not limited to online courses, training programs, certifications, and educational resources in data science, artificial intelligence, and related fields.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">3. User Accounts</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">3. User Accounts</h2>
               <p className="mb-4 leading-relaxed">
                 To access certain features of our services, you may be required to create an account. You are responsible for:
               </p>
@@ -53,7 +53,7 @@ export default function TermsOfService() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">4. Course Enrollment and Payment</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">4. Course Enrollment and Payment</h2>
               <p className="mb-4 leading-relaxed">
                 When you enroll in a course or program:
               </p>
@@ -66,7 +66,7 @@ export default function TermsOfService() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">5. Intellectual Property</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">5. Intellectual Property</h2>
               <p className="mb-4 leading-relaxed">
                 All content provided through DATAIDEA, including but not limited to text, graphics, logos, videos, and software, is the property of DATAIDEA or its content suppliers and is protected by intellectual property laws. You may not:
               </p>
@@ -79,7 +79,7 @@ export default function TermsOfService() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">6. User Conduct</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">6. User Conduct</h2>
               <p className="mb-4 leading-relaxed">
                 You agree not to:
               </p>
@@ -93,7 +93,7 @@ export default function TermsOfService() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">7. Certificates and Credentials</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">7. Certificates and Credentials</h2>
               <p className="mb-4 leading-relaxed">
                 Certificates are issued upon successful completion of course requirements. Certificates:
               </p>
@@ -106,14 +106,14 @@ export default function TermsOfService() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">8. Privacy and Data Protection</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">8. Privacy and Data Protection</h2>
               <p className="mb-4 leading-relaxed">
                 Your use of DATAIDEA is also governed by our Privacy Policy. Please review our Privacy Policy to understand our practices regarding your personal information.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">9. Disclaimers and Limitations of Liability</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">9. Disclaimers and Limitations of Liability</h2>
               <p className="mb-4 leading-relaxed">
                 DATAIDEA provides services "as is" and "as available" without warranties of any kind. We do not guarantee that:
               </p>
@@ -128,28 +128,28 @@ export default function TermsOfService() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">10. Modifications to Service and Terms</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">10. Modifications to Service and Terms</h2>
               <p className="mb-4 leading-relaxed">
                 We reserve the right to modify or discontinue the service at any time without notice. We may also revise these Terms of Service at any time. Continued use of the service after changes constitutes acceptance of the modified terms.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">11. Termination</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">11. Termination</h2>
               <p className="mb-4 leading-relaxed">
                 We may terminate or suspend your account and access to the service immediately, without prior notice or liability, for any reason, including breach of these Terms.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">12. Governing Law</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">12. Governing Law</h2>
               <p className="mb-4 leading-relaxed">
                 These Terms shall be governed by and construed in accordance with the laws of Uganda, without regard to its conflict of law provisions.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#e5e5e5] mb-4">13. Contact Information</h2>
+              <h2 className="text-2xl font-semibold text-type mb-4">13. Contact Information</h2>
               <p className="mb-4 leading-relaxed">
                 If you have any questions about these Terms of Service, please contact us at:
               </p>

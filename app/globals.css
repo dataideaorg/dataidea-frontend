@@ -1,55 +1,231 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1a1a1a;
-  --foreground: #e5e5e5;
+  /* Signal, shared */
+  --signal: #67fff0;
+  --signal-press: #3ad9cc;
+  --signal-wash: #e7fffd;
+  --signal-mist: #f4fffe;
+  --signal-ink: #005c57;
+
+  /* Night is the site default */
+  --ground: #0a0a0a;
+  --panel: #1c1c1c;
+  --hover: #262626;
+  --line: #2e2e2e;
+  --wash: #152726;
+  --mute: #8a8a8a;
+  --type: #e5e5e5;
+  --bright: #ffffff;
+  --ink: #ffffff;
+  --body: #e5e5e5;
+  --support: #e5e5e5;
+  --link: #ffffff;
+  --nav: #e5e5e5;
+  --nav-hover: #ffffff;
+  --pill-bg: #1c1c1c;
+  --pill-fg: #e5e5e5;
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-fg: #0a0a0a;
+  --btn-secondary-hover: #e5e5e5;
+  --btn-outline-hover: rgb(255 255 255 / 0.1);
+  --featured-border: #ffffff;
+  --input-focus: #67fff0;
+  --logo-word: #ffffff;
+  --jigsaw-filter: invert(1);
+  --jigsaw-opacity: 0.03;
+  --scrollbar-track: #0a0a0a;
+  --scrollbar-thumb: #2e2e2e;
+  --color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --ground: #ffffff;
+    --panel: #ffffff;
+    --hover: #f4fffe;
+    --line: #e6e6e6;
+    --wash: #e7fffd;
+    --mute: #595959;
+    --type: #1a1a1a;
+    --bright: #000000;
+    --ink: #000000;
+    --body: #1a1a1a;
+    --support: #3a3a3a;
+    --link: #005c57;
+    --nav: #595959;
+    --nav-hover: #000000;
+    --pill-bg: #e7fffd;
+    --pill-fg: #000000;
+    --btn-secondary-bg: #000000;
+    --btn-secondary-fg: #ffffff;
+    --btn-secondary-hover: #1a1a1a;
+    --btn-outline-hover: #e7fffd;
+    --featured-border: #000000;
+    --input-focus: #000000;
+    --logo-word: #000000;
+    --jigsaw-filter: none;
+    --jigsaw-opacity: 0.04;
+    --scrollbar-track: #f4fffe;
+    --scrollbar-thumb: #e6e6e6;
+    --color-scheme: light;
+  }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'DM Serif Text', Georgia, serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a1a1a;
-    --foreground: #e5e5e5;
-  }
+  --color-background: var(--ground);
+  --color-foreground: var(--type);
+  --color-ground: var(--ground);
+  --color-panel: var(--panel);
+  --color-hover: var(--hover);
+  --color-line: var(--line);
+  --color-wash: var(--wash);
+  --color-mute: var(--mute);
+  --color-type: var(--type);
+  --color-bright: var(--bright);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-support: var(--support);
+  --color-link: var(--link);
+  --color-nav: var(--nav);
+  --color-nav-hover: var(--nav-hover);
+  --color-pill: var(--pill-bg);
+  --color-pill-fg: var(--pill-fg);
+  --color-signal: var(--signal);
+  --color-signal-press: var(--signal-press);
+  --color-signal-wash: var(--signal-wash);
+  --color-signal-mist: var(--signal-mist);
+  --color-signal-ink: var(--signal-ink);
+  --color-featured: var(--featured-border);
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "DM Serif Text", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: var(--color-scheme);
 }
 
 body {
-  background: #1a1a1a;
-  color: #e5e5e5;
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--ground);
+  color: var(--type);
+  font-family: var(--font-sans);
 }
 
-/* Smooth scrolling for anchor links */
 @supports (scroll-behavior: smooth) {
   html {
     scroll-behavior: smooth;
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #111;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #555;
+  background: var(--scrollbar-thumb);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333;
+  background: var(--line);
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.btn-primary:focus-visible {
+  outline-color: #000;
+}
+
+.wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0;
+  color: var(--logo-word);
+}
+
+.wordmark-data,
+.wordmark-idea {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.wordmark-idea {
+  color: #000;
+  background: var(--signal);
+  padding: 0 0.1em;
+  border-radius: 2px;
+  width: max-content;
+}
+
+.mark-phrase {
+  background: var(--signal);
+  color: #000;
+  font-style: inherit;
+  font-weight: inherit;
+  padding: 0 0.06em;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--pill-bg);
+  color: var(--pill-fg);
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: var(--nav);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--nav-hover);
+}
+
+.link-inline {
+  color: var(--link);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.hero-jigsaw {
+  background-image: url("/jigsaw.svg");
+  background-size: 192px 192px;
+  background-repeat: repeat;
+  filter: var(--jigsaw-filter);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

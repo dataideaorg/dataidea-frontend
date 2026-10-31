@@ -42,21 +42,9 @@ export const CTA: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="w-full py-20 md:py-32 bg-gradient-to-r from-[#111] to-[#333] relative overflow-hidden">
-      {/* Animated Background */}
+    <section id="contact" className="w-full py-20 md:py-32 bg-ground border-t border-line">
       <motion.div
-        animate={{ float: [0, 20, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48"
-      />
-      <motion.div
-        animate={{ float: [0, -20, 0] }}
-        transition={{ duration: 10, repeat: Infinity, delay: 2 }}
-        className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-48 -mb-48"
-      />
-
-      <motion.div
-        className="relative max-w-4xl mx-auto px-4 md:px-8 text-center"
+        className="max-w-4xl mx-auto px-4 md:px-8 text-center"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -64,14 +52,14 @@ export const CTA: React.FC = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
+          className="text-4xl md:text-5xl font-normal text-bright mb-6 font-serif leading-[1.15]"
         >
           Ready to Transform Your Career?
         </motion.h2>
 
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"
+          className="text-lg md:text-xl text-support max-w-2xl mx-auto mb-8"
         >
           The January 2027 live cohort starts {FLAGSHIP_COHORT.startDateShort}. Apply for a seat, or subscribe for updates.
         </motion.p>
@@ -106,27 +94,27 @@ export const CTA: React.FC = () => {
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-col md:flex-row gap-8 justify-center items-center mt-12 pt-8 border-t border-white/20"
+          className="flex flex-col md:flex-row gap-8 justify-center items-center mt-12 pt-8 border-t border-line"
         >
           <div className="text-center md:text-left">
-            <p className="text-white/80 text-sm"><span className="grayscale opacity-70">📧</span> Email</p>
-            <a href="mailto:dataideaorg@gmail.com" className="text-white font-semibold hover:underline">
+            <p className="text-mute text-sm"><span className="grayscale opacity-70">📧</span> Email</p>
+            <a href="mailto:dataideaorg@gmail.com" className="text-bright font-semibold link-inline">
               dataideaorg@gmail.com
             </a>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-white/80 text-sm"><span className="grayscale opacity-70">📞</span> Phone</p>
-            <a href="tel:+256701520768" className="text-white font-semibold hover:underline">
+            <p className="text-mute text-sm"><span className="grayscale opacity-70">📞</span> Phone</p>
+            <a href="tel:+256701520768" className="text-bright font-semibold link-inline">
               +256 701 520768
             </a>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-white/80 text-sm"><span className="grayscale opacity-70">📍</span> Location</p>
-            <p className="text-white font-semibold">Kampala, Uganda</p>
+            <p className="text-mute text-sm"><span className="grayscale opacity-70">📍</span> Location</p>
+            <p className="text-bright font-semibold">Kampala, Uganda</p>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-white/80 text-sm"><span className="grayscale opacity-70">🌐</span> Website</p>
-            <a href="https://dataidea.org" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline">
+            <p className="text-mute text-sm"><span className="grayscale opacity-70">🌐</span> Website</p>
+            <a href="https://dataidea.org" target="_blank" rel="noopener noreferrer" className="text-bright font-semibold link-inline">
               dataidea.org
             </a>
           </div>

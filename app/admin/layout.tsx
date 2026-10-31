@@ -41,7 +41,7 @@ export default function AdminLayout({
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#1a1a1a]">
+      <div className="min-h-screen flex items-center justify-center bg-ground">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-yellow-400"></div>
       </div>
     );
@@ -52,9 +52,9 @@ export default function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-[#e5e5e5]">
+    <div className="min-h-screen bg-ground text-type">
       {/* Top Navigation Bar */}
-      <nav className="bg-[#111111] border-b border-[#333333]">
+      <nav className="bg-panel border-b border-line">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
@@ -88,11 +88,11 @@ export default function AdminLayout({
 
       <div className="flex">
         {/* Sidebar Navigation */}
-        <aside className="w-64 min-h-[calc(100vh-4rem)] bg-[#111111] border-r border-[#333333]">
+        <aside className="w-64 min-h-[calc(100vh-4rem)] bg-panel border-r border-line">
           <nav className="p-4 space-y-2">
             <Link
               href="/admin"
-              className="block px-4 py-3 rounded-lg hover:bg-[#1a1a1a] transition-colors"
+              className="block px-4 py-3 rounded-lg hover:bg-ground transition-colors"
             >
               <div className="flex items-center space-x-3">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ export default function AdminLayout({
 
             <Link
               href="/admin/courses"
-              className="block px-4 py-3 rounded-lg hover:bg-[#1a1a1a] transition-colors"
+              className="block px-4 py-3 rounded-lg hover:bg-ground transition-colors"
             >
               <div className="flex items-center space-x-3">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ export default function AdminLayout({
 
             <Link
               href="/admin/enrollments"
-              className="block px-4 py-3 rounded-lg hover:bg-[#1a1a1a] transition-colors"
+              className="block px-4 py-3 rounded-lg hover:bg-ground transition-colors"
             >
               <div className="flex items-center space-x-3">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,7 +128,7 @@ export default function AdminLayout({
 
             <Link
               href="/admin/certificates"
-              className="block px-4 py-3 rounded-lg hover:bg-[#1a1a1a] transition-colors"
+              className="block px-4 py-3 rounded-lg hover:bg-ground transition-colors"
             >
               <div className="flex items-center space-x-3">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

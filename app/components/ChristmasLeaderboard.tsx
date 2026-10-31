@@ -105,7 +105,7 @@ export const ChristmasLeaderboard: React.FC = () => {
         <p className="text-red-400 mb-4">{error}</p>
         <button
           onClick={fetchLeaderboard}
-          className="px-4 py-2 bg-[#222] border border-[#444] text-white rounded-lg hover:bg-[#2a2a2a] transition-colors"
+          className="px-4 py-2 bg-panel border border-line text-bright rounded-lg hover:bg-hover transition-colors"
         >
           Retry
         </button>
@@ -116,7 +116,7 @@ export const ChristmasLeaderboard: React.FC = () => {
   if (!leaderboard || leaderboard.leaderboard.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-[#bbb] text-lg">No scores yet. Be the first to play!</p>
+        <p className="text-support text-lg">No scores yet. Be the first to play!</p>
       </div>
     );
   }
@@ -132,8 +132,8 @@ export const ChristmasLeaderboard: React.FC = () => {
         >
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold text-white mb-1">Your Score</h3>
-              <p className="text-[#bbb]">
+              <h3 className="text-lg font-semibold text-bright mb-1">Your Score</h3>
+              <p className="text-support">
                 {leaderboard.userScore.userName} • {leaderboard.userScore.score}/
                 {leaderboard.userScore.totalQuestions} ({leaderboard.userScore.percentage}%)
               </p>
@@ -143,7 +143,7 @@ export const ChristmasLeaderboard: React.FC = () => {
                 <div className="text-2xl font-bold text-yellow-400">
                   #{leaderboard.userRank}
                 </div>
-                <div className="text-sm text-[#bbb]">Rank</div>
+                <div className="text-sm text-support">Rank</div>
               </div>
             )}
           </div>
@@ -151,11 +151,11 @@ export const ChristmasLeaderboard: React.FC = () => {
       )}
 
       {/* Leaderboard */}
-      <div className="bg-[#222] rounded-lg border border-[#333] overflow-hidden">
-        <div className="bg-[#2a2a2a] px-6 py-4 border-b border-[#333]">
-          <h3 className="text-xl font-bold text-white">Top Scores</h3>
+      <div className="bg-panel rounded-lg border border-line overflow-hidden">
+        <div className="bg-hover px-6 py-4 border-b border-line">
+          <h3 className="text-xl font-bold text-bright">Top Scores</h3>
         </div>
-        <div className="divide-y divide-[#333]">
+        <div className="divide-y divide-line">
           {leaderboard.leaderboard.map((entry, index) => {
             const isCurrentUser = user && entry.userId === user.id;
             const rank = index + 1;
@@ -167,16 +167,16 @@ export const ChristmasLeaderboard: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
                 className={`px-6 py-4 flex items-center justify-between ${
-                  isCurrentUser ? 'bg-yellow-500/10' : 'hover:bg-[#2a2a2a]'
+                  isCurrentUser ? 'bg-yellow-500/10' : 'hover:bg-hover'
                 } transition-colors`}
               >
                 <div className="flex items-center gap-4 flex-1">
-                  <div className="text-2xl font-bold text-white w-12 text-center">
+                  <div className="text-2xl font-bold text-bright w-12 text-center">
                     {getRankEmoji(rank)}
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-white">
+                      <span className="font-semibold text-bright">
                         {entry.userName}
                       </span>
                       {isCurrentUser && (
@@ -185,16 +185,16 @@ export const ChristmasLeaderboard: React.FC = () => {
                         </span>
                       )}
                     </div>
-                    <div className="text-sm text-[#999]">
+                    <div className="text-sm text-mute">
                       {formatDate(entry.createdAt)}
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-lg font-bold text-white">
+                  <div className="text-lg font-bold text-bright">
                     {entry.score}/{entry.totalQuestions}
                   </div>
-                  <div className="text-sm text-[#bbb]">
+                  <div className="text-sm text-support">
                     {entry.percentage}%
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export const ChristmasLeaderboard: React.FC = () => {
       <div className="text-center">
         <button
           onClick={fetchLeaderboard}
-          className="text-[#bbb] hover:text-white transition-colors text-sm"
+          className="text-support hover:text-bright transition-colors text-sm"
         >
           ↻ Refresh Leaderboard
         </button>

@@ -12,7 +12,7 @@ const PartnerLogo: React.FC<PartnerProps> = ({ name, logo }) => (
   <motion.div
     whileHover={{ scale: 1.05 }}
     transition={{ duration: 0.3 }}
-    className="flex items-center justify-center p-12 bg-white rounded-xl h-48 min-w-[280px] border border-[#444] flex-shrink-0"
+    className="flex items-center justify-center p-12 bg-white rounded-xl h-48 min-w-[280px] border border-line flex-shrink-0"
   >
     <img
       src={logo}
@@ -59,7 +59,7 @@ export const Partners: React.FC = () => {
   const duplicatedPartners = [...partners, ...partners, ...partners];
 
   return (
-    <section id="partners" className="w-full py-20 md:py-32 bg-gradient-to-br from-[#1a1a1a] to-[#222] overflow-hidden">
+    <section id="partners" className="w-full py-20 md:py-32 bg-ground overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 md:px-8 mb-16">
         <motion.div
           className="text-center"
@@ -69,21 +69,21 @@ export const Partners: React.FC = () => {
         >
           <motion.span
             variants={itemVariants}
-            className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold mb-4"
+            className="eyebrow mb-4"
           >
             Alumni Success
           </motion.span>
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
+            className="text-4xl md:text-5xl font-normal text-bright mb-6 font-serif leading-[1.15]"
           >
             Our Alumni Have Worked With
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg text-[#bbb] max-w-2xl mx-auto"
+            className="text-lg text-support max-w-2xl mx-auto"
           >
             Our graduates and partners have gone on to work with leading organizations across East Africa and beyond.
           </motion.p>

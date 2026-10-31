@@ -4,12 +4,14 @@ import Link from 'next/link';
 type Variant = 'primary' | 'secondary' | 'outline';
 type Size = 'sm' | 'md' | 'lg';
 
-const baseStyles = 'font-semibold rounded-full transition-all duration-300 inline-flex items-center justify-center';
+const baseStyles =
+  'font-semibold rounded-full transition-all duration-300 inline-flex items-center justify-center active:scale-95';
 
 const variants: Record<Variant, string> = {
-  primary: 'bg-white text-[#111] hover:bg-[#e5e5e5] active:scale-95 shadow-lg hover:shadow-xl',
-  secondary: 'bg-[#333] text-white hover:bg-[#444] active:scale-95',
-  outline: 'border-2 border-white text-white hover:bg-white/10 active:scale-95',
+  primary: 'btn-primary bg-signal text-black hover:bg-signal-press',
+  secondary: 'bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:bg-[var(--btn-secondary-hover)]',
+  outline:
+    'border-2 border-bright text-bright hover:bg-[var(--btn-outline-hover)]',
 };
 
 const sizes: Record<Size, string> = {

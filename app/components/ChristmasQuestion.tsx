@@ -36,14 +36,14 @@ export const ChristmasQuestion: React.FC<ChristmasQuestionProps> = ({
       {/* Progress Bar */}
       <div className="mb-8">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-[#bbb] text-sm font-medium">
+          <span className="text-support text-sm font-medium">
             Question {questionNumber} of {totalQuestions}
           </span>
-          <span className="text-[#bbb] text-sm font-medium">
+          <span className="text-support text-sm font-medium">
             {Math.round(progress)}%
           </span>
         </div>
-        <div className="w-full h-2 bg-[#333] rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-panel rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-gradient-to-r from-red-500 to-green-500"
             initial={{ width: 0 }}
@@ -58,9 +58,9 @@ export const ChristmasQuestion: React.FC<ChristmasQuestionProps> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-[#222] rounded-lg p-8 mb-6 border border-[#333]"
+        className="bg-panel rounded-lg p-8 mb-6 border border-line"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-bright mb-8 text-center">
           {question.question}
         </h2>
 
@@ -77,13 +77,13 @@ export const ChristmasQuestion: React.FC<ChristmasQuestionProps> = ({
               } else if (isSelected && !isCorrectAnswer) {
                 buttonClass += 'bg-red-500/20 border-red-500 text-red-300';
               } else {
-                buttonClass += 'bg-[#2a2a2a] border-[#444] text-[#bbb]';
+                buttonClass += 'bg-hover border-line text-support';
               }
             } else {
               if (isSelected) {
-                buttonClass += 'bg-[#2a2a2a] border-yellow-400 text-white';
+                buttonClass += 'bg-hover border-yellow-400 text-bright';
               } else {
-                buttonClass += 'bg-[#2a2a2a] border-[#444] text-[#bbb] hover:border-[#666] hover:text-white';
+                buttonClass += 'bg-hover border-line text-support hover:border-line hover:text-bright';
               }
             }
 

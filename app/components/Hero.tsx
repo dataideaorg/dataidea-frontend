@@ -26,39 +26,20 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-[#111] via-[#222] to-[#333] pt-20 overflow-hidden">
-      {/* Animated Background Elements */}
+    <section className="relative w-full min-h-screen bg-ground pt-20 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ float: [0, 20, 0] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48"
-        />
-        <motion.div
-          animate={{ float: [0, -20, 0] }}
-          transition={{ duration: 10, repeat: Infinity, delay: 2 }}
-          className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-48 -mb-48"
-        />
-
-        {/* Animated Jigsaw Pattern */}
         <motion.div
           animate={{
             rotate: [0, 360],
             scale: [1, 1.1, 1],
-            opacity: [0.03, 0.05, 0.03]
+            opacity: [0.03, 0.05, 0.03],
           }}
           transition={{
             duration: 40,
             repeat: Infinity,
-            ease: "linear"
+            ease: 'linear',
           }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]"
-          style={{
-            backgroundImage: 'url(/jigsaw.svg)',
-            backgroundSize: '192px 192px',
-            backgroundRepeat: 'repeat',
-            filter: 'invert(1)',
-          }}
+          className="hero-jigsaw absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]"
         />
       </div>
 
@@ -68,30 +49,24 @@ export const Hero: React.FC = () => {
         initial="hidden"
         animate="visible"
       >
-        {/* Badge */}
         <motion.div variants={itemVariants} className="mb-6">
-          <span className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold">
-            Learn Data Science in Uganda
-          </span>
+          <span className="eyebrow">Learn Data Science in Uganda</span>
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-serif bg-gradient-to-r from-white to-[#bbb] bg-clip-text text-transparent"
+          className="text-4xl md:text-6xl lg:text-7xl font-normal mb-6 leading-[1.15] font-serif text-bright"
         >
-          Programming for Data Science
+          Programming for <span className="mark-phrase">Data Science</span>
         </motion.h1>
 
-        {/* Subheading */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-[#bbb] max-w-2xl mb-8 leading-relaxed"
+          className="text-lg md:text-xl text-support max-w-2xl mb-8 leading-relaxed"
         >
           We offer hands on data science training and build custom websites and AI tools for individuals and organizations.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-4 mb-12">
           <Button
             size="lg"
@@ -109,7 +84,6 @@ export const Hero: React.FC = () => {
           </Button>
         </motion.div>
 
-        {/* Stats */}
         <motion.div
           variants={itemVariants}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-3xl"
@@ -121,8 +95,8 @@ export const Hero: React.FC = () => {
             { number: '100%', label: 'Hands-on' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-white">{stat.number}</p>
-              <p className="text-[#bbb] text-sm md:text-base">{stat.label}</p>
+              <p className="text-2xl md:text-3xl font-bold text-bright">{stat.number}</p>
+              <p className="text-mute text-sm md:text-base">{stat.label}</p>
             </div>
           ))}
         </motion.div>

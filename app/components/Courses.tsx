@@ -36,12 +36,12 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
         <div className="space-y-3 my-6">
           <div>
-            <p className="text-sm font-semibold text-[#bbb] mb-2">Key Skills:</p>
+            <p className="text-sm font-semibold text-support mb-2">Key Skills:</p>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 bg-[#333] text-[#e5e5e5] text-xs rounded-full font-medium"
+                  className="px-3 py-1 bg-pill text-pill-fg text-xs rounded-full font-medium border border-line"
                 >
                   {skill}
                 </span>
@@ -49,14 +49,14 @@ const CourseCard: React.FC<CourseCardProps> = ({
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#333]">
+          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-line">
             <div>
-              <p className="text-xs text-[#999]">Duration</p>
-              <p className="font-semibold text-white">{duration}</p>
+              <p className="text-xs text-mute">Duration</p>
+              <p className="font-semibold text-bright">{duration}</p>
             </div>
             <div>
-              <p className="text-xs text-[#999]">Level</p>
-              <p className="font-semibold text-white">{level}</p>
+              <p className="text-xs text-mute">Level</p>
+              <p className="font-semibold text-bright">{level}</p>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@ export const Courses: React.FC = () => {
   };
 
   return (
-    <section id="courses" className="w-full py-20 md:py-32 bg-[#1a1a1a]">
+    <section id="courses" className="w-full py-20 md:py-32 bg-ground">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <motion.div
           className="text-center mb-16"
@@ -144,21 +144,21 @@ export const Courses: React.FC = () => {
         >
           <motion.span
             variants={itemVariants}
-            className="inline-block px-4 py-2 bg-[#333] text-[#e5e5e5] rounded-full text-sm font-semibold mb-4"
+            className="eyebrow mb-4"
           >
             Our Programs
           </motion.span>
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
+            className="text-4xl md:text-5xl font-normal text-bright mb-6 font-serif leading-[1.15]"
           >
             Modules inside the flagship
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg text-[#bbb] max-w-2xl mx-auto"
+            className="text-lg text-support max-w-2xl mx-auto"
           >
             Study any module free. The January live cohort wraps them into one 12-week path with feedback and a certificate.
           </motion.p>
@@ -167,26 +167,26 @@ export const Courses: React.FC = () => {
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-[#111] border border-[#333] rounded-lg p-6 animate-pulse">
-                <div className="h-6 bg-[#222] rounded w-3/4 mb-4"></div>
+              <div key={i} className="bg-panel border border-line rounded-xl p-6 animate-pulse">
+                <div className="h-6 bg-hover rounded w-3/4 mb-4"></div>
                 <div className="space-y-2 mb-6">
-                  <div className="h-4 bg-[#222] rounded w-full"></div>
-                  <div className="h-4 bg-[#222] rounded w-5/6"></div>
+                  <div className="h-4 bg-hover rounded w-full"></div>
+                  <div className="h-4 bg-hover rounded w-5/6"></div>
                 </div>
                 <div className="space-y-3">
-                  <div className="h-4 bg-[#222] rounded w-1/3 mb-2"></div>
+                  <div className="h-4 bg-hover rounded w-1/3 mb-2"></div>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <div className="h-6 bg-[#222] rounded-full w-16"></div>
-                    <div className="h-6 bg-[#222] rounded-full w-20"></div>
-                    <div className="h-6 bg-[#222] rounded-full w-16"></div>
+                    <div className="h-6 bg-hover rounded-full w-16"></div>
+                    <div className="h-6 bg-hover rounded-full w-20"></div>
+                    <div className="h-6 bg-hover rounded-full w-16"></div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#333]">
-                    <div className="h-8 bg-[#222] rounded"></div>
-                    <div className="h-8 bg-[#222] rounded"></div>
+                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-line">
+                    <div className="h-8 bg-hover rounded"></div>
+                    <div className="h-8 bg-hover rounded"></div>
                   </div>
                   <div className="space-y-2 pt-4">
-                    <div className="h-10 bg-[#222] rounded"></div>
-                    <div className="h-10 bg-[#222] rounded"></div>
+                    <div className="h-10 bg-hover rounded"></div>
+                    <div className="h-10 bg-hover rounded"></div>
                   </div>
                 </div>
               </div>
@@ -194,7 +194,7 @@ export const Courses: React.FC = () => {
           </div>
         ) : courses.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-[#bbb] text-lg">No courses available at the moment.</p>
+            <p className="text-support text-lg">No courses available at the moment.</p>
           </div>
         ) : (
           <motion.div

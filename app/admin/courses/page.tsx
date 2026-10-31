@@ -157,7 +157,7 @@ export default function CoursesManagement() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#bbb]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-mute"></div>
       </div>
     );
   }
@@ -166,12 +166,12 @@ export default function CoursesManagement() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 font-serif">Courses Management</h1>
-          <p className="text-[#bbb]">Create and manage your courses</p>
+          <h1 className="text-3xl font-bold text-bright mb-2 font-serif">Courses Management</h1>
+          <p className="text-support">Create and manage your courses</p>
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
+          className="px-6 py-3 bg-signal text-black font-semibold rounded-lg hover:bg-signal-press transition-colors"
         >
           + Create Course
         </button>
@@ -179,17 +179,17 @@ export default function CoursesManagement() {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <div className="bg-[#111111] border border-[#333333] rounded-lg p-4">
+        <div className="bg-panel border border-line rounded-lg p-4">
           <p className="text-gray-400 text-sm mb-1">Total Courses</p>
-          <p className="text-2xl font-bold text-white">{courses.length}</p>
+          <p className="text-2xl font-bold text-bright">{courses.length}</p>
         </div>
-        <div className="bg-[#111111] border border-[#333333] rounded-lg p-4">
+        <div className="bg-panel border border-line rounded-lg p-4">
           <p className="text-gray-400 text-sm mb-1">Active Courses</p>
           <p className="text-2xl font-bold text-green-400">
             {courses.filter((c) => c.is_active).length}
           </p>
         </div>
-        <div className="bg-[#111111] border border-[#333333] rounded-lg p-4">
+        <div className="bg-panel border border-line rounded-lg p-4">
           <p className="text-gray-400 text-sm mb-1">Inactive Courses</p>
           <p className="text-2xl font-bold text-gray-400">
             {courses.filter((c) => !c.is_active).length}
@@ -202,11 +202,11 @@ export default function CoursesManagement() {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="bg-[#111111] border border-[#333333] rounded-lg p-6 hover:border-[#555] transition-colors"
+            className="bg-panel border border-line rounded-lg p-6 hover:border-line transition-colors"
           >
             <div className="flex justify-between items-start mb-4">
               <div>
-                <h3 className="text-xl font-bold text-white mb-1">{course.title}</h3>
+                <h3 className="text-xl font-bold text-bright mb-1">{course.title}</h3>
                 <div className="flex items-center space-x-2">
                   <span
                     className={`px-2 py-1 rounded-full text-xs font-medium border ${getLevelColor(
@@ -238,7 +238,7 @@ export default function CoursesManagement() {
                 {course.skills.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-2 py-1 bg-[#1a1a1a] border border-[#333333] rounded text-xs"
+                    className="px-2 py-1 bg-ground border border-line rounded text-xs"
                   >
                     {skill}
                   </span>
@@ -257,7 +257,7 @@ export default function CoursesManagement() {
               </a>
             )}
 
-            <div className="flex space-x-2 pt-4 border-t border-[#333333]">
+            <div className="flex space-x-2 pt-4 border-t border-line">
               <button
                 onClick={() => handleEdit(course)}
                 className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm transition-colors"
@@ -276,11 +276,11 @@ export default function CoursesManagement() {
       </div>
 
       {courses.length === 0 && (
-        <div className="bg-[#111111] border border-[#333333] rounded-lg p-12 text-center">
+        <div className="bg-panel border border-line rounded-lg p-12 text-center">
           <p className="text-gray-400 mb-4">No courses created yet</p>
           <button
             onClick={() => setShowCreateModal(true)}
-            className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
+            className="px-6 py-3 bg-signal text-black font-semibold rounded-lg hover:bg-signal-press transition-colors"
           >
             Create Your First Course
           </button>
@@ -290,8 +290,8 @@ export default function CoursesManagement() {
       {/* Create/Edit Course Modal */}
       {showCreateModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-[#111111] border border-[#333333] rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <h2 className="text-2xl font-bold text-white mb-6 font-serif">
+          <div className="bg-panel border border-line rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <h2 className="text-2xl font-bold text-bright mb-6 font-serif">
               {editingCourse ? 'Edit Course' : 'Create New Course'}
             </h2>
             <form onSubmit={handleSubmit}>
@@ -302,7 +302,7 @@ export default function CoursesManagement() {
                     type="text"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
+                    className="w-full px-4 py-2 bg-ground border border-line rounded-lg focus:outline-none focus:border-line"
                     required
                   />
                 </div>
@@ -312,7 +312,7 @@ export default function CoursesManagement() {
                   <textarea
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555] min-h-[100px]"
+                    className="w-full px-4 py-2 bg-ground border border-line rounded-lg focus:outline-none focus:border-line min-h-[100px]"
                     required
                   />
                 </div>
@@ -325,7 +325,7 @@ export default function CoursesManagement() {
                       value={formData.duration}
                       onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
                       placeholder="e.g., 8 weeks"
-                      className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
+                      className="w-full px-4 py-2 bg-ground border border-line rounded-lg focus:outline-none focus:border-line"
                       required
                     />
                   </div>
@@ -340,7 +340,7 @@ export default function CoursesManagement() {
                           level: e.target.value as 'beginner' | 'intermediate' | 'advanced' | 'all',
                         })
                       }
-                      className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
+                      className="w-full px-4 py-2 bg-ground border border-line rounded-lg focus:outline-none focus:border-line"
                       required
                     >
                       <option value="beginner">Beginner</option>
@@ -360,7 +360,7 @@ export default function CoursesManagement() {
                     value={formData.skills}
                     onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
                     placeholder="e.g., Python, Data Analysis, Machine Learning"
-                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
+                    className="w-full px-4 py-2 bg-ground border border-line rounded-lg focus:outline-none focus:border-line"
                     required
                   />
                 </div>
@@ -374,7 +374,7 @@ export default function CoursesManagement() {
                       setFormData({ ...formData, free_resources_link: e.target.value })
                     }
                     placeholder="https://..."
-                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
+                    className="w-full px-4 py-2 bg-ground border border-line rounded-lg focus:outline-none focus:border-line"
                   />
                 </div>
 
@@ -396,14 +396,14 @@ export default function CoursesManagement() {
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="flex-1 px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg hover:border-[#555] transition-colors"
+                  className="flex-1 px-4 py-2 bg-ground border border-line rounded-lg hover:border-line transition-colors"
                   disabled={submitting}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors disabled:opacity-50"
+                  className="flex-1 px-4 py-2 bg-signal text-black font-semibold rounded-lg hover:bg-signal-press transition-colors disabled:opacity-50"
                   disabled={submitting}
                 >
                   {submitting ? 'Saving...' : editingCourse ? 'Update Course' : 'Create Course'}

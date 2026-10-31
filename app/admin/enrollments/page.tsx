@@ -187,7 +187,7 @@ export default function EnrollmentsManagement() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#bbb]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-mute"></div>
       </div>
     );
   }
@@ -196,12 +196,12 @@ export default function EnrollmentsManagement() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 font-serif">Enrollments Management</h1>
-          <p className="text-[#bbb]">Manage student enrollments and track progress</p>
+          <h1 className="text-3xl font-bold text-bright mb-2 font-serif">Enrollments Management</h1>
+          <p className="text-support">Manage student enrollments and track progress</p>
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="px-6 py-3 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors"
+          className="px-6 py-3 bg-signal text-black font-semibold rounded-lg hover:bg-signal-press transition-colors"
         >
           + Create Enrollment
         </button>
@@ -213,8 +213,8 @@ export default function EnrollmentsManagement() {
           onClick={() => setFilter('all')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'all'
-              ? 'bg-white text-[#1a1a1a]'
-              : 'bg-[#111111] border border-[#333333] hover:border-[#555]'
+              ? 'bg-signal text-black'
+              : 'bg-panel border border-line hover:border-line'
           }`}
         >
           All ({enrollments.length})
@@ -223,8 +223,8 @@ export default function EnrollmentsManagement() {
           onClick={() => setFilter('enrolled')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'enrolled'
-              ? 'bg-white text-[#1a1a1a]'
-              : 'bg-[#111111] border border-[#333333] hover:border-[#555]'
+              ? 'bg-signal text-black'
+              : 'bg-panel border border-line hover:border-line'
           }`}
         >
           Enrolled ({enrollments.filter((e) => e.status === 'enrolled').length})
@@ -233,8 +233,8 @@ export default function EnrollmentsManagement() {
           onClick={() => setFilter('in_progress')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'in_progress'
-              ? 'bg-white text-[#1a1a1a]'
-              : 'bg-[#111111] border border-[#333333] hover:border-[#555]'
+              ? 'bg-signal text-black'
+              : 'bg-panel border border-line hover:border-line'
           }`}
         >
           In Progress ({enrollments.filter((e) => e.status === 'in_progress').length})
@@ -243,8 +243,8 @@ export default function EnrollmentsManagement() {
           onClick={() => setFilter('completed')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'completed'
-              ? 'bg-white text-[#1a1a1a]'
-              : 'bg-[#111111] border border-[#333333] hover:border-[#555]'
+              ? 'bg-signal text-black'
+              : 'bg-panel border border-line hover:border-line'
           }`}
         >
           Completed ({enrollments.filter((e) => e.status === 'completed').length})
@@ -252,10 +252,10 @@ export default function EnrollmentsManagement() {
       </div>
 
       {/* Enrollments Table */}
-      <div className="bg-[#111111] border border-[#333333] rounded-lg overflow-hidden">
+      <div className="bg-panel border border-line rounded-lg overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-[#1a1a1a] border-b border-[#333333]">
+            <thead className="bg-ground border-b border-line">
               <tr>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Student</th>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Course</th>
@@ -264,9 +264,9 @@ export default function EnrollmentsManagement() {
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#333333]">
+            <tbody className="divide-y divide-line">
               {filteredEnrollments.map((enrollment) => (
-                <tr key={enrollment.id} className="hover:bg-[#1a1a1a] transition-colors">
+                <tr key={enrollment.id} className="hover:bg-ground transition-colors">
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-3">
                       {enrollment.user.picture && (
@@ -336,8 +336,8 @@ export default function EnrollmentsManagement() {
       {/* Create Enrollment Modal */}
       {showCreateModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-[#111111] border border-[#333333] rounded-lg p-8 max-w-md w-full mx-4">
-            <h2 className="text-2xl font-bold text-white mb-6 font-serif">Create Enrollment</h2>
+          <div className="bg-panel border border-line rounded-lg p-8 max-w-md w-full mx-4">
+            <h2 className="text-2xl font-bold text-bright mb-6 font-serif">Create Enrollment</h2>
             <form onSubmit={handleCreateEnrollment}>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">Student Email</label>
@@ -345,7 +345,7 @@ export default function EnrollmentsManagement() {
                   type="email"
                   value={userEmail}
                   onChange={(e) => setUserEmail(e.target.value)}
-                  className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
+                  className="w-full px-4 py-2 bg-ground border border-line rounded-lg focus:outline-none focus:border-line"
                   placeholder="student@example.com"
                   required
                 />
@@ -356,7 +356,7 @@ export default function EnrollmentsManagement() {
                 <select
                   value={selectedCourseId || ''}
                   onChange={(e) => setSelectedCourseId(Number(e.target.value))}
-                  className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg focus:outline-none focus:border-[#555]"
+                  className="w-full px-4 py-2 bg-ground border border-line rounded-lg focus:outline-none focus:border-line"
                   required
                 >
                   <option value="">Select a course</option>
@@ -376,14 +376,14 @@ export default function EnrollmentsManagement() {
                     setUserEmail('');
                     setSelectedCourseId(null);
                   }}
-                  className="flex-1 px-4 py-2 bg-[#1a1a1a] border border-[#333333] rounded-lg hover:border-[#555] transition-colors"
+                  className="flex-1 px-4 py-2 bg-ground border border-line rounded-lg hover:border-line transition-colors"
                   disabled={submitting}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-white text-[#1a1a1a] font-semibold rounded-lg hover:bg-[#e5e5e5] transition-colors disabled:opacity-50"
+                  className="flex-1 px-4 py-2 bg-signal text-black font-semibold rounded-lg hover:bg-signal-press transition-colors disabled:opacity-50"
                   disabled={submitting}
                 >
                   {submitting ? 'Creating...' : 'Create'}
